@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f2842">
+<meta name="robots" content="noindex">
+<title>Houtindustrie Ideaal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html,body{margin:0;padding:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{
+  --brand:#15365a; --brand-2:#0f2842; --wood:#b07a3c; --wood-l:#e9d9c3;
+  --bg:#ffffff; --tint:#f4f3f0; --tint-2:#ebe9e4; --line:#e1ded8;
+  --fg:#15181b; --muted:#666c72; --night:#111518; --good:#2e7a4d;
+  --f:"Albert Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--brand-2)}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+img{display:block}
+:focus-visible{outline:2px solid var(--wood);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-weight:800;line-height:1.06;letter-spacing:-.028em;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.3rem,5.2vw,4.4rem);font-weight:900;letter-spacing:-.035em}
+h2{font-size:clamp(1.8rem,3.4vw,2.9rem)}
+h3{font-size:1.2rem;letter-spacing:-.015em;font-weight:700}
+p{margin:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.kick{display:inline-flex;align-items:center;gap:.7rem;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--wood)}
+.kick::before{content:"";width:28px;height:2px;background:currentColor}
+.lead{font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--muted);max-width:42rem;line-height:1.65}
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.7em;border:0;padding:1.05em 1.6em;font-weight:700;cursor:pointer;text-decoration:none;background:var(--brand);color:#fff;font-size:.93rem;letter-spacing:.01em;overflow:hidden;isolation:isolate;transition:color .35s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--wood);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease);z-index:-1}
+.btn:hover::before{transform:scaleX(1);transform-origin:left}
+.btn .ar{display:inline-block;transition:transform .35s var(--ease)}
+.btn:hover .ar{transform:translateX(5px)}
+.btn.white{background:#fff;color:var(--fg)}
+.btn.white:hover{color:#fff}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.btn.line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--fg)}
+.btn.line:hover{color:#fff;box-shadow:none}
+.btn.sm{padding:.7em 1.1em;font-size:.86rem}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn[disabled]::before{display:none}
+.tl{cursor:pointer;font-weight:700;text-decoration:none;display:inline-flex;gap:.5rem;align-items:center;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1.5px no-repeat;padding-bottom:3px;transition:background-size .4s var(--ease),color .3s}
+.tl:hover{background-size:0 1.5px;background-position:100% 100%;color:var(--wood)}
+.tl .ar{transition:transform .35s var(--ease)}.tl:hover .ar{transform:translateX(4px)}
+/* topbar + header */
+.topbar{background:var(--brand-2);color:rgba(255,255,255,.82);font-size:.8rem}
+.topbar .wrap{display:flex;justify-content:space-between;gap:1rem;padding-block:.5rem;flex-wrap:wrap}
+.topbar nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+.topbar a{text-decoration:none;cursor:pointer;transition:color .2s}.topbar a:hover{color:#fff}
+.topbar .r{display:flex;gap:1.4rem}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);transition:box-shadow .3s}
+header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.mainbar .wrap{display:flex;align-items:center;gap:2.4rem;height:88px;transition:height .35s var(--ease)}
+header.scrolled .mainbar .wrap{height:68px}
+.logo{display:flex;align-items:center;cursor:pointer;text-decoration:none;flex:none}
+.logo{background:var(--brand-2);padding:.55rem .85rem;align-self:center}
+.logo img{height:40px;width:auto;transition:height .35s var(--ease)}
+header.scrolled .logo img{height:32px}
+.wm{display:flex;flex-direction:column;line-height:1}
+.wm b{font-weight:900;font-size:1.55rem;letter-spacing:.06em;color:#fff}
+.wm small{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:.25rem}
+.mainnav{display:flex;flex:1;align-self:stretch;gap:.2rem}
+.mainnav>button{position:relative;background:none;border:0;padding:0 .95rem;font-weight:600;font-size:.95rem;cursor:pointer;display:flex;align-items:center;gap:.35rem}
+.mainnav>button::after{content:"";position:absolute;left:.95rem;right:.95rem;bottom:0;height:3px;background:var(--wood);transform:scaleX(0);transition:transform .35s var(--ease)}
+.mainnav>button:hover::after,.mainnav>button[aria-expanded="true"]::after,.mainnav>button.cur::after{transform:scaleX(1)}
+.mainnav svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .3s}
+.mainnav>button[aria-expanded="true"] svg{transform:rotate(180deg)}
+.icons{display:flex;gap:.15rem;margin-left:auto;align-items:center}
+.iconbtn{position:relative;background:none;border:0;width:44px;height:44px;cursor:pointer;display:grid;place-items:center;border-radius:50%;transition:background .2s}
+.iconbtn:hover{background:var(--tint)}
+.iconbtn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7}
+.badge{position:absolute;top:4px;right:3px;background:var(--wood);color:#fff;font:700 .62rem/1 var(--f);border-radius:9px;padding:.25em .45em;animation:pop .4s var(--ease)}
+.hcta{margin-left:.6rem;white-space:nowrap}
+.burger{display:none}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 40px 60px -40px rgba(0,0,0,.35)}
+.mega:not([hidden]){animation:megaIn .35s var(--ease)}
+.mega .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.3fr);gap:2rem 2.6rem;padding-block:2.2rem 2.6rem}
+.mega h4{font-size:1rem;letter-spacing:-.01em;margin-bottom:.8rem}
+.mega h4 a,.mega li a{cursor:pointer;text-decoration:none;transition:color .2s}
+.mega li a:hover,.mega h4 a:hover{color:var(--wood)}
+.mega ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.93rem;color:var(--muted)}
+.mega ul ul{padding:.4rem 0 .2rem .9rem;border-left:1px solid var(--line);margin-top:.4rem;font-size:.88rem}
+.mega .feat{grid-column:-2/-1;grid-row:1/span 3;align-self:start}
+.searchbox{background:#fff;border-top:1px solid var(--line)}
+.searchbox:not([hidden]){animation:megaIn .3s var(--ease)}
+.searchbox .wrap{padding-block:1.6rem 2rem}
+.searchbox input{width:100%;padding:.6rem 0;border:0;border-bottom:2px solid var(--fg);background:transparent;font-size:clamp(1.3rem,2.4vw,2rem);font-weight:700;letter-spacing:-.02em}
+.searchbox input:focus{outline:none;border-color:var(--wood)}
+.sresults{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.2rem 2rem;margin-top:1rem}
+.sresults a{cursor:pointer;padding:.6rem 0;border-bottom:1px solid var(--line);text-decoration:none;display:flex;gap:.8rem;align-items:center}
+.sresults a:hover{color:var(--wood)}
+.sresults svg{width:34px;height:44px;flex:none}
+.sresults img{width:34px;height:44px;object-fit:contain;mix-blend-mode:multiply;background:var(--tint)}
+.drawer{position:fixed;inset:0;z-index:70;display:flex}
+.drawer .scrim{flex:1;background:rgba(10,14,18,.5);animation:fade .3s}
+.drawer .panel{width:min(380px,88vw);background:#fff;overflow:auto;padding:calc(1.2rem + env(safe-area-inset-top,0px)) 1.4rem calc(1.2rem + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));order:-1;animation:slideL .4s var(--ease)}
+.drawer details{border-bottom:1px solid var(--line)}
+.drawer summary{padding:1rem 0;font-weight:700;cursor:pointer;font-size:1.05rem}
+.drawer .logo{display:inline-flex}
+.drawer a{display:block;padding:.4rem 0 .4rem .7rem;cursor:pointer;text-decoration:none;color:var(--muted)}
+/* photo containers */
+.ph{position:relative;background:var(--tint-2);overflow:hidden;max-width:100%}
+.ph>img{width:100%;height:100%;object-fit:cover}
+.ph.noimg{background:linear-gradient(150deg,#2a3440,#151b21)}
+.ph.noimg::after{content:attr(data-label);position:absolute;inset:auto 0 0 0;padding:1rem;color:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.zoom>img{transition:transform 1.1s var(--ease)}
+.zoomhost:hover .zoom>img{transform:scale(1.06)}
+.plx>img{transform:scale(1.14);will-change:transform}
+/* hero */
+.hero{position:relative;height:clamp(520px,78vh,780px);overflow:hidden;background:var(--night);color:#fff}
+.slide{position:absolute;inset:0;visibility:hidden;opacity:0;transition:opacity 1.1s ease,visibility 0s 1.1s}
+.slide.on{visibility:visible;opacity:1;transition:opacity 1.1s ease,visibility 0s}
+.slide .ph{position:absolute;inset:0;background:var(--night)}
+.slide.on .ph>img{animation:kb 9s ease-out both}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,16,.78) 0%,rgba(8,12,16,.45) 42%,rgba(8,12,16,.05) 75%),linear-gradient(0deg,rgba(8,12,16,.55),rgba(8,12,16,0) 40%)}
+.slide .txt{position:absolute;z-index:2;inset:0;display:flex;align-items:center}
+.slide .txt>.wrap{width:100%}
+.slide .inner{max-width:40rem;display:grid;gap:1.4rem}
+.slide.on .inner>*{animation:up .9s var(--ease) both}
+.slide.on .inner>*:nth-child(2){animation-delay:.12s}.slide.on .inner>*:nth-child(3){animation-delay:.24s}.slide.on .inner>*:nth-child(4){animation-delay:.36s}
+.slide .kick{color:var(--wood-l)}
+.slide p{font-size:1.15rem;color:rgba(255,255,255,.88);max-width:34rem}
+.slide.split{background:radial-gradient(120% 90% at 80% 50%,#1f2a35 0%,var(--night) 70%)}
+.slide.split::after{display:none}
+.slide.split .ph{position:absolute;inset:auto;top:50%;right:max(20px,calc((100% - 1360px)/2 + 20px));transform:translateY(-50%);width:auto;max-width:46%;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.slide.split .inner{max-width:min(40rem,48%)}
+.banner.split .ph{position:absolute;inset:auto;top:50%;right:max(20px,calc((100% - 1360px)/2 + 20px));transform:translateY(-50%);width:auto;max-width:46%;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);z-index:1}
+.banner.split{height:clamp(300px,34vw,460px);background:radial-gradient(120% 90% at 80% 50%,#1f2a35 0%,var(--night) 70%)}
+.banner.split::after{background:none}
+.banner.split .txt .wrap>*{max-width:48%}
+.ph.prodfit{background:var(--tint)}
+.ph.prodfit>img{object-fit:contain;padding:7% 0;mix-blend-mode:multiply}
+.ph.fit::before{content:"";position:absolute;inset:-30px;background:var(--bg) center/cover;filter:blur(22px) brightness(.75)}
+.ph.fit>img{position:relative;object-fit:contain}
+.hctl{position:absolute;z-index:3;left:0;right:0;bottom:2rem}
+.hctl .wrap{display:flex;align-items:center;gap:1.4rem}
+.hdots{display:flex;gap:.6rem;flex:1}
+.hdots button{flex:0 1 120px;height:28px;border:0;background:none;cursor:pointer;padding:0;display:grid;gap:.45rem;text-align:left;color:rgba(255,255,255,.6);font:600 .72rem var(--mono)}
+.hdots i{display:block;height:2px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.hdots i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.hdots button[aria-current="true"]{color:#fff}
+.hdots button[aria-current="true"] i::after{animation:prog 7s linear forwards}
+.harrow{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .25s,border-color .25s}
+.harrow:hover{background:#fff;color:var(--fg);border-color:#fff}
+.harrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+/* ticker */
+.ticker{background:var(--wood);color:#fff;overflow:hidden;white-space:nowrap;font-weight:700;font-size:.92rem;letter-spacing:.02em}
+.ticker .tr{display:inline-flex;gap:3rem;padding-block:.95rem;animation:tick 38s linear infinite;padding-left:3rem}
+.ticker span{display:inline-flex;gap:3rem;align-items:center}
+.ticker span::after{content:"✦";opacity:.6}
+/* sections */
+section.block{padding-block:clamp(3.5rem,8vw,7rem)}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:1.4rem;flex-wrap:wrap;margin-bottom:clamp(1.8rem,3vw,2.8rem)}
+.sh .l{display:grid;gap:.9rem;max-width:46rem}
+.grid{display:grid;gap:1.6rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))}
+.g3{grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr))}
+.g3x{grid-template-columns:1fr}
+@media (min-width:700px){.g3x{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.g4{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:2.6rem 1.4rem}
+.night{background:var(--night);color:#fff}
+.night .muted{color:rgba(255,255,255,.66)}
+.night .kick{color:var(--wood-l)}
+.tintbg{background:var(--tint)}
+/* tiles */
+.tile{position:relative;display:block;cursor:pointer;overflow:hidden;color:#fff;background:var(--night);text-decoration:none}
+.tile .ph{aspect-ratio:4/3}
+.tile.wide .ph{aspect-ratio:16/10}
+.tile.sq .ph{aspect-ratio:1}
+.tile .ph>img{transition:transform 1.2s var(--ease)}
+.tile:hover .ph>img{transform:scale(1.07)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,12,16,.82) 0%,rgba(8,12,16,.15) 50%,rgba(8,12,16,0) 70%);transition:opacity .5s}
+.tile .cap{position:absolute;z-index:2;inset:auto 0 0 0;padding:1.6rem;display:grid;gap:.35rem}
+.tile .cap b{font-size:clamp(1.15rem,1.6vw,1.45rem);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.tile .cap small{color:rgba(255,255,255,.8);font-size:.88rem}
+.tile .go{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.85rem;margin-top:.4rem;transform:translateY(8px);opacity:.7;transition:transform .45s var(--ease),opacity .45s}
+.tile:hover .go{transform:none;opacity:1}
+.tile .num{position:absolute;z-index:2;top:1.2rem;left:1.4rem;font:500 .78rem var(--mono);color:rgba(255,255,255,.8)}
+/* product card */
+.prod{cursor:pointer;position:relative;display:flex;flex-direction:column;gap:.9rem}
+.prod .pic{background:var(--tint);aspect-ratio:3/4;display:grid;place-items:center;overflow:hidden;position:relative;max-width:100%;transition:background .4s}
+.prod:hover .pic{background:var(--tint-2)}
+.prod .pic img{grid-area:1/1;height:86%;width:auto;max-width:88%;object-fit:contain;mix-blend-mode:multiply;transition:transform .7s var(--ease),opacity .5s}
+.prod .pic svg{grid-area:1/1;height:84%;width:auto;max-width:88%}
+.prod .pic img.alt{opacity:0}
+.prod:hover .pic img{transform:scale(1.04)}
+.prod:hover .pic.has2 img.main{opacity:0}
+.prod:hover .pic.has2 img.alt{opacity:1}
+.prod .peek{position:absolute;left:1rem;right:1rem;bottom:1rem;background:var(--fg);color:#fff;text-align:center;padding:.7rem;font-weight:700;font-size:.85rem;transform:translateY(130%);transition:transform .45s var(--ease)}
+.prod:hover .peek{transform:none}
+.prod .tag{position:absolute;top:1rem;left:1rem;background:#fff;font:600 .7rem var(--mono);padding:.3rem .5rem;letter-spacing:.04em}
+.prod .meta{display:grid;gap:.2rem}
+.prod .code{font:500 .76rem var(--mono);color:var(--muted);letter-spacing:.04em}
+.prod h3{font-size:1.02rem;font-weight:700}
+.prod .price{font-weight:700;font-variant-numeric:tabular-nums}
+.prod .price small{font-weight:400;color:var(--muted);font-size:.78rem}
+.fav{position:absolute;top:.8rem;right:.8rem;z-index:2;background:#fff;border:0;border-radius:50%;width:38px;height:38px;display:grid;place-items:center;cursor:pointer;transition:transform .3s var(--ease)}
+.fav:hover{transform:scale(1.12)}
+.fav svg{width:17px;height:17px;stroke:var(--fg);fill:none;stroke-width:1.8;transition:fill .2s}
+.fav.on svg{fill:var(--wood);stroke:var(--wood);animation:pop .45s var(--ease)}
+.dots{display:flex;gap:5px;margin-top:.3rem}
+.dot{width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
+/* rail */
+.railwrap{position:relative}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(250px,calc((100% - 4.2rem)/4));gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:.4rem}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:start}
+.rail.wide{grid-auto-columns:minmax(290px,calc((100% - 2.8rem)/3))}
+.railnav{display:flex;gap:.6rem}
+.rbtn{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--fg);background:transparent;cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
+.rbtn:hover{background:var(--fg);color:#fff}
+.night .rbtn{border-color:#fff;color:#fff}.night .rbtn:hover{background:#fff;color:var(--fg)}
+.rbtn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+/* tabs */
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap}
+.tabs button{border:0;background:var(--tint);padding:.75rem 1.2rem;font-weight:700;cursor:pointer;font-size:.9rem;transition:background .3s,color .3s}
+.tabs button:hover{background:var(--tint-2)}
+.tabs button[aria-selected="true"]{background:var(--fg);color:#fff}
+.fadein>*{animation:up .7s var(--ease) both}
+.fadein>*:nth-child(2){animation-delay:.06s}.fadein>*:nth-child(3){animation-delay:.12s}.fadein>*:nth-child(4){animation-delay:.18s}.fadein>*:nth-child(5){animation-delay:.24s}.fadein>*:nth-child(6){animation-delay:.3s}.fadein>*:nth-child(7){animation-delay:.36s}.fadein>*:nth-child(8){animation-delay:.42s}
+/* colour showcase */
+.show{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:640px;transition:background-color .8s var(--ease)}
+.show .stage{display:grid;place-items:center;padding:3rem 2rem;position:relative}
+.show .stage img,.show .stage svg{max-height:540px;max-width:100%;width:auto;mix-blend-mode:multiply;animation:swap .7s var(--ease) both}
+.show .info{display:grid;align-content:center;gap:1.6rem;padding:3rem clamp(1.4rem,5vw,5rem)}
+.show .big{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:900;letter-spacing:-.04em;line-height:1;animation:up .6s var(--ease) both}
+.swrow{display:flex;gap:.8rem;flex-wrap:wrap}
+.swb{width:50px;height:50px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);transition:transform .35s var(--ease),box-shadow .35s}
+.swb:hover{transform:scale(1.1)}
+.swb[aria-pressed="true"]{box-shadow:inset 0 0 0 1px rgba(0,0,0,.2),0 0 0 3px #fff,0 0 0 5px var(--fg);transform:scale(1.06)}
+/* split & stats */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.split.top{align-items:start}
+.split .ph{aspect-ratio:4/5}
+.split .ph.land{aspect-ratio:4/3}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.6rem;border-top:1px solid var(--line);padding-top:1.6rem}
+.night .stats{border-color:rgba(255,255,255,.18)}
+.stats b{display:block;font-size:clamp(2.2rem,3.6vw,3.2rem);font-weight:900;letter-spacing:-.045em;line-height:1;color:var(--wood)}
+.stats span{font-size:.9rem}
+.collage{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:1rem}
+.collage .ph:first-child{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+.collage .ph{aspect-ratio:4/3}
+/* page header */
+.crumbs{font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.crumbs a{cursor:pointer;text-decoration:none;transition:color .2s}.crumbs a:hover{color:var(--wood)}
+.crumbs span{opacity:.5}
+.pagehead{padding-block:2rem 3rem;display:grid;gap:1.2rem}
+.banner{position:relative;color:#fff;background:var(--night);overflow:hidden}
+.banner .ph{height:clamp(300px,42vw,500px);background:var(--night)}
+.banner .ph>img{animation:kb 9s ease-out both}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,12,16,.8),rgba(8,12,16,.15) 70%),linear-gradient(90deg,rgba(8,12,16,.5),rgba(8,12,16,0) 60%)}
+.banner .txt{position:absolute;inset:auto 0 0 0;z-index:2;padding-block:2.6rem}
+.banner .txt .wrap>*{animation:up .9s var(--ease) both}
+.banner .txt .wrap>*:nth-child(2){animation-delay:.1s}
+.banner .crumbs{color:rgba(255,255,255,.75);margin-bottom:1rem}
+.intro{padding-block:clamp(2.4rem,5vw,4rem) 1rem}
+/* listing */
+.listing{display:grid;grid-template-columns:260px minmax(0,1fr);gap:3rem;align-items:start}
+.filters{position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px);max-height:calc(100vh - 110px);overflow:auto;padding-right:.4rem;scrollbar-width:thin}
+.filters details{border-top:1px solid var(--line)}
+.filters summary{padding:1rem 0;font-weight:700;cursor:pointer;font-size:.95rem;list-style:none;display:flex;justify-content:space-between}
+.filters summary::after{content:"+";font-weight:400}
+.filters details[open] summary::after{content:"−"}
+.filters label{display:flex;gap:.6rem;align-items:center;font-size:.92rem;padding:.2rem 0;cursor:pointer}
+.filters input[type=checkbox]{accent-color:var(--brand);width:17px;height:17px}
+.filters .row{display:flex;gap:.5rem;padding-bottom:1rem}
+.filters input[type=number]{width:100%;padding:.55rem;border:1px solid var(--line);background:#fff}
+.listhead{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;margin-bottom:1.4rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line);font-size:.92rem}
+.listhead select{padding:.45rem .6rem;border:1px solid var(--line);background:#fff}
+.filtertoggle{display:none}
+.chipbar{display:flex;flex-wrap:wrap;gap:.45rem}
+.chipbar button{border:0;background:var(--fg);color:#fff;padding:.4rem .8rem;font-size:.8rem;font-weight:600;cursor:pointer;animation:pop .35s var(--ease)}
+.pager{display:flex;gap:.35rem;justify-content:center;margin-top:3rem;flex-wrap:wrap}
+.pager button{min-width:2.8rem;height:2.8rem;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:600;transition:all .25s}
+.pager button:hover{border-color:var(--fg)}
+.pager button[aria-current="true"]{background:var(--fg);color:#fff;border-color:var(--fg)}
+/* detail */
+.detail{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.gallery{display:grid;gap:.9rem;position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px)}
+.gallery .main{background:var(--tint);aspect-ratio:4/5;display:grid;place-items:center;max-width:100%;overflow:hidden;cursor:zoom-in}
+.gallery .main img{height:90%;width:auto;max-width:92%;object-fit:contain;mix-blend-mode:multiply;transition:transform .5s var(--ease);animation:swap .6s var(--ease) both}
+.gallery .main svg{height:86%;width:auto;animation:swap .6s var(--ease) both}
+@media (hover:hover){.gallery .main:hover img{transform:scale(1.8)}}
+.thumbs{display:flex;gap:.6rem;flex-wrap:wrap}
+.thumbs button{width:74px;height:92px;background:var(--tint);border:0;cursor:pointer;display:grid;place-items:center;padding:6px;box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .25s}
+.thumbs button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--fg)}
+.thumbs img,.thumbs svg{max-height:100%;max-width:100%;mix-blend-mode:multiply}
+.og{display:grid;gap:.75rem;padding-block:1.3rem;border-top:1px solid var(--line)}
+.og>b{font-size:.92rem}
+.og>b span{font-weight:400;color:var(--muted)}
+.swatches{display:flex;flex-wrap:wrap;gap:.7rem}
+.sw{width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);transition:transform .3s var(--ease),box-shadow .3s}
+.sw:hover{transform:scale(1.08)}
+.sw[aria-pressed="true"]{box-shadow:inset 0 0 0 1px rgba(0,0,0,.2),0 0 0 3px #fff,0 0 0 4.5px var(--fg)}
+.seg{display:flex;flex-wrap:wrap;gap:.5rem}
+.seg button{padding:.6rem 1rem;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:.9rem;font-weight:500;transition:all .25s var(--ease)}
+.seg button:hover{border-color:var(--fg)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:#fff;border-color:var(--fg)}
+.usprow{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-size:.86rem;color:var(--muted);padding-block:.4rem 1.2rem}
+.usprow span{display:flex;gap:.45rem;align-items:center}
+.usprow svg{width:15px;height:15px;stroke:var(--wood);fill:none;stroke-width:2.4}
+details.acc{border-top:1px solid var(--line)}
+details.acc:last-of-type{border-bottom:1px solid var(--line)}
+details.acc summary{padding:1.15rem 0;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"";width:12px;height:12px;flex:none;margin-top:.35rem;background:linear-gradient(var(--fg),var(--fg)) center/12px 2px no-repeat,linear-gradient(var(--fg),var(--fg)) center/2px 12px no-repeat;transition:transform .35s var(--ease)}
+details.acc[open] summary::after{transform:rotate(135deg)}
+details.acc>div{padding-bottom:1.4rem;animation:up .5s var(--ease)}
+table.spec{width:100%;border-collapse:collapse;font-size:.92rem}
+table.spec td{padding:.6rem .3rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.spec td:first-child{color:var(--muted);width:44%}
+table.spec a{font-weight:600}
+.tablewrap{overflow-x:auto}
+.bigprice{font-size:2rem;font-weight:900;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+/* configurator */
+.cfgbar{height:3px;background:var(--line);margin-bottom:2rem;position:relative}
+.cfgbar i{position:absolute;inset:0 auto 0 0;background:var(--wood);transition:width .6s var(--ease)}
+.cfg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,4vw,4rem);align-items:start}
+.cstage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px);background:var(--tint);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1.4rem;padding:2rem}
+.cstage .photo{display:grid;place-items:center;aspect-ratio:3/4;max-width:100%}
+.cstage .photo img{max-height:100%;max-width:100%;mix-blend-mode:multiply;animation:swap .6s var(--ease) both}
+.cstage .photo svg{height:100%;width:auto;animation:swap .6s var(--ease) both}
+.cstage .sk{display:grid;align-content:space-between;gap:1rem}
+.cstage .sk svg{width:100%;height:auto;color:var(--muted)}
+.cstage .garn{background:#fff;padding:.6rem;display:grid;gap:.4rem;font-size:.78rem}
+.cstage .garn img{width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply;animation:swap .5s var(--ease) both}
+.cstage .total{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:1.1rem;gap:1rem;flex-wrap:wrap}
+.cstage .total b{font-size:1.9rem;font-weight:900;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.steps{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:2rem}
+.steps button{padding:.55rem .85rem;border:0;background:none;cursor:pointer;font-weight:700;font-size:.84rem;color:var(--muted);transition:color .25s,background .25s}
+.steps button:hover{color:var(--fg)}
+.steps button[aria-current="step"]{background:var(--fg);color:#fff}
+.steps button.done{color:var(--fg)}
+.steps .n{font-family:var(--mono);margin-right:.4em;color:var(--wood)}
+#cfgPanel.anim{animation:panelIn .55s var(--ease) both}
+#cfgPanel h2{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:.4rem}
+.navbtns{display:flex;justify-content:space-between;gap:.6rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.modelpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:.6rem;max-height:470px;overflow:auto;padding:3px}
+.modelpick button{background:var(--tint);border:0;padding:.6rem .2rem .45rem;cursor:pointer;display:grid;gap:.35rem;justify-items:center;font:500 .72rem var(--mono);box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .2s,background .2s}
+.modelpick button:hover{background:var(--tint-2)}
+.modelpick button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--fg)}
+.modelpick img,.modelpick svg{height:104px;width:auto;max-width:100%;mix-blend-mode:multiply}
+.garnpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:.6rem}
+.garnpick button{background:var(--tint);border:0;padding:.5rem;cursor:pointer;display:grid;gap:.35rem;font-size:.78rem;font-weight:600;box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .2s}
+.garnpick button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--fg)}
+.garnpick img{width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply}
+.garnpick .none{aspect-ratio:1;display:grid;place-items:center;color:var(--muted)}
+.dim{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.dim label,.form label{display:grid;gap:.35rem;font-size:.86rem;font-weight:600}
+.dim select,.dim input,.form input,.form select,.form textarea{padding:.8rem .9rem;border:1px solid var(--line);background:#fff;width:100%;transition:border-color .2s,box-shadow .2s}
+.form input:focus,.form select:focus,.form textarea:focus,.dim input:focus,.dim select:focus{outline:none;border-color:var(--fg);box-shadow:0 0 0 3px rgba(176,122,60,.18)}
+.summary table{width:100%;border-collapse:collapse;font-size:.93rem}
+.summary td{padding:.6rem .2rem;border-bottom:1px solid var(--line)}
+.summary td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.summary tr.total td{border-bottom:0;border-top:2px solid var(--fg);font-weight:800;font-size:1.15rem}
+.form{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+.form .full{grid-column:1/-1}
+.note{font-size:.85rem;color:var(--muted);border-left:2px solid var(--wood);padding-left:.9rem}
+.ok{background:#eef6f0;border-left:3px solid var(--good);padding:1.1rem 1.2rem;animation:up .5s var(--ease)}
+/* cart */
+.cart{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);background:#fff;z-index:80;box-shadow:-30px 0 60px rgba(0,0,0,.2);display:flex;flex-direction:column;padding:calc(1.4rem + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(1.4rem + env(safe-area-inset-bottom,0px)) 1.6rem}
+.cart:not([hidden]){animation:slideR .45s var(--ease)}
+.cart .items{flex:1;overflow:auto;display:grid;align-content:start;margin-block:1rem}
+.citem{display:grid;grid-template-columns:64px 1fr auto;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:center}
+.citem .im{width:64px;height:64px;background:var(--tint);display:grid;place-items:center}
+.citem .im img{max-width:100%;max-height:100%;mix-blend-mode:multiply}
+.qty{display:flex;align-items:center;gap:.5rem;margin-top:.3rem}
+.qty button{width:28px;height:28px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));background:var(--fg);color:#fff;padding:.9rem 1.4rem;z-index:90;font-weight:600;font-size:.92rem;transform:translateX(-50%);animation:toastIn .45s var(--ease)}
+/* misc content */
+.prose{max-width:44rem;display:grid;gap:1.4rem}
+.prose h3{font-size:1.3rem}
+.prose ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+.list3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:2.4rem 2rem}
+.list3>div{border-top:2px solid var(--fg);padding-top:1.2rem;display:grid;gap:.6rem;align-content:start}
+.night .list3>div{border-color:rgba(255,255,255,.8)}
+.list3 .nr{font:500 .8rem var(--mono);color:var(--wood)}
+.figure{background:var(--tint);display:grid;place-items:center;padding:2rem;max-width:100%}
+.figure img,.figure svg{max-height:420px;max-width:100%;width:auto;mix-blend-mode:multiply}
+.item{display:grid;gap:.75rem;cursor:default}
+.item .fig{background:var(--tint);aspect-ratio:3/4;display:grid;place-items:center;padding:1rem;overflow:hidden}
+.item .fig img,.item .fig svg{max-height:100%;max-width:100%;mix-blend-mode:multiply;transition:transform .7s var(--ease)}
+.item:hover .fig img{transform:scale(1.05)}
+.item .fig.sq{aspect-ratio:1}
+.newsrow{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:2rem;padding-block:1.8rem;border-top:1px solid var(--line);align-items:start;transition:background .3s}
+.newsrow:hover{background:var(--tint)}
+.newsrow .d{font:500 .82rem var(--mono);color:var(--muted);padding-top:.3rem}
+.newsrow h3{font-size:1.3rem;margin-bottom:.4rem}
+.dlgroup{display:grid;grid-template-columns:240px minmax(0,1fr);gap:2rem;padding-block:2rem;border-top:1px solid var(--line)}
+.dl{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:center;transition:padding .3s var(--ease),color .2s}
+.dl:hover{padding-left:.6rem;color:var(--wood)}
+.dl small{font:500 .74rem var(--mono);color:var(--muted);flex:none}
+.proj .ph{aspect-ratio:4/3}
+.proj{cursor:default}
+.filterchips{display:flex;gap:.4rem;flex-wrap:wrap}
+.filterchips button{border:1px solid var(--line);background:#fff;padding:.55rem 1rem;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .25s}
+.filterchips button[aria-pressed="true"]{background:var(--fg);color:#fff;border-color:var(--fg)}
+.lakstift{aspect-ratio:1;display:grid;place-items:center;background:var(--tint)}
+.lakstift i{width:46%;aspect-ratio:1;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18),0 18px 30px -16px rgba(0,0,0,.35)}
+/* footer */
+footer.site{background:var(--night);color:#d5d9dd;margin-top:0}
+.prefoot{background:var(--brand);color:#fff}
+.prefoot .wrap{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding-block:clamp(2.6rem,5vw,4rem)}
+.prefoot h2{max-width:34rem}
+footer .top{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:2.4rem;padding-block:4rem 3rem}
+footer h4{font-size:.95rem;margin-bottom:1rem;color:#fff;letter-spacing:-.01em}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:.9rem}
+footer a{cursor:pointer;text-decoration:none;color:#a9b0b7;transition:color .2s}footer a:hover{color:#fff}
+.flogo{display:inline-block;padding:0}
+.flogo img{height:40px;width:auto}
+.certs{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.certs a{background:#fff;padding:.35rem .55rem;display:grid;place-items:center;height:44px;min-width:58px;color:var(--fg);font:600 .72rem var(--mono)}
+.certs img{max-height:30px;width:auto}
+.social{display:flex;gap:.5rem;margin-top:1.2rem}
+.social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:background .25s,border-color .25s}
+.social a:hover{background:var(--wood);border-color:var(--wood)}
+.social svg{width:16px;height:16px;fill:#fff}
+.legal{border-top:1px solid rgba(255,255,255,.1)}
+.legal .wrap{display:flex;flex-wrap:wrap;gap:1.4rem;padding-block:1.3rem;font-size:.8rem;color:#80888f}
+/* reveal + page */
+.rv{transform:translateY(36px);opacity:.35;transition:transform 1s var(--ease),opacity 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{transform:none;opacity:1}
+#app.enter>*{animation:pageIn .6s var(--ease) both}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes prog{to{transform:scaleX(1)}}
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes megaIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@keyframes slideL{from{transform:translateX(-100%)}to{transform:none}}
+@keyframes slideR{from{transform:translateX(100%)}to{transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes swap{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes panelIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+@media (max-width:1120px){
+  .mainnav,.topbar nav,.hcta{display:none}
+  .burger{display:grid}
+  footer .top{grid-template-columns:1fr 1fr}
+  .mega .wrap{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  .detail,.cfg,.split,.show{grid-template-columns:1fr}
+  .gallery,.cstage{position:static}
+  .listing{grid-template-columns:1fr}
+  .filters{position:static;max-height:none;display:none}
+  .filters.open{display:block;animation:up .4s var(--ease)}
+  .filtertoggle{display:inline-flex}
+  .rail{grid-auto-columns:minmax(230px,70%)}
+  .rail.wide{grid-auto-columns:minmax(260px,82%)}
+  .newsrow{grid-template-columns:1fr;gap:.5rem}
+  .dlgroup{grid-template-columns:1fr;gap:.6rem}
+  .split .ph{aspect-ratio:4/3}
+  .show{min-height:0}
+  .collage{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .slide.split .ph{inset:0;transform:none;max-width:none;height:100%!important;aspect-ratio:auto!important;box-shadow:none}
+  .slide.split::after{display:block}
+  .slide.split .inner{max-width:40rem}
+  .banner.split .ph{position:static;transform:none;max-width:none;height:100%;aspect-ratio:auto!important;box-shadow:none}
+  .banner.split::after{background:linear-gradient(0deg,rgba(8,12,16,.8),rgba(8,12,16,.15) 70%)}
+  .banner.split .txt .wrap>*{max-width:none}
+}
+@media (max-width:600px){
+  .form,.dim{grid-template-columns:1fr}
+  .cstage{grid-template-columns:1fr}
+  footer .top{grid-template-columns:1fr}
+  .g4{grid-template-columns:1fr 1fr;gap:1.8rem .9rem}
+  .mainbar .wrap{height:72px;gap:1rem}
+  .hdots button{font-size:0;gap:0}
+  .topbar .r span:first-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{transform:none;opacity:1}
+  .ticker .tr{animation:none}
+}
+</style>
+</head>
+<body>
+
+
+<header class="site" id="hdr">
+  <div class="topbar"><div class="wrap">
+    <nav aria-label="Service">
+      <a data-go="over-ons">Over Ideaal</a><a data-go="nieuws">Nieuws</a><a data-go="vacatures">Werken bij</a><a data-go="duurzaamheid">Groene deuren</a><a data-go="faq">FAQ</a><a data-go="koperskeuze">Koperskeuze intake</a><a data-go="dealerportal">Dealerportal</a>
+    </nav>
+    <div class="r"><span>Ma–vr 07:30–16:30</span><span class="mono">0316 - 581350</span></div>
+  </div></div>
+  <div class="mainbar"><div class="wrap">
+    <a class="logo" data-go="home" id="logo" aria-label="Houtindustrie Ideaal, naar home"></a>
+    <nav class="mainnav" id="mainnav" aria-label="Hoofdmenu"></nav>
+    <div class="icons">
+      <button class="iconbtn" id="btnSearch" aria-label="Zoeken"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      <button class="iconbtn" data-go="favorieten" aria-label="Favorieten"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span class="badge" id="favCount" hidden>0</span></button>
+      <button class="iconbtn" id="btnCart" aria-label="Winkelwagen"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><span class="badge" id="cartCount" hidden>0</span></button>
+      <button class="btn sm hcta" data-go="configurator">Stel uw deur samen <span class="ar">→</span></button>
+      <button class="iconbtn burger" id="btnMenu" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></div>
+  <div class="mega" id="mega" hidden></div>
+  <div class="searchbox" id="searchbox" hidden><div class="wrap"><input id="q" type="search" placeholder="Zoek een deur, serie of onderwerp…" aria-label="Zoeken"><div class="sresults" id="sres"></div></div></div>
+</header>
+<div class="drawer" id="drawer" hidden><div class="panel" id="drawerPanel"></div><div class="scrim" data-close="drawer"></div></div>
+<aside class="cart" id="cart" hidden aria-label="Winkelwagen"></aside>
+<main id="app"></main>
+<footer class="site">
+  <div class="prefoot"><div class="wrap"><h2>Een project in voorbereiding? Wij denken graag mee.</h2><div style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn white" data-go="contact">Neem contact op <span class="ar">→</span></button><button class="btn ghost" data-go="configurator">Stel uw deur samen</button></div></div></div>
+  <div class="wrap top">
+    <div><span class="flogo" id="flogo"></span><p style="margin-top:1.2rem;font-size:.9rem;color:#a9b0b7;line-height:1.75">Houtindustrie “Ideaal” B.V.<br>Industriestraat 18, 6905 DH Zevenaar<br>T <span class="mono">0316 - 581350</span> · F <span class="mono">0316 - 529368</span><br>info@ideaal.nl<br>Ma t/m vr 07:30 – 16:30</p><div class="social"><a href="https://www.facebook.com/Houtindustrie-Ideaal-BV-180532109054761/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg></a><a href="https://www.linkedin.com/company/houtindustrie-'ideaal'-b.v./" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3 9h4v12H3zM10 9h3.8v1.7c.6-1 1.9-2 3.9-2 4.1 0 4.3 2.7 4.3 6.2V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.2 1.4-2.2 2.9V21h-4z"/></svg></a></div></div>
+    <div><h4>Assortiment</h4><ul><li><a data-go="stijldeuren">Stijldeuren</a></li><li><a data-go="woningbouw">Woningbouw</a></li><li><a data-go="utiliteitsbouw">Utiliteitsbouw</a></li><li><a data-go="kozijnen">Kozijnen</a></li><li><a data-go="beslag">Hang- en sluitwerk</a></li><li><a data-go="profilux">Profilux Industrieel</a></li></ul></div>
+    <div><h4>Inspiratie</h4><ul><li><a data-go="configurator">Deur samenstellen</a></li><li><a data-go="projecten">Projecten</a></li><li><a data-go="trends">Interieurtrends</a></li><li><a data-go="deuropties">Kleuren &amp; glas</a></li></ul></div>
+    <div><h4>Professionals</h4><ul><li><a data-go="montage">Deur-Kozijn-Montage</a></li><li><a data-go="gnd">GND-deuren</a></li><li><a data-go="downloads">Downloads</a></li><li><a data-go="links">Links</a></li><li><a data-go="brandstoftoeslag">Brandstoftoeslag</a></li></ul></div>
+    <div><h4>Ideaal</h4><ul><li><a data-go="over-ons">Over ons</a></li><li><a data-go="nieuws">Nieuws</a></li><li><a data-go="vacatures">Vacatures</a></li><li><a data-go="contact">Contact</a></li></ul><div class="certs" id="certs" style="margin-top:1.4rem"></div></div>
+  </div>
+  <div class="legal"><div class="wrap"><a data-go="privacy">Privacyverklaring</a><a data-go="garantie">Garantievoorwaarden</a><a href="https://www.ideaal.nl/app/uploads/2025/10/VerwerkingvoorschriftIdeaal.pdf" target="_blank" rel="noopener">Verwerkingsvoorschrift</a><a data-go="sitemap">Sitemap</a><span>KvK 09045549 · BTW NL004847180B01</span><span style="margin-left:auto">© 2026 Houtindustrie Ideaal · testversie</span></div></div>
+</footer>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const EMB={"https://www.ideaal.nl/app/themes/sage10/public/build/assets/logo-Cx1mQhyT.png":"img/68e7c48684.webp","https://www.ideaal.nl/app/uploads/2025/10/Foto-fabriek-4.jpg":"img/a8f9f0c8f6.webp","https://www.ideaal.nl/app/uploads/2025/11/nieuws-1920x400.jpg":"img/2a54141843.webp","https://www.ideaal.nl/app/uploads/2025/11/woningsbouw-1920x400.jpg":"img/7180a0c38b.webp","https://www.ideaal.nl/app/uploads/2025/11/utiliteitsbouw-1920x400.jpg":"img/e70a3177fb.webp","https://www.ideaal.nl/app/uploads/2025/11/Vacatures-1920x400.jpg":"img/6f8badc73d.webp","https://www.ideaal.nl/app/uploads/2025/10/Ideaal_Hout_088-1920x400.jpg":"img/7decf8b37a.webp","https://www.ideaal.nl/app/uploads/2025/10/Ideaal_deur_veluwe_kl_3-1536x1152.jpg":"img/b108f7d9ef.webp","https://www.ideaal.nl/app/uploads/2025/10/Ideaal_deur_veluwe_kl_1-1536x1152.jpg":"img/9e7f56e4d0.webp","https://www.ideaal.nl/app/uploads/2026/10/54-won-Sion-Park-Weboma.webp":"img/ea631a9b5f.webp","https://www.ideaal.nl/app/uploads/2026/10/173-won-fase-1-Remisehof-Dura-Vermeer2.webp":"img/16c902e2f4.webp","https://www.ideaal.nl/app/uploads/2026/10/80-appartementen-Thorbeckelaan-Assen2.webp":"img/c4fc27d587.webp","https://www.ideaal.nl/app/uploads/2026/10/124-app.-Woenderskamp-Nijmegen2.webp":"img/9c10f1a81f.webp","https://www.ideaal.nl/app/uploads/2026/10/132-won-De-Poelen-Roelofarendsveen2.webp":"img/0501241ab1.webp","https://www.ideaal.nl/app/uploads/2026/10/98-won-Meijert-98-Weboma.webp":"img/a3184fdb47.webp","https://www.ideaal.nl/app/uploads/2026/10/60-recratie-woningen-Aalden2.webp":"img/7098dd922c.webp","https://www.ideaal.nl/app/uploads/2026/10/400-app-Verde-Vista-Plegt-Vos.webp":"img/4d4734eb56.webp","https://www.ideaal.nl/app/uploads/2026/10/200-won-Harmonie-Stebru.avif":"img/1985e4dff8.webp","https://www.ideaal.nl/app/uploads/2025/10/fsc.svg":"img/066621452e.svg","https://www.ideaal.nl/app/uploads/2025/10/Profal_X-1_kozijn_A01_st.png":"img/bd4d22b36a.webp","https://www.ideaal.nl/app/uploads/2025/10/Profal_opdekdeur_type_X-1_met_standaard_ventilatierooster_meterkast.jpg":"img/ca3e90a886.webp","https://www.ideaal.nl/app/uploads/2025/10/Profal_X-1_spiegelstuk_kozijn_A51_st.png":"img/1cbb84e161.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Amsterdam-RVS.jpg":"img/d73ed284e7.webp","https://www.ideaal.nl/app/uploads/2025/10/Profal_X-1_ventilatie_kozijn_A01_st.png":"img/e3d5049244.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Amsterdam-RVS-Loopslot.jpg":"img/35e137f040.webp","https://www.ideaal.nl/app/uploads/2025/10/G-1.png":"img/e271706c21.webp","https://www.ideaal.nl/app/uploads/2025/10/G-2.png":"img/2760dfc8b6.webp","https://www.ideaal.nl/app/uploads/2025/10/G-3.png":"img/cc368d71b3.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Bonn-RVS.jpg":"img/2b7395d205.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Bonn-RVS-Loopslot.jpg":"img/e12fbd3c3c.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Amsterdam-Kastslot.jpg":"img/2d72468ee5.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-RVS.jpg":"img/34cf87ee52.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Bonn-RVS-Kastslot.jpg":"img/418181c147.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-RVS-V-B-slot.jpg":"img/93449bb6e7.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-RVS-Kastslot.jpg":"img/e2da0b9be5.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-RVS-Loopslot.jpg":"img/2d4c321db1.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-RVS-D-N-slot.jpg":"img/45431f8416.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-F1.jpg":"img/f246b57d45.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-F1-Loopslot.jpg":"img/71147de006.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-F1-D-N-slot.jpg":"img/31152482d4.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-F1-V-B-slot.jpg":"img/07de705b7d.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Marseille-F1-Kastslot.jpg":"img/47ce021a81.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Paris-RVS.jpg":"img/e31a2d68f3.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Paris-RVS-Kastslot.jpg":"img/fc1f54fc5a.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Paris-RVS-D-N-slot.jpg":"img/286178db46.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Stockholm-F1-Kastslot.jpg":"img/7cf93401b0.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Paris-RVS-Loopslot.jpg":"img/b67df7e625.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Stockholm-F1-D-N-slot.jpg":"img/cf52211731.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Paris-RVS-V-B-slot.jpg":"img/0640aafaaf.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Stockholm-F1-Loopslot.jpg":"img/e380f8d740.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Tokyo-F1-D-N-slot.jpg":"img/2590b84442.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Tokyo-F1-Loopslot.jpg":"img/ef0c2e92d8.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Tokyo-F1-Kastslot.jpg":"img/1f2761e672.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Tokyo-F1-V-B-slot.jpg":"img/d873836124.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Vitoria-F1-D-N-slot.jpg":"img/a2e6f006b5.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Vitoria-F1-Kastslot.jpg":"img/024bc975a3.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Vitoria-F1-V-B-slot.jpg":"img/76baaec993.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Dubay-F1-loop.jpg":"img/f4b4d0c607.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Vitoria-F1.jpg":"img/e442b2080d.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Dubay-F1-D-N.jpg":"img/724c129339.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Vitoria-F1-Loopslot.jpg":"img/1f03abf872.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Amsterdam-RVS-D-N-slot.jpg":"img/3f482ccf18.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Amsterdam-RVS-V-B-slot.jpg":"img/afdf86ad01.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Bonn-RVS-D-N-slot.jpg":"img/cc02778f23.webp","https://www.ideaal.nl/app/uploads/2025/10/HPL-Formica-F4177-Lime.jpg":"img/3b3185b3a6.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Bonn-RVS-V-B-slot.jpg":"img/357e72ea1f.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Stockholm-F1-V-B-slot.jpg":"img/c266bcc277.webp","https://www.ideaal.nl/app/uploads/2025/10/Profal_X-1_kozijn_A11_st.png":"img/1f01b62354.webp","https://www.ideaal.nl/app/uploads/2025/10/G-31.png":"img/ce81015110.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Dubay-F1-kast.jpg":"img/ba6adfd603.webp","https://www.ideaal.nl/app/uploads/2025/10/G-30.png":"img/49274315d7.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Dubay-F1-V-B.jpg":"img/f3b511f839.webp","https://www.ideaal.nl/app/uploads/2025/10/G-41.png":"img/1811665c31.webp","https://www.ideaal.nl/app/uploads/2025/10/HPL-Resopal-4408-60.jpg":"img/f65abe893a.webp","https://www.ideaal.nl/app/uploads/2025/10/G901-zwart.png":"img/567f8669d3.webp","https://www.ideaal.nl/app/uploads/2025/10/G902-zwart-2.png":"img/63d0d99710.webp","https://www.ideaal.nl/app/uploads/2025/10/G903zwart-2.png":"img/ed6d72f051.webp","https://www.ideaal.nl/app/uploads/2025/10/L70-K.png":"img/b638d9648e.webp","https://www.ideaal.nl/app/uploads/2025/10/L90-K.png":"img/8078841ca3.webp","https://www.ideaal.nl/app/uploads/2025/10/L80-K.png":"img/2af5de9096.webp","https://www.ideaal.nl/app/uploads/2025/10/HPL-Duropal-R4370-NH.jpg":"img/dcce9c006d.webp","https://www.ideaal.nl/app/uploads/2025/10/I101-161.png":"img/ed2303449c.webp","https://www.ideaal.nl/app/uploads/2026/10/35_woningen_Centrumplan_Schaijk.webp":"img/48ffae31cf.webp","https://www.ideaal.nl/app/uploads/2025/10/Ideaal_deur_veluwe_kl_10-1536x1152.jpg":"img/7872637a9e.webp","https://www.ideaal.nl/app/uploads/2025/10/I101-162.png":"img/9cdb7b65d2.webp","https://www.ideaal.nl/app/uploads/2025/10/I101-262.png":"img/111c4e0de7.webp","https://www.ideaal.nl/app/uploads/2025/10/I104-161.png":"img/6ca0a1efe7.webp","https://www.ideaal.nl/app/uploads/2025/10/I103-161.png":"img/4cfa2a84e5.webp","https://www.ideaal.nl/app/uploads/2026/10/117-app-Tetem-4-Enschede2.webp":"img/625cd0b8e3.webp","https://www.ideaal.nl/app/uploads/2025/10/I110-161.png":"img/c1e64d5a77.webp","https://www.ideaal.nl/app/uploads/2026/10/126-woningen-De-Industrieel-Blok-A-.-Zaandam2.webp":"img/b20417bcac.webp","https://www.ideaal.nl/app/uploads/2026/10/104-appartementen-CentrumEiland-Amsterdam2.webp":"img/976e0c458d.webp","https://www.ideaal.nl/app/uploads/2026/10/388-won-Maestro-Stebru-1.webp":"img/b4ec4ebcb2.webp","https://www.ideaal.nl/app/uploads/2026/10/61-won-waltersparrk.webp":"img/05c0cd5d0c.webp","https://www.ideaal.nl/app/uploads/2026/10/313-woningen-Goude-Podium2.webp":"img/68b82c1d59.webp","https://www.ideaal.nl/app/uploads/2025/10/fnd.png":"img/7b9e9a825a.webp","https://www.ideaal.nl/app/uploads/2026/10/40-woningen-Westvaartpark-Rijndijk2.webp":"img/8bc04c0f9b.webp","https://www.ideaal.nl/app/uploads/2025/10/nbvt.png":"img/f9705009d7.webp","https://www.ideaal.nl/app/uploads/2025/10/gnd.png":"img/4ecc495b8d.webp","https://www.ideaal.nl/app/uploads/2025/10/Ideaal_deur_veluwe_kl_6-1536x1152.jpg":"img/4da3d43188.webp","https://www.ideaal.nl/app/uploads/2025/10/Schuifdeurkom-rvs-ovaal.jpg":"img/b2e887fc7d.webp","https://www.ideaal.nl/app/uploads/2026/10/156-app-De-Koploper-Goude-Dura-Vermeer2.webp":"img/339ab68f7d.webp","https://www.ideaal.nl/app/uploads/2025/10/Schuifdeurkom-rvs-ovaal-schroefzijde.jpg":"img/e71d6cb49e.webp","https://www.ideaal.nl/app/uploads/2026/10/58-woningen-Houthaven-Waterdeel-Amsterdam2.webp":"img/40acc2dda6.webp","https://www.ideaal.nl/app/uploads/2025/10/Ideaal_deur_veluwe_kl_11-1536x1152.jpg":"img/756a5b3518.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-deurgreep-F1-25x300mm.jpg":"img/b243d01d5c.webp","https://www.ideaal.nl/app/uploads/2025/10/Hoppe-Tokyo-F1.jpg":"img/6f2b78912d.webp","https://www.ideaal.nl/app/uploads/2025/10/Schuifdeurkom-rvs.jpg":"img/45de042c8f.webp","https://www.ideaal.nl/app/uploads/2026/10/240-app-Weverstede-Nieuwegein-AKOR.avif":"img/2286aa6018.webp","https://www.ideaal.nl/app/uploads/2025/10/komo.png":"img/9b02b030a4.webp","https://www.ideaal.nl/app/uploads/2025/10/Profal_vlakke_dichte_deur_type_X-1.jpg":"img/4da71104f3.webp","https://www.ideaal.nl/app/uploads/2026/10/312-appartementen-Dreeftoren-Amsterdam2.webp":"img/2fa22cc104.webp","https://www.ideaal.nl/app/uploads/2026/10/421-appartementen-The-Modernist-Rotterdam2.webp":"img/4e431ecac4.webp","https://www.ideaal.nl/app/uploads/2025/10/HPL-Formica-K3737-Krypton.jpg":"img/fffc235393.webp","https://www.ideaal.nl/app/uploads/2026/10/607-won-De-Zaanse-Helden-Stebru.webp":"img/154071ecd0.webp","https://www.ideaal.nl/app/uploads/2026/10/440-woningen-en-appartementen-New-Brooklyn-Almere.webp":"img/16aca36438.webp","https://www.svedex.nl/static/shared/media/cache/svedex-deuren.79a4ce6079a3dc33daa42c6a3d889f04.jpg":"img/c01841b1a2.webp","https://www.svedex.nl/static/shared/media/cache/SX-NL-PASSIE-FRONT-FR517Z-FR-MR.fc714c1402de6b4253e89f39f8ab9b7f.jpg":"img/b8cd61c93b.webp","https://www.svedex.nl/static/shared/media/cache/SX-NL-PASSIE-FRONT-FR508Z-3D-MR.8cca720bfcb1e47f1963e0e762b3f646.jpg":"img/0ccfcd54a2.webp","https://www.svedex.nl/static/shared/media/cache/CA18.475b41217106b8a3453ee7e870d87b2e.jpg":"img/44663cf061.webp","https://www.svedex.nl/static/shared/media/cache/AL13-Mood.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/80001621ce.webp","https://www.svedex.nl/static/shared/media/cache/AE11.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/9f9ec17fb2.webp","https://www.svedex.nl/static/shared/media/cache/AE10.41422cd582a97d672d944b0ebfc7d9c4.jpg":"img/ae80907726.webp","https://www.svedex.nl/static/shared/media/cache/AE23.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/0efdfd3157.webp","https://www.svedex.nl/static/shared/media/cache/AE13.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/7d29a8becd.webp","https://www.svedex.nl/static/shared/media/cache/Svedex-sfeerbeeld-Front-binnendeur-met-glas-FR507-lijndeur-FR557.0d46a3fc1a268c8eb5261af0b0ca0044.jpg":"img/962a44e773.webp","https://www.svedex.nl/static/shared/media/cache/SX-NL-PASSIE-FRONT-FR507Z-FR557-FR-LR.2d8a4f294593eacb8d333dcd63dc0a27.jpg":"img/6278300752.webp","https://www.svedex.nl/static/shared/media/cache/AE33.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/61d061d2a8.webp","https://www.svedex.nl/static/shared/media/cache/AE25.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/c36fb6df95.webp","https://www.svedex.nl/static/shared/media/cache/AE34.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/f300ee9fe8.webp","https://www.svedex.nl/static/shared/media/cache/AE31.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/0f7e915b0d.webp","https://www.svedex.nl/static/shared/media/cache/AE12.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/2677fdc789.webp","https://www.svedex.nl/static/shared/media/cache/AE24.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/55c3df240d.webp","https://www.svedex.nl/static/shared/media/cache/SX-Prop-8555-vierkant.9acc82905f36a8e42b40dc1d95392e17.jpg":"img/ec750148a4.webp","https://www.svedex.nl/static/shared/media/cache/Comfort-Kozijn---model-AL84.296e3f60e7e2128ac9e03e82c6a34e3d.jpg":"img/341e1983f7.webp","https://www.svedex.nl/static/shared/media/cache/DX-Move4-Elegant-Cottage-CT30-schrag-prev.cdc1be51194a5660fbbb1a4e255df638.jpg":"img/8617e93e9e.webp","https://www.svedex.nl/static/shared/media/cache/AE35.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/d9ea051315.webp","https://www.svedex.nl/static/shared/media/cache/AE43.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/f7f4bf9224.webp","https://www.svedex.nl/static/shared/media/cache/AE45.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/21ec0e270c.webp","https://www.svedex.nl/static/shared/media/cache/AE44.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/8f6aebc066.webp","https://www.svedex.nl/static/shared/media/cache/AE47.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/f69dc68da2.webp","https://www.svedex.nl/static/shared/media/cache/AE53.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/6a269648a9.webp","https://www.svedex.nl/static/shared/media/cache/AE49.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/33b5a324f9.webp","https://www.svedex.nl/static/shared/media/cache/AE62.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/7527a70177.webp","https://www.svedex.nl/static/shared/media/cache/AE48.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/483551b8af.webp","https://www.svedex.nl/static/shared/media/cache/AE61.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/e9b5d81282.webp","https://www.svedex.nl/static/shared/media/cache/AE74.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/8c622d7872.webp","https://www.svedex.nl/static/shared/media/cache/AE63.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/b3b2afd64e.webp","https://www.svedex.nl/static/shared/media/cache/AE73.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/16b526b3e6.webp","https://www.svedex.nl/static/shared/media/cache/CA01.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/3485ab7d3f.webp","https://www.svedex.nl/static/shared/media/cache/CA11.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/d41c8cd8a7.webp","https://www.svedex.nl/static/shared/media/cache/CA02.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/2b00161bca.webp","https://www.svedex.nl/static/shared/media/cache/AE64.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/4d7ee7bfb4.webp","https://www.svedex.nl/static/shared/media/cache/CA05.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/a457399f11.webp","https://www.svedex.nl/static/shared/media/cache/AE75.52a7c02e793a55f2659f1a82f89ca128.jpg":"img/8bca3d5b5c.webp","https://www.svedex.nl/static/shared/media/cache/CA16.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/ba79dcaeec.webp","https://www.svedex.nl/static/shared/media/cache/CA17.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/288843e2a8.webp","https://www.svedex.nl/static/shared/media/cache/CA08.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/7c04f52f5c.webp","https://www.svedex.nl/static/shared/media/cache/CA13.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/731a50b0d9.webp","https://www.svedex.nl/static/shared/media/cache/CA10.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/bd48c61117.webp","https://www.svedex.nl/static/shared/media/cache/CA03.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/e4315d2b36.webp","https://www.svedex.nl/static/shared/media/cache/CA04.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/c660b3db8e.webp","https://www.svedex.nl/static/shared/media/cache/CA09.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/5cde8f39e9.webp","https://www.svedex.nl/static/shared/media/cache/CA15.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/656aeb736f.webp","https://www.svedex.nl/static/shared/media/cache/CE102.2d4b925a39bbf950af985da2426cac2b.jpg":"img/17dcafc3fa.webp","https://www.svedex.nl/static/shared/media/cache/CE01.2d4b925a39bbf950af985da2426cac2b.jpg":"img/f4fb1f824d.webp","https://www.svedex.nl/static/shared/media/cache/CE102-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/bd9e124cc7.webp","https://www.svedex.nl/static/shared/media/cache/CE01-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/ab33c06dd9.webp","https://www.svedex.nl/static/shared/media/cache/CA06.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/0cc0b70674.webp","https://www.svedex.nl/static/shared/media/cache/CA07.71b978fa1bd45b17fc6da15f81d12751.jpg":"img/86ba8bd89f.webp","https://www.svedex.nl/static/shared/media/cache/CE05.2d4b925a39bbf950af985da2426cac2b.jpg":"img/65972daf91.webp","https://www.svedex.nl/static/shared/media/cache/CE106.2d4b925a39bbf950af985da2426cac2b.jpg":"img/22a86f8ff8.webp","https://www.svedex.nl/static/shared/media/cache/CE03-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/fb5c0c2b77.webp","https://www.svedex.nl/static/shared/media/cache/CE05-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/5b266aa616.webp","https://www.svedex.nl/static/shared/media/cache/CE03.2d4b925a39bbf950af985da2426cac2b.jpg":"img/535f5c8169.webp","https://www.svedex.nl/static/shared/media/cache/CE104.2d4b925a39bbf950af985da2426cac2b.jpg":"img/dd7508663e.webp","https://www.svedex.nl/static/shared/media/cache/CE104-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/e10d3f4aa7.webp","https://www.svedex.nl/static/shared/media/cache/CE114-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/e1d655f3f3.webp","https://www.svedex.nl/static/shared/media/cache/CE121.2d4b925a39bbf950af985da2426cac2b.jpg":"img/c59eb425f4.webp","https://www.svedex.nl/static/shared/media/cache/CE114.2d4b925a39bbf950af985da2426cac2b.jpg":"img/0aa7c46807.webp","https://www.svedex.nl/static/shared/media/cache/AL15.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/9a2f199d0d.webp","https://www.svedex.nl/static/shared/media/cache/AL11.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/988de06ee1.webp","https://www.svedex.nl/static/shared/media/cache/AL17.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/5f2ee31a5f.webp","https://www.svedex.nl/static/shared/media/cache/CE121-Z.2d4b925a39bbf950af985da2426cac2b.jpg":"img/0b3034530d.webp","https://www.svedex.nl/static/shared/media/cache/AL21.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/b7ba462af9.webp","https://www.svedex.nl/static/shared/media/cache/AL14.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/c89876f892.webp","https://www.svedex.nl/static/shared/media/cache/AL24.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/4e553bf0cd.webp","https://www.svedex.nl/static/shared/media/cache/AL51.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/511ce27d9a.webp","https://www.svedex.nl/static/shared/media/cache/AL54.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/0ed557eb41.webp","https://www.svedex.nl/static/shared/media/cache/AL27.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/36ba85b68a.webp","https://www.svedex.nl/static/shared/media/cache/AL55.f7645e2dcc31d7484f4f69a978d01024.jpg":"img/d42c28bfd5.webp","https://www.svedex.nl/static/shared/media/cache/FR500-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/6c544f5eb9.webp","https://www.svedex.nl/static/shared/media/cache/FR501-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/6168b74ea1.webp","https://www.svedex.nl/static/shared/media/cache/FR500.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/bcfbb6e705.webp","https://www.svedex.nl/static/shared/media/cache/FR501.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/5520216e50.webp","https://www.svedex.nl/static/shared/media/cache/FR502.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/941a40ad27.webp","https://www.svedex.nl/static/shared/media/cache/FR502-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/65272ccb94.webp","https://www.svedex.nl/static/shared/media/cache/FR503-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/95dbc34b6f.webp","https://www.svedex.nl/static/shared/media/cache/FR504.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/bdbef35a1e.webp","https://www.svedex.nl/static/shared/media/cache/FR505-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/6fdce4adbb.webp","https://www.svedex.nl/static/shared/media/cache/FR503.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/80b6c80135.webp","https://www.svedex.nl/static/shared/media/cache/FR504-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/5629f3bdd3.webp","https://www.svedex.nl/static/shared/media/cache/FR507-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/107ba5d888.webp","https://www.svedex.nl/static/shared/media/cache/NDB901-wit.f7ba41c977aec1853eefe966d16f2113.jpg":"img/c7592e88ab.webp","https://www.svedex.nl/static/shared/media/cache/FR506.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/5871080ac1.webp","https://www.svedex.nl/static/shared/media/cache/FR506-Z.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/94f9196ba3.webp","https://www.svedex.nl/static/shared/media/cache/NDB903.7c97ecdf744eed9e3d2855285eac8643.jpg":"img/89d3b017bb.webp","https://www.svedex.nl/static/shared/media/cache/NDB900.7c97ecdf744eed9e3d2855285eac8643.jpg":"img/0910daa663.webp","https://www.svedex.nl/static/shared/media/cache/NDB900-wit.f7ba41c977aec1853eefe966d16f2113.jpg":"img/7e0a8f68d6.webp","https://www.svedex.nl/static/shared/media/cache/FR505.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/9b092dafe9.webp","https://www.svedex.nl/static/shared/media/cache/NDB901.7c97ecdf744eed9e3d2855285eac8643.jpg":"img/59c0b454da.webp","https://www.svedex.nl/static/shared/media/cache/FR507.9b93238907f9b65ee7ba53b650a08f94.jpg":"img/8cc7741cfe.webp","https://www.svedex.nl/static/shared/media/cache/NDB903-wit.f7ba41c977aec1853eefe966d16f2113.jpg":"img/6697737262.webp","https://www.svedex.nl/static/shared/media/cache/NDB900-LE.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/cd9fd97460.webp","https://www.svedex.nl/static/shared/media/cache/NDB900-DE.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/8e5e49f528.webp","https://www.svedex.nl/static/shared/media/cache/NDB900-MB.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/f193d7bec1.webp","https://www.svedex.nl/static/shared/media/cache/NDB901-LE.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/2846124edf.webp","https://www.svedex.nl/static/shared/media/cache/NDB903-LE.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/4b7777c7a4.webp","https://www.svedex.nl/static/shared/media/cache/NDB901-DE.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/fbf738f3f7.webp","https://www.svedex.nl/static/shared/media/cache/NC102-CB.59ab02d046aa251b95cc456511aba737.jpg":"img/93a25a0b1f.webp","https://www.svedex.nl/static/shared/media/cache/NDB901-MB.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/6fdfee362f.webp","https://www.svedex.nl/static/shared/media/cache/NDB903-DE.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/fc10d8dabb.webp","https://www.svedex.nl/static/shared/media/cache/NC103.59ab02d046aa251b95cc456511aba737.jpg":"img/4195d3dfeb.webp","https://www.svedex.nl/static/shared/media/cache/NC103-LT.59ab02d046aa251b95cc456511aba737.jpg":"img/838866ea60.webp","https://www.svedex.nl/static/shared/media/cache/NC101.59ab02d046aa251b95cc456511aba737.jpg":"img/245aeb269d.webp","https://www.svedex.nl/static/shared/media/cache/NC101-Z.59ab02d046aa251b95cc456511aba737.jpg":"img/dc1656d55d.webp","https://www.svedex.nl/static/shared/media/cache/NDB905.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/c6881cb10c.webp","https://www.svedex.nl/static/shared/media/cache/NDB903-MB.a9d9d6850622321fef31c5ab6a84c8ff.jpg":"img/88d66b1314.webp","https://www.svedex.nl/static/shared/media/cache/NC102-LT.59ab02d046aa251b95cc456511aba737.jpg":"img/bfe6d0d22d.webp","https://www.svedex.nl/static/shared/media/cache/NC102-Z.59ab02d046aa251b95cc456511aba737.jpg":"img/9c04732c43.webp","https://www.svedex.nl/static/shared/media/cache/NC101-CB.59ab02d046aa251b95cc456511aba737.jpg":"img/1b4efc5d42.webp","https://www.svedex.nl/static/shared/media/cache/NC101-LT.59ab02d046aa251b95cc456511aba737.jpg":"img/7366701fea.webp","https://www.svedex.nl/static/shared/media/cache/NC103-Z.59ab02d046aa251b95cc456511aba737.jpg":"img/8c4ce51025.webp","https://www.svedex.nl/static/shared/media/cache/NC102.59ab02d046aa251b95cc456511aba737.jpg":"img/64bc25b5af.webp","https://www.svedex.nl/static/shared/media/cache/NC104.59ab02d046aa251b95cc456511aba737.jpg":"img/00abe18d19.webp","https://www.svedex.nl/static/shared/media/cache/NC103-CB.59ab02d046aa251b95cc456511aba737.jpg":"img/9c45eb3b24.webp","https://www.svedex.nl/static/shared/media/cache/NC104-LT.59ab02d046aa251b95cc456511aba737.jpg":"img/e021bd5c03.webp","https://www.svedex.nl/static/shared/media/cache/NC104-CB.59ab02d046aa251b95cc456511aba737.jpg":"img/a499cfb241.webp","https://www.svedex.nl/static/shared/media/cache/NC104-Z.59ab02d046aa251b95cc456511aba737.jpg":"img/b7857df119.webp","https://www.svedex.nl/static/shared/media/cache/CN11.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/2a5f165aa3.webp","https://www.svedex.nl/static/shared/media/cache/CN01.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/d23749c036.webp","https://www.svedex.nl/static/shared/media/cache/CN12.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/02ce7b767f.webp","https://www.svedex.nl/static/shared/media/cache/CN02.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/56db96376c.webp","https://www.svedex.nl/static/shared/media/cache/CN05.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/28da9c2791.webp","https://www.svedex.nl/static/shared/media/cache/CN04.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/440f0485a9.webp","https://www.svedex.nl/static/shared/media/cache/CN08.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/ec19aaaf38.webp","https://www.svedex.nl/static/shared/media/cache/CN09.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/cbe5cf4d9b.webp","https://www.svedex.nl/static/shared/media/cache/CN50.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/c5642f8797.webp","https://www.svedex.nl/static/shared/media/cache/CN06.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/14819a0493.webp","https://www.svedex.nl/static/shared/media/cache/CN52.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/5d55700435.webp","https://www.svedex.nl/static/shared/media/cache/CN53.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/6f27cd4f46.webp","https://www.svedex.nl/static/shared/media/cache/CN07.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/05c5a0510c.webp","https://www.svedex.nl/static/shared/media/cache/CN03.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/8768ad340b.webp","https://www.svedex.nl/static/shared/media/cache/FM01.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/a6e97fb1fc.webp","https://www.svedex.nl/static/shared/media/cache/CN10.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/05ec303492.webp","https://www.svedex.nl/static/shared/media/cache/CN51.ee0dbee8fd70ed7cbdc6db5d85fd0a6c.jpg":"img/40db1e39e0.webp","https://www.svedex.nl/static/shared/media/cache/FM03.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/a9558de192.webp","https://www.svedex.nl/static/shared/media/cache/FM04.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/84034108d8.webp","https://www.svedex.nl/static/shared/media/cache/FM53.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/ef8e08e769.webp","https://www.svedex.nl/static/shared/media/cache/FM06.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/7db8aacc26.webp","https://www.svedex.nl/static/shared/media/cache/FM02.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/07ac648e86.webp","https://www.svedex.nl/static/shared/media/cache/FM05.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/c020b22685.webp","https://www.svedex.nl/static/shared/media/cache/FM55.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/9a585b293d.webp","https://www.svedex.nl/static/shared/media/cache/FM51.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/b76f899b81.webp","https://www.svedex.nl/static/shared/media/cache/FM54.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/44d7aa84a0.webp","https://www.svedex.nl/static/shared/media/cache/FM52.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/e3e47416f2.webp","https://www.svedex.nl/static/shared/media/cache/FM56.714b4b9895fe2eaf1a846d28aa056851.jpg":"img/1bd33e828a.webp"};const U=u=>EMB[u]||u;
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const eur=n=>"€ "+Math.round(n).toLocaleString("nl-NL");
+const eur2=n=>"€ "+n.toLocaleString("nl-NL",{minimumFractionDigits:2,maximumFractionDigits:2});
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store={get(k,d){try{const v=localStorage.getItem("ideaal_"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("ideaal_"+k,JSON.stringify(v))}catch(e){}}};
+function toast(t){const el=$("#toast");el.hidden=true;void el.offsetWidth;el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,2600)}
+const AR=`<span class="ar">→</span>`;
+const ICL=`<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>`,ICR=`<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>`;
+const CHK=`<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>`;
+
+/* ================= BEELDBANK ================= */
+const SV="https://www.svedex.nl/static/shared/media/cache/";
+const ID="https://www.ideaal.nl/app/uploads/";
+const PH={
+ logo:"https://www.ideaal.nl/app/themes/sage10/public/build/assets/logo-Cx1mQhyT.png",
+ fabriek:ID+"2025/10/Foto-fabriek-4.jpg",
+ hout:ID+"2025/10/Ideaal_Hout_088-1920x400.jpg",
+ woningbouw:ID+"2025/11/woningsbouw-1920x400.jpg",
+ utiliteit:ID+"2025/11/utiliteitsbouw-1920x400.jpg",
+ nieuws:ID+"2025/11/nieuws-1920x400.jpg",
+ vacatures:ID+"2025/11/Vacatures-1920x400.jpg",
+ brochure:ID+"2025/10/Foto-fabriek-4.jpg",
+ gnd:ID+"2025/11/utiliteitsbouw-1920x400.jpg",
+ video:ID+"2025/10/Ideaal_deur_veluwe_kl_3-1536x1152.jpg",
+ ind1:ID+"2025/10/Ideaal_deur_veluwe_kl_1-1536x1152.jpg",
+ ind3:ID+"2025/10/Ideaal_deur_veluwe_kl_3-1536x1152.jpg",
+ ind6:ID+"2025/10/Ideaal_deur_veluwe_kl_6-1536x1152.jpg",
+ ind10:ID+"2025/10/Ideaal_deur_veluwe_kl_10-1536x1152.jpg",
+ ind11:ID+"2025/10/Ideaal_deur_veluwe_kl_11-1536x1152.jpg",
+ connect:SV+"svedex-deuren.79a4ce6079a3dc33daa42c6a3d889f04.jpg",
+ front:SV+"Svedex-sfeerbeeld-Front-binnendeur-met-glas-FR507-lijndeur-FR557.0d46a3fc1a268c8eb5261af0b0ca0044.jpg",
+ nuance:SV+"SX-NL-PASSIE-FRONT-FR508Z-3D-MR.8cca720bfcb1e47f1963e0e762b3f646.jpg",
+ kozijnzwart:SV+"SX-NL-PASSIE-FRONT-FR517Z-FR-MR.fc714c1402de6b4253e89f39f8ab9b7f.jpg",
+ interieur:SV+"Comfort-Kozijn---model-AL84.296e3f60e7e2128ac9e03e82c6a34e3d.jpg",
+ zwartgarn:SV+"SX-NL-PASSIE-FRONT-FR507Z-FR557-FR-LR.2d8a4f294593eacb8d333dcd63dc0a27.jpg",
+ staal:SV+"SX-NL-PASSIE-FRONT-FR508Z-3D-MR.8cca720bfcb1e47f1963e0e762b3f646.jpg",
+ zwartschuif:SV+"SX-NL-PASSIE-FRONT-FR517Z-FR-MR.fc714c1402de6b4253e89f39f8ab9b7f.jpg",
+ deuren:SV+"svedex-deuren.79a4ce6079a3dc33daa42c6a3d889f04.jpg",
+ kozijnhout:SV+"Comfort-Kozijn---model-AL84.296e3f60e7e2128ac9e03e82c6a34e3d.jpg",
+ schuif:SV+"DX-Move4-Elegant-Cottage-CT30-schrag-prev.cdc1be51194a5660fbbb1a4e255df638.jpg",
+ kruk:SV+"SX-Prop-8555-vierkant.9acc82905f36a8e42b40dc1d95392e17.jpg"
+};
+const ph=(src,label,cls="",style="")=>`<div class="ph ${cls}" data-label="${esc(label)}"${style?` style="${style}"`:""}><img src="${U(src)}" alt="${esc(label)}" loading="lazy"></div>`;
+
+/* ================= KLEUREN & GLAS ================= */
+const COLORS={
+ "Alpine wit":{hex:"#f1efe6",ral:"ca. RAL 9010 · zijdeglans",bg:"#f2f1ec"},
+ "Extra wit":{hex:"#f7f8f7",ral:"ca. RAL 9016 · zijdeglans",bg:"#f2f3f2"},
+ "Diep zwart":{hex:"#1d1d1f",ral:"ca. RAL 9005 · mat",dark:1,bg:"#e4e3e0"},
+ "Leem taupe":{hex:"#a69886",ral:"natuurlijke aardetint",bg:"#ece6de"},
+ "Cacao bruin":{hex:"#4c3a2f",ral:"warme aardetint",dark:1,bg:"#e9e1d9"},
+ "Metallic brons":{hex:"#7b6247",ral:"metallic afwerking",dark:1,bg:"#ece4da"},
+ "Licht eiken":{hex:"#c9a272",ral:"eikendecor",wood:1,bg:"#f1e8dc"},
+ "Donker eiken":{hex:"#6e4b2e",ral:"eikendecor",wood:1,dark:1,bg:"#e8dfd5"}
+};
+const GLASS={
+ "Blank":{f:"#bcd6e2",o:.75,add:0,d:"Helder, maximale lichtinval, gehard veiligheidsglas."},
+ "Blank-facet":{f:"#bcd6e2",o:.75,add:40,facet:1,d:"Helder glas met facetgeslepen rand."},
+ "Satijn":{f:"#eef1f0",o:.95,add:25,d:"Mat en ondoorzichtig, laat wel licht door."},
+ "Gezandstraald met blanke rand":{f:"#eef1f0",o:.95,add:60,rim:1,d:"Mat vlak met heldere rand."},
+ "Rookglas":{f:"#585e64",o:.82,add:55,d:"Grijs getint, 6 mm gehard."},
+ "Brons glas":{f:"#8a6a45",o:.78,add:55,d:"Brons getint, 6 mm gehard."},
+ "Satijn 8 vlaks":{f:"#eef1f0",o:.95,add:50,grid:1,d:"Satijnglas met blanke lijnen in 8 vlakken."}
+};
+const LATS={"Wit":"#f3f3f0","Zwart":"#1e1e1e","Eiken":"#b0854f"};
+const SERIES={
+ "Elite":"Klassieke stijldeuren met brede stijlen en dorpels.",
+ "Front":"Strakke glasdeuren met smalle stijlen, ook in diep zwart.",
+ "Nova design":"Moderne glasindelingen in zwart, eiken en metallic brons.",
+ "Linea":"Vlakke lijndeuren met gefreesde groeflijnen.",
+ "Nuance":"Zachte aardetinten: leem taupe en cacao bruin.",
+ "Cameo":"Paneeldeuren met verdiepte vlakken, ook in diep zwart.",
+ "Character":"Stoere landelijke paneel- en glasdeuren.",
+ "Connect":"Glas-, paneel- en lijndeuren die door het hele huis combineren.",
+ "Form":"Ronde en organische vormen."
+};
+
+/* ================= MODELLEN STIJLDEUREN ================= */
+const H={AE:"52a7c02e793a55f2659f1a82f89ca128",CA:"71b978fa1bd45b17fc6da15f81d12751",CE:"2d4b925a39bbf950af985da2426cac2b",AL:"f7645e2dcc31d7484f4f69a978d01024",FR:"9b93238907f9b65ee7ba53b650a08f94",NC:"59ab02d046aa251b95cc456511aba737",CN:"ee0dbee8fd70ed7cbdc6db5d85fd0a6c",FM:"714b4b9895fe2eaf1a846d28aa056851",NB:"7c97ecdf744eed9e3d2855285eac8643",NX:"a9d9d6850622321fef31c5ab6a84c8ff",NW:"f7ba41c977aec1853eefe966d16f2113"};
+const G3=["Blank","Satijn","Rookglas"],GALL=Object.keys(GLASS),GN=["Blank","Satijn","Brons glas"],GNOVA=["Blank","Satijn","Rookglas","Brons glas"];
+const MODELS=[];
+function add(code,serie,type,imgs,prices,glass){const colors=Object.keys(imgs);MODELS.push({code,serie,type,imgs,prices,colors,price:Math.min(...Object.values(prices)),glass:/Glas/.test(type)?glass:[],kant:["Opdek","Stomp","Stomp recht"],name:(type==="Glas"?"Binnendeur met glas ":type==="Paneel"?"Paneeldeur ":type==="Lijn"?"Lijndeur ":type==="Glas-/paneel"?"Glas-/paneeldeur ":"Glas-/lijndeur ")+code})}
+const white=(file,h,p)=>[{"Alpine wit":SV+file+"."+h+".jpg","Extra wit":SV+file+"."+h+".jpg"},{"Alpine wit":p,"Extra wit":p}];
+add("AE10","Elite","Glas",...white("AE10","41422cd582a97d672d944b0ebfc7d9c4",670),GALL);
+[["AE11",670],["AE12",715],["AE13",740],["AE23",670],["AE24",715],["AE25",740],["AE31",670],["AE33",740],["AE34",800],["AE35",860]].forEach(([c,p])=>add(c,"Elite","Glas",...white(c,H.AE,p),GALL));
+[["AE43",740],["AE44",800],["AE45",860]].forEach(([c,p])=>add(c,"Elite","Paneel",...white(c,H.AE,p)));
+[["AE47",740],["AE48",800],["AE49",800]].forEach(([c,p])=>add(c,"Elite","Glas-/paneel",...white(c,H.AE,p),GALL));
+["AE53","AE61","AE62","AE63","AE64","AE73","AE74","AE75"].forEach(c=>add(c,"Elite","Lijn",...white(c,H.AE,335)));
+[["CA11",725],["CA16",605]].forEach(([c,p])=>add(c,"Character","Glas",...white(c,H.CA,p),GALL));
+[["CA01",605],["CA02",665],["CA05",725],["CA06",665],["CA08",665],["CA10",725],["CA17",665]].forEach(([c,p])=>add(c,"Character","Paneel",...white(c,H.CA,p)));
+[["CA03",665],["CA04",725],["CA07",665],["CA09",725],["CA13",690],["CA15",665]].forEach(([c,p])=>add(c,"Character","Glas-/paneel",...white(c,H.CA,p),GALL));
+add("CA18","Character","Glas-/paneel",...white("CA18","475b41217106b8a3453ee7e870d87b2e",665),GALL);
+const cameo=(c,p,pz)=>{const [i,pr]=white(c,H.CE,p);if(pz){i["Diep zwart"]=SV+c+"-Z."+H.CE+".jpg";pr["Diep zwart"]=pz}return[i,pr]};
+add("CE102","Cameo","Glas",...cameo("CE102",650,895),GALL);add("CE106","Cameo","Glas",...cameo("CE106",770),GALL);
+[["CE01",580,825],["CE03",580,825],["CE05",580,825]].forEach(([c,p,z])=>add(c,"Cameo","Paneel",...cameo(c,p,z)));
+[["CE104",650,895],["CE114",675,920],["CE121",735,980]].forEach(([c,p,z])=>add(c,"Cameo","Glas-/paneel",...cameo(c,p,z),GALL));
+["AL11","AL14","AL15","AL17","AL21","AL24","AL27"].forEach(c=>add(c,"Linea","Lijn",...white(c,H.AL,335)));
+add("AL13","Linea","Lijn",...white("AL13-Mood",H.AL,335));
+["AL51","AL54","AL55"].forEach(c=>add(c,"Linea","Glas-/lijn",...white(c,H.AL,620),GALL));
+["FR500","FR501","FR502","FR503","FR504","FR505","FR506","FR507"].forEach(c=>{const [i,p]=white(c,H.FR,670);i["Diep zwart"]=SV+c+"-Z."+H.FR+".jpg";p["Diep zwart"]=915;add(c,"Front","Glas",i,p,G3)});
+["NDB900","NDB901","NDB903"].forEach(c=>add(c,"Nova design","Glas",{"Diep zwart":SV+c+"."+H.NB+".jpg","Alpine wit":SV+c+"-wit."+H.NW+".jpg","Licht eiken":SV+c+"-LE."+H.NX+".jpg","Donker eiken":SV+c+"-DE."+H.NX+".jpg","Metallic brons":SV+c+"-MB."+H.NX+".jpg"},{"Diep zwart":c==="NDB900"?770:805,"Alpine wit":805,"Licht eiken":885,"Donker eiken":885,"Metallic brons":975},GNOVA));
+add("NDB905","Nova design","Glas",{"Diep zwart":SV+"NDB905."+H.NX+".jpg"},{"Diep zwart":805},GNOVA);
+[["NC101",1150,1250],["NC102",1150,1250],["NC103",1250,1350],["NC104",1250,1350]].forEach(([c,p,q])=>add(c,"Nuance","Glas",{"Alpine wit":SV+c+"."+H.NC+".jpg","Leem taupe":SV+c+"-LT."+H.NC+".jpg","Cacao bruin":SV+c+"-CB."+H.NC+".jpg","Diep zwart":SV+c+"-Z."+H.NC+".jpg"},{"Alpine wit":p,"Leem taupe":q,"Cacao bruin":q,"Diep zwart":p},GN));
+["CN01","CN02","CN04","CN05","CN07","CN08","CN10"].forEach(c=>add(c,"Connect","Glas",...white(c,H.CN,620),GALL));
+[["CN03",620],["CN06",620],["CN09",620],["CN11",570]].forEach(([c,p])=>add(c,"Connect","Paneel",...white(c,H.CN,p)));
+["CN12","CN50","CN51","CN52","CN53"].forEach(c=>add(c,"Connect","Lijn",...white(c,H.CN,335)));
+["FM01","FM02","FM03","FM04","FM05","FM06"].forEach(c=>add(c,"Form","Glas",...white(c,H.FM,780),G3));
+["FM51","FM52","FM53","FM54","FM55","FM56"].forEach(c=>add(c,"Form","Lijn",...white(c,H.FM,385)));
+const byCode=c=>MODELS.find(m=>m.code===c);
+const LAYS={"Glas":["g1","g3","g4","gv","g8","gvl","g2","g6"],"Paneel":["p2","p3","p4","p5"],"Glas-/paneel":["gp","gp2"],"Lijn":["l3","l4","l5","lv","lg","ls","lh"],"Glas-/lijn":["gl","glv"]};
+MODELS.forEach(m=>{const n=parseInt(m.code.replace(/\D/g,""))||0;const l=m.serie==="Form"&&m.type==="Glas"?["gr","ga","gc"]:LAYS[m.type];m.lay=l[n%l.length]});
+const imgOf=(m,color)=>m.imgs[color]||m.imgs[m.colors[0]];
+const priceOf=(m,color)=>m.prices[color]??m.price;
+const uniqueImgs=m=>[...new Set(m.colors.map(c=>m.imgs[c]))];
+
+/* ================= IDEAAL-ASSORTIMENT ================= */
+const IDP=f=>ID+"2025/10/"+f;
+const IDEAAL=[
+ {g:"Profal",t:"Profal X-1 vlakke dichte deur",f:"Profal_vlakke_dichte_deur_type_X-1.jpg",pdf:"OverzichtMO1_15.pdf"},
+ {g:"Profal",t:"Profal X-1 met standaard ventilatierooster",f:"Profal_opdekdeur_type_X-1_met_standaard_ventilatierooster_meterkast.jpg",pdf:"OverzichtMO1_2.pdf"},
+ {g:"Profal",t:"Profal X-1 kozijn A01",f:"Profal_X-1_kozijn_A01_st.png",pdf:"OverzichtMO1_14.pdf"},
+ {g:"Profal",t:"Profal X-1 kozijn A11",f:"Profal_X-1_kozijn_A11_st.png",pdf:"OverzichtMO1_13.pdf"},
+ {g:"Profal",t:"Profal X-1 spiegelstuk kozijn A51",f:"Profal_X-1_spiegelstuk_kozijn_A51_st.png",pdf:"OverzichtMO1_10.pdf"},
+ {g:"Profal",t:"Profal X-1 ventilatie kozijn A01",f:"Profal_X-1_ventilatie_kozijn_A01_st.png",pdf:"OverzichtMO1_9.pdf"},
+ {g:"Groefdeuren",t:"L70-K",f:"L70-K.png",pdf:"OverzichtMO1.pdf"},{g:"Groefdeuren",t:"L80-K",f:"L80-K.png",pdf:"OverzichtMO1.pdf"},{g:"Groefdeuren",t:"L90-K",f:"L90-K.png",pdf:"OverzichtMO1.pdf"},
+ {g:"Glasdeuren",t:"G-1",f:"G-1.png"},{g:"Glasdeuren",t:"G-2",f:"G-2.png"},{g:"Glasdeuren",t:"G-3",f:"G-3.png"},{g:"Glasdeuren",t:"G-30",f:"G-30.png"},{g:"Glasdeuren",t:"G-31",f:"G-31.png"},{g:"Glasdeuren",t:"G-41",f:"G-41.png"},
+ {g:"Zwart afgelakt",t:"G901",f:"G901-zwart.png"},{g:"Zwart afgelakt",t:"G902",f:"G902-zwart-2.png"},{g:"Zwart afgelakt",t:"G903",f:"G903zwart-2.png"},
+ {g:"Profiluxe",t:"I101-161",f:"I101-161.png"},{g:"Profiluxe",t:"I101-162",f:"I101-162.png"},{g:"Profiluxe",t:"I101-262",f:"I101-262.png"},{g:"Profiluxe",t:"I103-161",f:"I103-161.png"},{g:"Profiluxe",t:"I104-161",f:"I104-161.png"},{g:"Profiluxe",t:"I110-161",f:"I110-161.png"}
+];
+const HPL=[["HPL Duropal R4370 NH","HPL-Duropal-R4370-NH.jpg"],["HPL Formica F4177 Lime","HPL-Formica-F4177-Lime.jpg"],["HPL Formica K3737 Krypton","HPL-Formica-K3737-Krypton.jpg"],["HPL Resopal 4408-60","HPL-Resopal-4408-60.jpg"]];
+/* Hoppe garnituren */
+const std=(p)=>({base:p,"Loopslot":p+"-Loopslot","Dag-nachtslot":p+"-D-N-slot","Vrij-bezetslot":p+"-V-B-slot","Kastslot":p+"-Kastslot"});
+const HOPPE={
+ "Amsterdam RVS":{...std("Hoppe-Amsterdam-RVS"),"Kastslot":"Hoppe-Amsterdam-Kastslot",p:59},
+ "Bonn RVS":{...std("Hoppe-Bonn-RVS"),p:49},
+ "Marseille RVS":{...std("Hoppe-Marseille-RVS"),p:55},
+ "Marseille F1":{...std("Hoppe-Marseille-F1"),p:45},
+ "Paris RVS":{...std("Hoppe-Paris-RVS"),p:59},
+ "Stockholm F1":{...std("Hoppe-Stockholm-F1"),base:"Hoppe-Stockholm-F1-Loopslot",p:49},
+ "Tokyo F1":{...std("Hoppe-Tokyo-F1"),p:39},
+ "Vitória F1":{...std("Hoppe-Vitoria-F1"),p:45},
+ "Dubay F1":{base:"Hoppe-Dubay-F1-loop","Loopslot":"Hoppe-Dubay-F1-loop","Dag-nachtslot":"Hoppe-Dubay-F1-D-N","Vrij-bezetslot":"Hoppe-Dubay-F1-V-B","Kastslot":"Hoppe-Dubay-F1-kast",p:45}
+};
+const hoppeImg=(name,slot)=>IDP((HOPPE[name][slot]||HOPPE[name].base)+".jpg");
+const SCHUIFKOM=[["Schuifdeurkom RVS ovaal","Schuifdeurkom-rvs-ovaal.jpg",24.95],["Schuifdeurkom RVS ovaal schroefzijde","Schuifdeurkom-rvs-ovaal-schroefzijde.jpg",22.95],["Schuifdeurkom RVS rechthoekig","Schuifdeurkom-rvs.jpg",24.95],["Hoppe deurgreep F1 25×300 mm","Hoppe-deurgreep-F1-25x300mm.jpg",89]];
+
+/* ================= PROJECTEN (ideaal.nl) ================= */
+const PROJ=[
+ ["New Brooklyn","Almere",440,"woningen en appartementen","440-woningen-en-appartementen-New-Brooklyn-Almere.webp"],
+ ["Thorbeckelaan","Assen",80,"appartementen","80-appartementen-Thorbeckelaan-Assen2.webp"],
+ ["Dreeftoren","Amsterdam",312,"appartementen","312-appartementen-Dreeftoren-Amsterdam2.webp"],
+ ["Sionpark","Rijswijk",54,"woningen","54-won-Sion-Park-Weboma.webp"],
+ ["De Zaanse Helden","Zaandam",607,"woningen","607-won-De-Zaanse-Helden-Stebru.webp"],
+ ["Woenderskamp","Nijmegen",124,"appartementen","124-app.-Woenderskamp-Nijmegen2.webp"],
+ ["Remisehof fase 1","Rotterdam",173,"woningen","173-won-fase-1-Remisehof-Dura-Vermeer2.webp"],
+ ["Recreatiewoningen","Aalden",60,"recreatiewoningen","60-recratie-woningen-Aalden2.webp"],
+ ["Verde Vista","Zoeterwoude",400,"appartementen","400-app-Verde-Vista-Plegt-Vos.webp"],
+ ["De Poelen","Roelofarendsveen",132,"woningen","132-won-De-Poelen-Roelofarendsveen2.webp"],
+ ["Meijert","Rijswijk",98,"woningen","98-won-Meijert-98-Weboma.webp"],
+ ["Harmonie","Capelle aan den IJssel",200,"woningen","200-won-Harmonie-Stebru.avif"],
+ ["The Modernist","Rotterdam",421,"appartementen","421-appartementen-The-Modernist-Rotterdam2.webp"],
+ ["Centrumplan","Schaijk",35,"woningen","35_woningen_Centrumplan_Schaijk.webp"],
+ ["Tetem 4","Enschede",117,"appartementen","117-app-Tetem-4-Enschede2.webp"],
+ ["Weverstede","Nieuwegein",240,"appartementen","240-app-Weverstede-Nieuwegein-AKOR.avif"],
+ ["Gouden Podium","Berkel en Rodenrijs",313,"woningen","313-woningen-Goude-Podium2.webp"],
+ ["Walterspark","Hoogvliet",61,"woningen","61-won-waltersparrk.webp"],
+ ["De Industrieel blok A","Zaandam",126,"woningen","126-woningen-De-Industrieel-Blok-A-.-Zaandam2.webp"],
+ ["CentrumEiland","Amsterdam",104,"appartementen","104-appartementen-CentrumEiland-Amsterdam2.webp"],
+ ["Maestro","Den Haag",388,"appartementen","388-won-Maestro-Stebru-1.webp"],
+ ["Westvaartpark","Rijndijk",40,"woningen","40-woningen-Westvaartpark-Rijndijk2.webp"],
+ ["De Koploper","Gouda",156,"appartementen","156-app-De-Koploper-Goude-Dura-Vermeer2.webp"],
+ ["Houthaven Waterdeel","Amsterdam",58,"woningen","58-woningen-Houthaven-Waterdeel-Amsterdam2.webp"]
+].map(([n,p,a,t,f])=>({n,p,a,t,img:ID+"2026/10/"+f}));
+const TOTAL_UNITS=PROJ.reduce((s,p)=>s+p.a,0);
+
+/* ================= NIEUWS, VACATURES, DOWNLOADS (ideaal.nl) ================= */
+const NEWS=[
+ ["7 oktober 2026","IDEAAL behaalt trede 3 van de Safety Culture Ladder","Houtindustrie Ideaal heeft trede 3 van de Safety Culture Ladder behaald: een erkenning voor de structurele inzet op veilig werken in fabriek en op de bouwplaats.",PH.fabriek],
+ ["5 maart 2019","GND Zekerheidsklassen geluidwerende deuren","Geluidwerende deuren met een GND-zekerheidsklasse helpen geluidhinder in woningen te beperken. Onderzoek naar de geluidsbelasting van bijna 4 miljoen Nederlanders laat zien hoe belangrijk dat is.",PH.ind11],
+ ["21 februari 2019","Blog KOMO-certificaathouder","In project Latona in Utrecht zijn zwart UV-afgelakte houten binnendeuren van Ideaal toegepast, geleverd onder KOMO-certificaat.",PH.ind3],
+ ["22 januari 2019","Primeur: als eerste in Nederland een zwart afgelakte houten binnendeur","Ideaal introduceerde als eerste fabrikant in Nederland een fabrieksmatig zwart afgelakte houten binnendeur: de uitstraling van staal, zonder lakwerk op de bouw.",PH.ind1],
+ ["30 november 2018","GND mijlpaal","Sinds de introductie van het nieuwe GND-garantielabel zijn er een half miljoen deuren van dat label voorzien.",PH.ind10],
+ ["9 april 2018","Tourmalijn Ridderkerk opgeleverd","De Tourmalijn in Ridderkerk is opgeleverd: twee woontorens van elk 18 verdiepingen met in totaal 128 appartementen aan het water.",PROJ[12].img],
+ ["1 december 2017","Nieuwe zaagstraat met kantenfoliemachine","In januari 2018 plaatst Ideaal een nieuwe zaagstraat en kantenfoliemachine. Vloeren en technische installaties worden daarvoor eerst aangepast.",PH.fabriek],
+ ["10 augustus 2017","Nieuwe websites bij Ideaal","De websites ideaal.nl en koperskeuzedeuren.nl krijgen een vernieuwd ontwerp en meer functies.",PH.ind6],
+ ["18 augustus 2016","Sierra Leone","Ideaal ondersteunt de Lion Heart Foundation, die sinds 2006 in Sierra Leone werkt aan duurzame gezondheidszorg, economische activiteit en kennisoverdracht.",PH.fabriek],
+ ["9 april 2016","Deurprestaties verkennen? Label scannen!","De prestaties van GND-deuren, waaronder brandwerendheid, zijn nu via een QR-code op het nieuwe garantielabel op te vragen.",PH.zwartgarn],
+ ["10 februari 2016","B-I-G-DOOR","Ideaal introduceert de B-I-G-DOOR: een inpandige woningentreedeur die brandwerend, inbraakwerend én geluidwerend is.",PH.staal],
+ ["23 december 2015","Profilak afgelakte opdekdeur","Na ruim 50 jaar in het assortiment verdwijnt de Profilak afgelakte opdekdeur uit het aanbod.",PH.kozijnhout]
+];
+const VACS=[
+ {t:"Operator Lakstraat",s:"Productie · tijdelijk, uitzicht op vast",d:"Je bedient, controleert en onderhoudt de laklijn met lakwalsen en een UV-lakinstallatie. Daarnaast doe je visuele en maatcontroles, eerstelijnsonderhoud, procesbewaking en administratie.",e:["MBO-niveau, bij voorkeur techniek of productie","Ervaring als operator, liefst met lak- of coatingprocessen","Kennis van UV-lak en walstechniek is een pré","Technisch inzicht, nauwkeurig, veiligheidsbewust en flexibel in werktijden"],o:"Uitdagende functie in een dynamische productieomgeving, opleidingsmogelijkheden, marktconform salaris en goede secundaire arbeidsvoorwaarden."},
+ {t:"Productiemedewerker",s:"Productie · Zevenaar · tijdelijk, uitzicht op vast",d:"Je ondersteunt het productieproces: machines en gereedschap bedienen, deurcomponenten assembleren, materialen en producten controleren en een schone, veilige werkplek onderhouden.",e:["Minimaal MBO-niveau, bij voorkeur technisch","Ervaring in productie, liefst houtbewerking of meubelindustrie","Kennis van veiligheidsvoorschriften en kwaliteitsnormen","Goede beheersing van het Nederlands; geschikt voor staand werk en tillen"],o:"Marktconform salaris, reiskostenvergoeding, training en doorgroeimogelijkheden in een prettige werkomgeving."},
+ {t:"Expeditie Medewerker",s:"Logistiek · tijdelijk, uitzicht op vast",d:"Je verzamelt bestellingen en maakt ze klaar voor transport, controleert op volledigheid en kwaliteit en zorgt samen met chauffeurs en de transport- en montageplanner voor tijdige, complete leveringen.",e:["Goede organisatorische en plantechnische vaardigheden","Punctueel, communicatief en een echte teamspeler","Ervaring is een pré maar niet verplicht","Interesse in bouw of logistiek is een pluspunt"],o:"Prettige werksfeer met betrokken collega’s, een afwisselende functie, marktconform salaris en ruimte voor ontwikkeling."}
+];
+const DL=[
+ ["Certificaten",[["FSC certificaat","SKH-COC-000527-22-Houtindustrie-Ideaal-B.pdf"],["KOMO attest-met-productcertificaat","20833_13_Houtindustrie_Ideaal.pdf"]]],
+ ["Algemene voorwaarden",[["Algemene voorwaarden Houtindustrie Ideaal 2025","Algemene-voorwaarden-Houtindustrie-Ideaal-2025.pdf"],["Verwerkingsvoorschrift","VerwerkingvoorschriftIdeaal.pdf"]]],
+ ["Werkvoorbereiding",[["HPL voor deuren 2025","Formica-Door-Collection-NL-2025.pdf"],["Montagevoorwaarden","montagevoorwaardenideaal2018.pdf"]]],
+ ["Overig",[["Formica collectie deuren","Formica-Collection-Doors-NL.pdf"],["Profilux","montagevoorwaardenideaal2018-1.pdf"],["Brandveiligheid (bedrijfsfolder GND)","Bedrijfsfolder-GND-148x210mm-DEFONLINE.pdf"]]],
+ ["Handleidingen derden",[["Deventer valdorpel DSD 1528, montagehandleiding","DEVENTER_DSD_1528.pdf"]]],
+ ["Samenvatting van onderzoek",[["Inbraakwerendheid buitendraaiende deur 40 mm in stalen kozijn","SHR_3219.pdf"],["Inbraakwerendheid binnendraaiende deur 40 mm in stalen kozijn","SHR_2093.pdf"],["Brand-, inbraak- en geluidwerende woningtoegangsdeur 54 mm","SHR150013BIG.pdf"],["Wbdbo 30 deur 40 mm in stalen kozijn","wbdbo30enkel40.pdf"],["Wbdbo 60 brandwerende deur 54 mm in stalen puiconstructie","wbdbo30enkel54glas.pdf"],["Wbdbo 30 brandwerende deur 40 mm in stalen kozijn (39 dB)","wbdbo30enkel4039dB.pdf"],["Wbdbo 60 brandwerende deur 54 mm in stalen kozijn (41 dB)","wbdbo60enkel5441dB.pdf"],["Wbdbo 30 brandwerende deur 40 of 54 mm met glas (39 dB)","wbdbo30enkel40of54glas39dB.pdf"],["Wbdbo 60 brandwerende dubbele deur 54 mm in stalen kozijn","wbdbo60dubbel54glas41dB.pdf"],["Wbdbo 60 brandwerende deur 40 mm in houten montagekozijn","wbdbo60enkel40of54glas39dBv2.pdf"],["Wbdbo 60 brandwerende deur 40 mm in stalen montagekozijn","wbdbo60enkel40glas39dBabs.pdf"],["Wbdbo 60 brandwerende deur 40 mm in stalen kozijn","wbdbo60enkel40glas39dB.pdf"],["Wbdbo 30 brandwerende dubbele deur 40 mm in stalen kozijn","wbdbo30dubbel40glas39dB.pdf"],["Wbdbo 60 brandwerende dubbele deur 54 mm, spiegelstuk stalen kozijn","wbdbo60dubbel54glas39dB.pdf"],["Wbdbo 60 brandwerende dubbele deur 40 mm in stalen kozijn","wbdbo60dubbel4039dB.pdf"]]]
+];
+const LINKS=[["ANDUSTA stalen binnendeurkozijnen","https://andusta.nl/","Plaatstalen binnendeurkozijnen voor woning-, utiliteits- en zorgbouw."],["Federatie Nederlandse Deurenindustrie (FND)","http://www.fnd.nl/","Brancheorganisatie waarvan Ideaal lid is."],["Nederlandse Bond van Timmerfabrikanten (NBvT)","http://www.nbvt.nl/","Brancheorganisatie waarvan Ideaal lid is."],["GND Garantie Deuren","http://www.gnd.nl/","Herverzekerde garanties op kwaliteit en prestaties van deuren."],["Brandveilig Bouwen Nederland (BBN)","http://www.bbn.nu/","Kennis over bouwkundige brandpreventie."],["FSC Nederland","http://www.fsc.nl/nl-nl","Certificering van verantwoord geproduceerd hout."],["KOMO","http://www.komo.nl/","Kwaliteitskeurmerk voor de bouw; Ideaal is gecertificeerd."],["STABU","https://www.stabu.org/","Standaard bestekssystemen voor woning- en utiliteitsbouw."]];
+
+/* ================= DEURSCHETS (maatschets + reserve) ================= */
+let SVGID=0;
+function door(m,o={}){
+ const id="d"+(++SVGID);
+ const col=COLORS[o.color||m.colors[0]]||COLORS["Alpine wit"];
+ const gl=GLASS[o.glass||m.glass[0]||"Blank"];const lat=LATS[o.lat||(col.dark?"Zwart":"Wit")];
+ const Wd=160,Hd=380,X=20,Y=20;
+ const groove=col.dark?"rgba(255,255,255,.22)":"rgba(0,0,0,.26)";
+ const shade=col.dark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)";
+ let s=`<svg viewBox="0 0 200 ${o.dims?458:420}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(m.name)}"><defs>`;
+ if(col.wood)s+=`<pattern id="${id}w" width="160" height="12" patternUnits="userSpaceOnUse"><rect width="160" height="12" fill="${col.hex}"/><path d="M0 3h160M0 8h160" stroke="rgba(0,0,0,.12)"/></pattern>`;
+ s+=`<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>`;
+ if(o.frame)s+=`<rect x="8" y="10" width="184" height="402" fill="${o.frameColor||col.hex}" stroke="${shade}"/>`;
+ s+=`<rect x="${X}" y="${Y}" width="${Wd}" height="${Hd}" fill="${col.wood?`url(#${id}w)`:col.hex}" stroke="rgba(0,0,0,.28)" stroke-width="1.2"/>`;
+ const glass=(x,y,w,h,rx=0)=>{let r=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${gl.f}" fill-opacity="${gl.o}" stroke="${lat}" stroke-width="3.2"/>`;
+  if(gl.f==="#bcd6e2")r+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="url(#${id}g)"/>`;
+  if(gl.facet)r+=`<rect x="${x+4}" y="${y+4}" width="${w-8}" height="${h-8}" rx="${rx}" fill="none" stroke="#fff" stroke-opacity=".7"/>`;
+  if(gl.rim)r+=`<rect x="${x+5}" y="${y+5}" width="${w-10}" height="${h-10}" rx="${rx}" fill="none" stroke="#bcd6e2" stroke-width="4"/>`;
+  if(gl.grid&&h>60)r+=`<path d="M${x+w/2} ${y}V${y+h}M${x} ${y+h/4}H${x+w}M${x} ${y+h/2}H${x+w}M${x} ${y+3*h/4}H${x+w}" stroke="#bcd6e2" stroke-width="1.6"/>`;
+  return r};
+ const panel=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${shade}" stroke-width="5"/><rect x="${x+6}" y="${y+6}" width="${w-12}" height="${h-12}" fill="${shade}" fill-opacity=".35"/>`;
+ const line=(x1,y1,x2,y2)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${groove}" stroke-width="2.2"/>`;
+ const stack=(n)=>{let r="",gap=10,h=(Hd-96-gap*(n-1))/n;for(let i=0;i<n;i++)r+=glass(X+34,Y+48+i*(h+gap),Wd-68,h);return r};
+ const L=m.lay;
+ if(L==="g1")s+=glass(X+34,Y+40,Wd-68,Hd-80);
+ else if(/^g[2-6]$/.test(L))s+=stack(+L[1]);
+ else if(L==="g8"){const gw=(Wd-78)/2,gh=(Hd-126)/4;for(let i=0;i<4;i++)for(let j=0;j<2;j++)s+=glass(X+34+j*(gw+10),Y+48+i*(gh+10),gw,gh)}
+ else if(L==="gv")s+=glass(X+Wd-62,Y+40,26,Hd-80);
+ else if(L==="gvl")s+=glass(X+28,Y+40,30,Hd-80)+line(X+80,Y+40,X+80,Y+Hd-40);
+ else if(L==="gp")s+=glass(X+34,Y+40,Wd-68,170)+panel(X+34,Y+232,Wd-68,108);
+ else if(L==="gp2")s+=glass(X+34,Y+40,Wd-68,150)+panel(X+34,Y+212,(Wd-78)/2,128)+panel(X+44+(Wd-78)/2,Y+212,(Wd-78)/2,128);
+ else if(/^p\d$/.test(L)){const n=+L[1];if(n===2)s+=panel(X+34,Y+40,Wd-68,170)+panel(X+34,Y+228,Wd-68,112);else{const h=(Hd-80-(n-1)*14)/n;for(let i=0;i<n;i++)s+=panel(X+34,Y+40+i*(h+14),Wd-68,h)}}
+ else if(/^l\d$/.test(L)){const n=+L[1];for(let i=1;i<=n;i++){const y=Y+Hd*i/(n+1);s+=line(X+14,y,X+Wd-14,y)}}
+ else if(L==="lv")s+=line(X+Wd/2,Y+30,X+Wd/2,Y+Hd-30);
+ else if(L==="lg"){for(let i=1;i<=3;i++)s+=line(X+14,Y+Hd*i/4,X+Wd-14,Y+Hd*i/4);s+=line(X+Wd/2,Y+30,X+Wd/2,Y+Hd-30)}
+ else if(L==="ls")s+=line(X+36,Y+30,X+36,Y+Hd-30)+line(X+Wd-36,Y+30,X+Wd-36,Y+Hd-30);
+ else if(L==="lh")s+=line(X+14,Y+120,X+Wd-14,Y+120)+line(X+14,Y+128,X+Wd-14,Y+128);
+ else if(L==="gl"){s+=glass(X+34,Y+40,Wd-68,150);for(let i=0;i<3;i++)s+=line(X+14,Y+240+i*40,X+Wd-14,Y+240+i*40)}
+ else if(L==="glv")s+=glass(X+30,Y+40,34,Hd-80)+line(X+90,Y+30,X+90,Y+Hd-30)+line(X+120,Y+30,X+120,Y+Hd-30);
+ else if(L==="gr")s+=glass(X+40,Y+40,Wd-80,Hd-80,40);
+ else if(L==="ga")s+=`<path d="M${X+34} ${Y+Hd-40}V${Y+110}a${(Wd-68)/2} ${(Wd-68)/2} 0 0 1 ${Wd-68} 0V${Y+Hd-40}z" fill="${gl.f}" fill-opacity="${gl.o}" stroke="${lat}" stroke-width="3.2"/>`;
+ else if(L==="gc")s+=`<circle cx="${X+Wd/2}" cy="${Y+120}" r="44" fill="${gl.f}" fill-opacity="${gl.o}" stroke="${lat}" stroke-width="3.2"/>`+line(X+14,Y+260,X+Wd-14,Y+260);
+ const right=(o.hand||"Rechts")==="Links";const hx=right?X+Wd-16:X+10;
+ const hcol=/F1/.test(o.beslag||"")?"#c8cacc":col.dark?"#2a2a2a":"#a9adb1";
+ s+=`<rect x="${hx}" y="${Y+Hd/2-14}" width="6" height="28" rx="3" fill="${hcol}"/><rect x="${right?hx-12:hx}" y="${Y+Hd/2-3}" width="18" height="6" rx="3" fill="${hcol}"/>`;
+ const px=right?X-1:X+Wd-3;[60,Hd/2,Hd-60].forEach(y=>s+=`<rect x="${px}" y="${Y+y-12}" width="4" height="24" fill="#8d9195"/>`);
+ if(o.dims)s+=`<g fill="currentColor" font-family="IBM Plex Mono,monospace" font-size="12"><line x1="${X}" y1="438" x2="${X+Wd}" y2="438" stroke="currentColor" stroke-width=".8"/><line x1="${X}" y1="432" x2="${X}" y2="444" stroke="currentColor" stroke-width=".8"/><line x1="${X+Wd}" y1="432" x2="${X+Wd}" y2="444" stroke="currentColor" stroke-width=".8"/><text x="100" y="455" text-anchor="middle">${o.w} mm</text><text x="197" y="215" text-anchor="middle" transform="rotate(90 197 215)">${o.h} mm</text></g>`;
+ return s+"</svg>";
+}
+const prodImg=(m,color,cls="")=>`<img class="${cls}" src="${U(imgOf(m,color))}" alt="${esc(m.name)}${color?" in "+esc(color):""}" loading="lazy" data-code="${m.code}" data-color="${esc(color||m.colors[0])}">`;
+document.addEventListener("error",e=>{const el=e.target;if(!el||el.tagName!=="IMG")return;
+ if(el.dataset.code){const m=byCode(el.dataset.code);if(el.classList.contains("alt")){el.parentElement&&el.parentElement.classList.remove("has2");el.remove();return}const t=document.createElement("span");t.innerHTML=door(m,{color:el.dataset.color});el.replaceWith(t.firstChild)}
+ else if(el.dataset.fallback!==undefined){el.outerHTML=el.dataset.fallback}
+ else{const p=el.parentElement;el.remove();if(p&&p.classList.contains("ph"))p.classList.add("noimg")}},true);
+
+/* ================= OVERIGE DATA ================= */
+const KOZIJNEN=[
+ {id:"match",t:"Stalen montagekozijn",p:185,img:PH.kozijnzwart,d:"Stalen montagekozijn, snel te plaatsen na het stucwerk. Leverbaar in wit en zwart.",spec:[["Materiaal","Staal, gepoedercoat"],["Montage","Na afwerking van de wand"],["Wanddikte","70–250 mm"]]},
+ {id:"matchplus",t:"Stalen montagekozijn Plus",p:235,img:PH.kozijnzwart,d:"Uitgebreide stalen variant met geïntegreerde dichting.",spec:[["Materiaal","Staal"],["Dichting","Rondom geïntegreerd"],["Wanddikte","70–250 mm"]]},
+ {id:"matchplusff",t:"Stalen montagekozijn Plus vlak",p:265,img:PH.staal,d:"Vlakke uitvoering waarbij deur en kozijn in één vlak liggen.",spec:[["Materiaal","Staal"],["Uitvoering","Vlak met de deur"],["Deur","Stomp"]]},
+ {id:"agti",t:"Houten montagekozijn",p:210,img:PH.kozijnhout,d:"Houten montagekozijn, fabrieksmatig afgelakt in de deurkleur.",spec:[["Materiaal","Hout, afgelakt"],["Kleuren","Alpine wit, Extra wit, Diep zwart"],["Keurmerk","KOMO"]]},
+ {id:"agtismart",t:"Houten montagekozijn Smart",p:245,img:PH.kozijnhout,d:"Houten montagekozijn met verstelling voor maatvoering op de bouw.",spec:[["Materiaal","Hout, afgelakt"],["Verstelbereik","± 20 mm"],["Montage","Geen schroeven in zicht"]]},
+ {id:"profal",t:"Profal X-1 kozijnen",p:0,img:PH.woningbouw,d:"De kozijnen A01, A11, A51 en ventilatiekozijn A01 uit het Profal-programma voor woningbouw.",ideaal:"Profal"}
+];
+const SCHUIF=[
+ {id:"inwand",t:"Schuifdeursystemen in de wand",img:PH.zwartschuif,d:"De deur verdwijnt volledig in een cassette in de wand. Ideaal waar draairuimte ontbreekt."},
+ {id:"voorwand",t:"Schuifdeursystemen voor de wand",img:PH.schuif,d:"Zichtbare rail voor de wand, in RVS of zwart. Snel te plaatsen in bestaande bouw."},
+ {id:"verdekt",t:"Schuifdeuren met verdekte rail",img:PH.schuif,d:"Strak systeem met verdekte rail en zachte demping in beide richtingen."}
+];
+const SHOPCAT={garnituren:"Garnituren",sloten:"Garnituren met slot",schuif:"Schuifdeurkommen & grepen",lakstiften:"Lakstiften"};
+const SHOP={
+ garnituren:Object.keys(HOPPE).map(n=>({n:"Hoppe "+n,p:HOPPE[n].p,img:hoppeImg(n,"base")})),
+ sloten:[["Amsterdam RVS","Dag-nachtslot"],["Bonn RVS","Vrij-bezetslot"],["Marseille RVS","Loopslot"],["Paris RVS","Kastslot"],["Tokyo F1","Dag-nachtslot"],["Vitória F1","Vrij-bezetslot"],["Stockholm F1","Loopslot"],["Dubay F1","Kastslot"]].map(([n,s])=>({n:`Hoppe ${n} · ${s}`,p:HOPPE[n].p+12,img:hoppeImg(n,s)})),
+ schuif:SCHUIFKOM.map(([n,f,p])=>({n,p,img:IDP(f)})),
+ lakstiften:["Alpine wit","Extra wit","Diep zwart"].map(c=>({n:"Lakstift "+c,p:12.95,lak:COLORS[c].hex}))
+};
+const TRENDS=[
+ {t:"De magie van wit",img:PH.deuren,m:"AE12",c:"Alpine wit",d:"Wit blijft de rustigste basis: licht, tijdloos en makkelijk te combineren met hout en natuursteen."},
+ {t:"Deur en kozijn in één kleur",img:PH.kozijnzwart,m:"FR507",c:"Diep zwart",d:"Deur en kozijn in dezelfde kleur geven een strak, architectonisch beeld."},
+ {t:"Industrieel zwart",img:PH.ind1,m:"FR506",c:"Diep zwart",d:"De uitstraling van een stalen deur, met het comfort en de prijs van hout."},
+ {t:"Modern Zen",m:"AL13",c:"Alpine wit",d:"Strakke groeflijnen en lege vlakken: minder is meer."},
+ {t:"Soft Nature",m:"NC103",c:"Leem taupe",d:"Aardetinten die warmte geven zonder te overheersen."},
+ {t:"Japandi",img:PH.connect,m:"CN07",c:"Alpine wit",d:"Japanse eenvoud ontmoet Scandinavisch comfort."},
+ {t:"Boutique Chic",m:"CE104",c:"Diep zwart",d:"Klassieke panelen in een eigentijdse kleur."},
+ {t:"Kalmte in huis",m:"NC101",c:"Cacao bruin",d:"Diepe, warme tinten voor een rustig interieur."},
+ {t:"Art Deco",m:"FM03",c:"Alpine wit",d:"Ronde vormen en grafische lijnen."}
+];
+const trendImg=i=>{const t=TRENDS[i];return t.img||imgOf(byCode(t.m),t.c)};
+
+/* ================= NAVIGATIE ================= */
+const NAV=[
+ {id:"assortiment",t:"Assortiment",img:PH.front,kids:[
+  {id:"stijldeuren",t:"Stijldeuren",kids:[{id:"glasdeuren",t:"Glasdeuren"},{id:"paneeldeuren",t:"Paneeldeuren"},{id:"lijndeuren",t:"Lijndeuren"},{id:"glas-paneeldeuren",t:"Glas-/paneeldeuren"},{id:"glas-lijndeuren",t:"Glas-/lijndeuren"},{id:"prijslijst",t:"Prijsoverzicht"}]},
+  {id:"binnendeuren",t:"Ideaal binnendeuren",kids:[{id:"woningbouw",t:"Woningbouw"},{id:"utiliteitsbouw",t:"Utiliteitsbouw"},{id:"profilux",t:"Profilux Industrieel"},{id:"technische",t:"Technische deuren"},{id:"hpl",t:"HPL-deuren"}]},
+  {id:"kozijnen",t:"Kozijnen",kids:KOZIJNEN.map(k=>({id:"koz-"+k.id,t:k.t}))},
+  {id:"beslag",t:"Hang- en sluitwerk",kids:[{id:"garnituren",t:"Garnituren"},{id:"schuifdeuren",t:"Schuifdeursystemen"}]},
+  {id:"deuropties",t:"Deuropties",kids:[{id:"superlak",t:"Kleuren & lak"},{id:"glassoorten",t:"Glassoorten"},{id:"lijnvarianten",t:"Lijnvarianten"}]}]},
+ {id:"projecten",t:"Projecten"},
+ {id:"inspiratie",t:"Inspiratie",img:PH.connect,kids:[{id:"configurator",t:"Deur samenstellen"},{id:"trends",t:"Interieurtrends",kids:TRENDS.map((t,i)=>({id:"trend-"+i,t:t.t}))},{id:"projecten",t:"Projecten"}]},
+ {id:"professionals",t:"Professionals",img:PH.fabriek,kids:[
+  {id:"montage",t:"Deur-Kozijn-Montage"},{id:"gnd",t:"GND-deuren"},
+  {id:"technische",t:"Technische deuren",kids:[{id:"brandwerend",t:"Brandwerend"},{id:"geluidwerend",t:"Geluidwerend"},{id:"inbraakwerend",t:"Inbraakwerend"}]},
+  {id:"stomp",t:"Verwerking",kids:[{id:"stomp-monteren",t:"Monteren en afhangen"},{id:"stomp-schaven",t:"Schaven van afgelakte deuren"},{id:"stomp-opmaat",t:"Deuren op maat"}]},
+  {id:"downloads",t:"Downloads"},{id:"links",t:"Links"},{id:"koperskeuze",t:"Koperskeuze intake"},{id:"dealerportal",t:"Dealerportal"},{id:"brandstoftoeslag",t:"Brandstoftoeslag"}]},
+ {id:"verkooppunten",t:"Verkooppunten"},
+ {id:"serviceshop",t:"Serviceshop",img:IDP("Hoppe-Tokyo-F1.jpg"),kids:Object.keys(SHOP).map(k=>({id:"shop-"+k,t:SHOPCAT[k]}))},
+ {id:"contact",t:"Contact"}
+];
+const PARENT={},TITLE={home:"Home"},NODE={};
+(function walk(list,p){list.forEach(n=>{if(!(n.id in TITLE))TITLE[n.id]=n.t;if(!(n.id in PARENT))PARENT[n.id]=p;NODE[n.id]=(NODE[n.id]&&NODE[n.id].kids)?NODE[n.id]:n;if(n.kids)walk(n.kids,n.id)})})(NAV,null);
+Object.assign(TITLE,{"over-ons":"Over Ideaal",nieuws:"Nieuws",vacatures:"Vacatures",duurzaamheid:"Groene deuren",faq:"Veelgestelde vragen",favorieten:"Favorieten",privacy:"Privacyverklaring",garantie:"Garantievoorwaarden",sitemap:"Sitemap",product:"Product",checkout:"Afrekenen",concepten:"Concepten"});
+PARENT["over-ons"]=null;PARENT.nieuws="over-ons";PARENT.vacatures="over-ons";PARENT.duurzaamheid="over-ons";
+const tree=l=>`<ul>${l.map(k=>`<li><a data-go="${k.id}">${esc(k.t)}</a>${k.kids&&k.kids.length<7?tree(k.kids):""}</li>`).join("")}</ul>`;
+const CHEV=`<svg viewBox="0 0 10 10"><path d="M1 3l4 4 4-4"/></svg>`;
+function renderChrome(){
+ const logo=`<img src="${U(PH.logo)}" alt="Houtindustrie Ideaal" data-fallback='<span class="wm"><b>IDEAAL</b><small>Houtindustrie</small></span>'>`;
+ $("#logo").innerHTML=logo;$("#flogo").innerHTML=logo;
+ $("#certs").innerHTML=[["fnd.png","FND","http://www.fnd.nl/"],["gnd.png","GND","http://www.gnd.nl/"],["nbvt.png","NBvT","https://nbvt.nl/"],["komo.png","KOMO","https://www.komo.nl/"],["fsc.svg","FSC","http://www.fsc.nl/nl-nl"]].map(([f,t,u])=>`<a href="${u}" target="_blank" rel="noopener"><img src="${U(IDP(f))}" alt="${t}" data-fallback="${t}"></a>`).join("");
+ $("#mainnav").innerHTML=NAV.map(n=>n.kids?`<button aria-expanded="false" data-mega="${n.id}">${n.t}${CHEV}</button>`:`<button data-go="${n.id}" data-nav="${n.id}">${n.t}</button>`).join("");
+ $("#drawerPanel").innerHTML=`<a class="logo" data-go="home" style="margin-bottom:1.2rem">${logo}</a>`+NAV.map(n=>n.kids?`<details><summary>${n.t}</summary><a data-go="${n.id}"><b>Alles in ${n.t.toLowerCase()}</b></a>${n.kids.map(k=>`<a data-go="${k.id}">${esc(k.t)}</a>`).join("")}</details>`:`<details><summary><a data-go="${n.id}" style="display:inline;padding:0;color:inherit">${n.t}</a></summary></details>`).join("")+`<details><summary>Over Ideaal</summary>${["over-ons","duurzaamheid","nieuws","vacatures","faq","koperskeuze","dealerportal"].map(i=>`<a data-go="${i}">${TITLE[i]}</a>`).join("")}</details><div style="margin-top:1.4rem"><button class="btn" data-go="configurator" style="width:100%">Stel uw deur samen</button></div>`;
+}
+function openMega(id){
+ const n=NODE[id],m=$("#mega");
+ if(!m.hidden&&m.dataset.open===id){closeMega();return}
+ $$("[data-mega]").forEach(b=>b.setAttribute("aria-expanded",b.dataset.mega===id));
+ m.dataset.open=id;$("#searchbox").hidden=true;
+ m.innerHTML=`<div class="wrap">${n.kids.map(k=>`<div><h4><a data-go="${k.id}">${esc(k.t)}</a></h4>${k.kids?tree(k.kids):""}</div>`).join("")}${n.img?`<a class="tile wide feat" data-go="${n.id}">${ph(n.img,n.t)}<span class="cap"><b>Alles in ${esc(n.t.toLowerCase())}</b><span class="go">Bekijk ${AR}</span></span></a>`:""}</div>`;
+ m.hidden=false;
+}
+function closeMega(){$("#mega").hidden=true;$$("[data-mega]").forEach(b=>b.setAttribute("aria-expanded","false"))}
+
+/* ================= STATE ================= */
+let favs=store.get("favs",[]).filter(c=>byCode(c)),cart=store.get("cart2",[]);
+function counts(){const f=$("#favCount"),c=$("#cartCount");f.textContent=favs.length;f.hidden=!favs.length;const n=cart.reduce((a,b)=>a+b.q,0);c.textContent=n;c.hidden=!n;if(n){c.style.animation="none";void c.offsetWidth;c.style.animation=""}}
+function toggleFav(code){favs=favs.includes(code)?favs.filter(x=>x!==code):[...favs,code];store.set("favs",favs);counts();toast(favs.includes(code)?`${code} bewaard in uw favorieten`:`${code} verwijderd uit favorieten`)}
+function addCart(it){const ex=cart.find(x=>x.n===it.n);if(ex)ex.q++;else cart.push({...it,q:1});store.set("cart2",cart);counts();toast(`${it.n} toegevoegd`)}
+
+/* ================= COMPONENTEN ================= */
+const crumbsHtml=id=>{const c=[];let p=id,guard=0;while(p&&guard++<8){c.unshift(p);p=PARENT[p]}return `<a data-go="home">Home</a>${c.map(x=>`<span>/</span><a data-go="${x}">${esc(TITLE[x]||x)}</a>`).join("")}`};
+const prod=(m,color,tag)=>{color=color||m.colors[0];const imgs=uniqueImgs(m);const alt=imgs.find(u=>u!==imgOf(m,color));const altColor=alt?m.colors.find(c=>m.imgs[c]===alt):null;return `<article class="prod rv" data-model="${m.code}">
+ <div class="pic${alt?" has2":""}">${prodImg(m,color,"main")}${alt?prodImg(m,altColor,"alt"):""}${tag?`<span class="tag">${tag}</span>`:""}<button class="fav ${favs.includes(m.code)?"on":""}" data-fav="${m.code}" aria-label="Bewaar ${m.code}"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button><span class="peek">Bekijk deur</span></div>
+ <div class="meta"><span class="code">${m.serie.toUpperCase()} · ${m.code}</span><h3>${esc(m.name)}</h3>
+ <span class="price">vanaf ${eur(priceOf(m,color))} <small>incl. btw</small></span>
+ <div class="dots">${m.colors.filter((c,i,a)=>!(c==="Extra wit"&&a.includes("Alpine wit"))).map(c=>`<span class="dot" title="${c}" style="background:${COLORS[c].hex}"></span>`).join("")}</div></div></article>`};
+function head(id,intro,img){
+ if(img)return `<div class="banner">${ph(img,TITLE[id])}<div class="txt"><div class="wrap"><nav class="crumbs" aria-label="Kruimelpad">${crumbsHtml(id)}</nav><h1>${esc(TITLE[id])}</h1></div></div></div>${intro?`<section class="wrap intro"><p class="lead rv">${intro}</p></section>`:""}`;
+ return `<section class="wrap pagehead"><nav class="crumbs" aria-label="Kruimelpad">${crumbsHtml(id)}</nav><h1>${esc(TITLE[id])}</h1>${intro?`<p class="lead">${intro}</p>`:""}</section>`}
+const tile=(id,title,img,sub="",cls="",num="")=>`<a class="tile rv ${cls}" data-go="${id}">${ph(img,title)}${num?`<span class="num">${num}</span>`:""}<span class="cap"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}<span class="go">Bekijk ${AR}</span></span></a>`;
+const rail=(id,items,cls="")=>`<div class="railwrap"><div class="rail ${cls}" id="${id}">${items}</div></div>`;
+const railNav=id=>`<div class="railnav"><button class="rbtn" data-rail="${id}" data-dir="-1" aria-label="Vorige">${ICL}</button><button class="rbtn" data-rail="${id}" data-dir="1" aria-label="Volgende">${ICR}</button></div>`;
+const itemCard=(t,img,sub="",sq=false)=>`<article class="item rv"><div class="fig${sq?" sq":""}"><img src="${U(img)}" alt="${esc(t)}" loading="lazy"></div><div><h3 style="font-size:1rem">${esc(t)}</h3>${sub?`<p class="muted" style="font-size:.88rem">${sub}</p>`:""}</div></article>`;
+
+/* ================= HOME ================= */
+const SLIDES=[
+ {img:PH.ind1,k:"Primeur van Ideaal",t:"Zwart afgelakt. Industriële uitstraling.",p:"De Profilux Industriële deur: de look van staal, fabrieksmatig afgewerkt in Zevenaar en klaar om te plaatsen.",b:[["Ontdek Profilux","profilux"],["Alle deuren","stijldeuren"]]},
+ {img:PH.zwartgarn,split:[600,386],k:"Binnendeuren",t:"Deuren die het huis compleet maken",p:"Glas-, paneel- en lijndeuren, kant-en-klaar afgelakt en geleverd Just-in-Time.",b:[["Stel uw deur samen","configurator"],["Bekijk de collectie","stijldeuren"]]},
+ {img:PH.front,split:[680,680],k:"Serie Front",t:"Strak glas, smalle stijlen",p:"In Alpine wit of diep zwart, met blank, satijn of rookglas.",b:[["Bekijk glasdeuren","glasdeuren"]]},
+ {img:PROJ[2].img,split:[495,348],k:"Projecten",t:`Meer dan ${Math.floor(TOTAL_UNITS/100)*100} woningen voorzien`,p:"Van Dreeftoren in Amsterdam tot De Zaanse Helden in Zaandam: deuren, kozijnen en montage uit één hand.",b:[["Bekijk projecten","projecten"]]}
+];
+let slideT,curSlide=0;
+const SHOWCASE=[["NDB901","Diep zwart"],["NDB901","Metallic brons"],["NDB901","Licht eiken"],["NDB901","Donker eiken"],["NC103","Leem taupe"],["NC103","Cacao bruin"],["NDB901","Alpine wit"]];
+let showIdx=0,homeTab="Glas";
+function home(){
+ const ticks=["Sinds 1958 in Zevenaar","KOMO · FSC · GND","Deur, kozijn en montage uit één hand","Just-in-Time geleverd","Doorlooptijd ±50% korter dankzij QRM","Safety Culture Ladder trede 3"];
+ return `<section class="hero" id="hero">${SLIDES.map((s,i)=>`<div class="slide ${i===curSlide?"on":""}${s.split?" split":""}">${s.split?`<div class="ph" data-label="${esc(s.t)}" style="height:min(70%,${s.split[1]}px);aspect-ratio:${s.split[0]}/${s.split[1]}"><img src="${U(s.img)}" alt="${esc(s.t)}" loading="lazy"></div>`:ph(s.img,s.t)}<div class="txt"><div class="wrap"><div class="inner"><span class="kick">${s.k}</span><h1>${s.t}</h1><p>${s.p}</p><div style="display:flex;gap:.8rem;flex-wrap:wrap">${s.b.map(([l,g],j)=>`<button class="btn ${j?"ghost":"white"}" data-go="${g}">${l}${j?"":" "+AR}</button>`).join("")}</div></div></div></div></div>`).join("")}
+ <div class="hctl"><div class="wrap"><div class="hdots">${SLIDES.map((s,i)=>`<button data-slide="${i}" aria-current="${i===curSlide}" aria-label="Dia ${i+1}: ${esc(s.k)}">0${i+1} ${esc(s.k)}<i></i></button>`).join("")}</div><button class="harrow" data-slide-step="-1" aria-label="Vorige dia">${ICL}</button><button class="harrow" data-slide-step="1" aria-label="Volgende dia">${ICR}</button></div></div></section>
+ <div class="ticker" aria-hidden="true"><div class="tr">${[...ticks,...ticks].map(t=>`<span>${t}</span>`).join("")}</div></div>
+
+ <section class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Voor wie</span><h2 class="rv">Eén fabriek, drie werelden</h2></div></div>
+ <div class="grid g3x">${tile("woningbouw","Woningbouw",PROJ[0].img,"Series, koperskeuze en dagmontage","","01")}${tile("utiliteitsbouw","Utiliteitsbouw",PH.utiliteit,"Brand-, geluid- en inbraakwerend","","02")}${tile("stijldeuren","Wonen & renovatie",PH.zwartgarn,"Stijldeuren via aannemer of verkooppunt","","03")}</div></section>
+
+ <section class="tintbg"><div class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Collectie</span><h2 class="rv">Ontdek per deurtype</h2></div><a class="tl" data-go="stijldeuren">Alle ${MODELS.length} stijldeuren ${AR}</a></div>
+ <div class="tabs rv" role="tablist" style="margin-bottom:2rem">${["Glas","Paneel","Lijn","Glas-/paneel","Glas-/lijn"].map(t=>`<button role="tab" data-hometab="${t}" aria-selected="${t===homeTab}">${t==="Glas"?"Glasdeuren":t==="Paneel"?"Paneeldeuren":t==="Lijn"?"Lijndeuren":t+"deuren"}</button>`).join("")}</div>
+ <div id="homeRail">${homeRail()}</div></div></section>
+
+ <section class="show" id="showcase" style="background:${COLORS[SHOWCASE[showIdx][1]].bg}">${showHtml()}</section>
+
+ <section class="wrap block"><div class="split">
+  <div class="collage rv">${ph(PH.ind1,"Profilux Industriële deur","plx")}${ph(PH.ind6,"Detail zwart afgelakt")}${ph(PH.ind10,"Profilux in interieur")}</div>
+  <div class="prose"><span class="kick rv">Primeur</span><h2 class="rv">Als eerste in Nederland: de zwart afgelakte houten binnendeur</h2><p class="muted rv">De Profilux Industriële deur heeft de uitstraling van een stalen deur, maar is van hout en wordt in onze fabriek zwart UV-gelakt. Op de bouw hoeft er niets meer aan te gebeuren. Goedkoper dan staal en dan een zwart voorbewerkte deur, leverbaar met verdekte scharnieren, magneetslot met bijpassend garnituur en optioneel een valdorpel.</p><div class="rv"><button class="btn" data-go="profilux">Ontdek Profilux ${AR}</button></div></div>
+ </div></section>
+
+ <section class="night"><div class="wrap block"><div class="split">
+  <div class="prose"><span class="kick rv">Sinds 1958</span><h2 class="rv">Deuren van formaat. No-nonsense uit Zevenaar.</h2><p class="muted rv">Projecten worden van begin tot eind door één en dezelfde persoon begeleid. Dankzij Quick Response Manufacturing leveren we Just-in-Time en kunnen wijzigingen nog laat in het project. Wij adviseren alleen een bijzondere deur als de klant die echt nodig heeft.</p>
+  <div class="stats rv"><div><b class="count" data-to="1958" data-plain="1">1958</b><span class="muted">opgericht</span></div><div><b class="count" data-to="${TOTAL_UNITS}">${TOTAL_UNITS.toLocaleString("nl-NL")}</b><span class="muted">woningen in recente projecten</span></div><div><b class="count" data-to="50" data-pre="±" data-suf="%">±50%</b><span class="muted">kortere doorlooptijd</span></div></div>
+  <div class="rv"><button class="btn white" data-go="over-ons">Over Ideaal ${AR}</button></div></div>
+  ${ph(PH.fabriek,"Fabriek Houtindustrie Ideaal","land plx rv")}
+ </div></div></section>
+
+ <section class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Projecten</span><h2 class="rv">Recent opgeleverd met Ideaal-deuren</h2></div>${railNav("projRail")}</div>
+ ${rail("projRail",PROJ.slice(0,10).map(p=>projCard(p)).join(""),"wide")}<div style="margin-top:2rem"><a class="tl" data-go="projecten">Alle ${PROJ.length} projecten ${AR}</a></div></section>
+
+ <section class="tintbg"><div class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Ontzorgen</span><h2 class="rv">U zorgt voor het gat in de muur. Wij doen de rest.</h2></div></div>
+ <div class="list3">${[["01","Werkvoorbereiding","Begeleiding van het aspect binnendeuren, werkvoorbereiding en controle op de voorschriften."],["02","Just-in-Time","Transport en coördinatie op de bouwplaats, per dagmontage. Geen opslag op de bouw."],["03","Leveren en monteren","Deuren, kozijnen, glas, glaslatten en hang- en sluitwerk. Niets blijft ongemonteerd achter."]].map(([n,t,d])=>`<div class="rv"><span class="nr">${n}</span><h3>${t}</h3><p class="muted">${d}</p></div>`).join("")}</div>
+ <div style="margin-top:2.6rem" class="rv"><button class="btn line" data-go="montage">Bekijk Deur-Kozijn-Montage ${AR}</button></div></div></section>
+
+ <section class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Assortiment</span><h2 class="rv">Alles voor de binnendeur</h2></div></div>
+ <div class="grid g3">${[["stijldeuren","Stijldeuren",PH.connect,`${MODELS.length} modellen in 9 series`],["kozijnen","Kozijnen",PH.kozijnhout,"Stalen en houten montagekozijnen"],["garnituren","Garnituren",IDP("Hoppe-Amsterdam-RVS.jpg"),"Hoppe in RVS en F1"],["schuifdeuren","Schuifdeursystemen",PH.schuif,"In, voor en langs de wand"],["technische","Technische deuren",PH.utiliteit,"Brand-, geluid- en inbraakwerend"],["deuropties","Kleuren & glas",PH.nuance,"Acht kleuren, zeven glassoorten"]].map(([g,t,i,s])=>tile(g,t,i,s,"wide")).join("")}</div></section>
+
+ <section class="night"><div class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Inspiratie</span><h2 class="rv">Interieurtrends</h2></div>${railNav("trendRail")}</div>
+ ${rail("trendRail",TRENDS.map((t,i)=>`<a class="tile" data-go="trend-${i}">${ph(trendImg(i),t.t)}<span class="cap"><b>${t.t}</b><small>${t.m} · ${t.c}</small><span class="go">Bekijk ${AR}</span></span></a>`).join(""))}</div></section>
+
+ <section class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Nieuws</span><h2 class="rv">Laatste nieuws</h2></div><a class="tl" data-go="nieuws">Alle berichten ${AR}</a></div>
+ <div class="grid g3">${NEWS.slice(0,3).map((n,i)=>newsCard(n,i)).join("")}</div></section>`;
+}
+function homeRail(){const l=MODELS.filter(m=>m.type===homeTab);const pick=l.filter((m,i)=>i%Math.max(1,Math.floor(l.length/8))===0).slice(0,8);return `<div class="rail fadein" id="typeRail">${pick.map(m=>prod(m,m.colors.includes("Diep zwart")&&m.serie!=="Nova design"?null:null)).join("")}</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem;gap:1rem;flex-wrap:wrap">${railNav("typeRail")}<button class="btn line" data-go="${{"Glas":"glasdeuren","Paneel":"paneeldeuren","Lijn":"lijndeuren","Glas-/paneel":"glas-paneeldeuren","Glas-/lijn":"glas-lijndeuren"}[homeTab]}">Bekijk alle ${l.length} ${AR}</button></div>`}
+function showHtml(){const [c,col]=SHOWCASE[showIdx],m=byCode(c);return `<div class="stage">${prodImg(m,col)}</div><div class="info"><span class="kick">Kies uw kleur</span><div class="big" key="${showIdx}">${col}</div><p class="muted" style="max-width:30rem">${m.serie} ${m.code} · ${COLORS[col].ral}. Klik op een kleur en zie de deur direct veranderen.</p>
+ <div class="swrow">${SHOWCASE.map(([cc,k],i)=>`<button class="swb" data-show="${i}" aria-pressed="${i===showIdx}" aria-label="${k}" title="${k}" style="background:${COLORS[k].hex}"></button>`).join("")}</div>
+ <div style="display:flex;gap:.8rem;flex-wrap:wrap;align-items:center"><button class="btn" data-cfgc="${c}|${col}">Stel deze deur samen ${AR}</button><span class="bigprice" style="font-size:1.4rem">vanaf ${eur(priceOf(m,col))}</span></div></div>`}
+const projCard=p=>`<article class="tile proj">${ph(p.img,p.n+" "+p.p)}<span class="cap"><small class="mono">${p.a} ${p.t}</small><b>${esc(p.n)}</b><small>${esc(p.p)}</small></span></article>`;
+const newsCard=(n,i)=>`<article class="item rv zoomhost" style="cursor:pointer" data-news="${i}">${ph(n[3],n[1],"zoom","aspect-ratio:3/2")}<div style="display:grid;gap:.5rem"><span class="mono muted" style="font-size:.8rem">${n[0]}</span><h3 style="font-size:1.25rem">${esc(n[1])}</h3><span class="tl" style="justify-self:start">Lees meer ${AR}</span></div></article>`;
+function startSlides(){clearInterval(slideT);if(RM)return;slideT=setInterval(()=>{if(current!=="home"){clearInterval(slideT);return}showSlide((curSlide+1)%SLIDES.length)},7000)}
+function showSlide(i){curSlide=(i+SLIDES.length)%SLIDES.length;$$(".slide").forEach((s,j)=>s.classList.toggle("on",curSlide===j));$$("[data-slide]").forEach((b,j)=>b.setAttribute("aria-current",curSlide===j))}
+
+/* ================= LISTING ================= */
+const LIST_PRESET={glasdeuren:"Glas",paneeldeuren:"Paneel",lijndeuren:"Lijn","glas-paneeldeuren":"Glas-/paneel","glas-lijndeuren":"Glas-/lijn",stijldeuren:""};
+const LIST_IMG={stijldeuren:PH.connect,glasdeuren:PH.front,paneeldeuren:PH.deuren,lijndeuren:PH.interieur,"glas-paneeldeuren":PH.deuren,"glas-lijndeuren":PH.connect};
+let LS={};
+function listing(id){
+ const preset=LIST_PRESET[id];
+ LS={type:preset?[preset]:[],color:[],serie:[],kant:[],glass:[],min:"",max:"",sort:"pop",page:1,per:24,id};
+ const box=(k,label,vals,open)=>`<details ${open?"open":""}><summary>${label}</summary>${vals.map(v=>`<label><input type="checkbox" data-f="${k}" value="${esc(v)}" ${LS[k].includes(v)?"checked":""}> ${k==="color"?`<span class="dot" style="background:${COLORS[v].hex}"></span>`:""}${esc(v)}</label>`).join("")}<div style="height:.8rem"></div></details>`;
+ const intro={stijldeuren:"Afgelakte stijldeuren: kant-en-klaar, krasvast en met 10 jaar garantie op de lak. Geleverd en desgewenst gemonteerd door Houtindustrie Ideaal.",glasdeuren:"Binnendeuren met gehard veiligheidsglas, van één groot vlak tot fijne verdelingen.",paneeldeuren:"Tijdloze deuren met verdiepte panelen.",lijndeuren:"Vlakke deuren met gefreesde groeflijnen. LIN01 standaard, VLG03 optioneel.","glas-paneeldeuren":"Glas boven, panelen onder: licht én karakter.","glas-lijndeuren":"Een glasvlak gecombineerd met groeflijnen."}[id]||"";
+ return head(id,intro,LIST_IMG[id])+`<section class="wrap" style="padding-bottom:4rem"><div class="listing">
+ <aside class="filters" id="filters">
+  <details open><summary>Prijs</summary><div class="row"><input type="number" id="fmin" placeholder="Van €" min="0" aria-label="Minimumprijs"><input type="number" id="fmax" placeholder="Tot €" min="0" aria-label="Maximumprijs"></div></details>
+  ${box("type","Type",["Glas","Glas-/lijn","Glas-/paneel","Lijn","Paneel"],!preset)}
+  ${box("serie","Deurenserie",Object.keys(SERIES),true)}
+  ${box("color","Kleur",Object.keys(COLORS),true)}
+  ${box("kant","Kantvorm",["Opdek","Stomp","Stomp recht"])}
+  ${box("glass","Glassoort",GALL)}
+  <button class="btn line sm" id="freset" style="margin-top:1.2rem">Filters wissen</button>
+ </aside>
+ <div style="min-width:0"><div class="listhead"><button class="btn line sm filtertoggle" id="ftoggle">Filters</button><b id="lcount" style="font-size:1.05rem"></b>
+  <span style="display:flex;gap:1.2rem;flex-wrap:wrap"><label>Sorteer <select id="lsort"><option value="pop">Populariteit</option><option value="asc">Prijs oplopend</option><option value="desc">Prijs aflopend</option><option value="code">Deurcode</option></select></label>
+  <label>Toon <select id="lper"><option>24</option><option>48</option><option>96</option></select></label></span></div>
+  <div class="chipbar" id="chips" style="margin-bottom:1.4rem"></div>
+  <div class="grid g4" id="lgrid"></div><div class="pager" id="lpager"></div></div>
+ </div></section>`;
+}
+function drawListing(){
+ let r=MODELS.filter(m=>(!LS.type.length||LS.type.includes(m.type))&&(!LS.color.length||m.colors.some(c=>LS.color.includes(c)))&&(!LS.serie.length||LS.serie.includes(m.serie))&&(!LS.kant.length||m.kant.some(c=>LS.kant.includes(c)))&&(!LS.glass.length||m.glass.some(c=>LS.glass.includes(c)))&&(!LS.min||m.price>=+LS.min)&&(!LS.max||m.price<=+LS.max));
+ if(LS.sort==="asc")r.sort((a,b)=>a.price-b.price);else if(LS.sort==="desc")r.sort((a,b)=>b.price-a.price);else if(LS.sort==="code")r.sort((a,b)=>a.code.localeCompare(b.code));
+ const pages=Math.max(1,Math.ceil(r.length/LS.per));LS.page=Math.min(LS.page,pages);
+ $("#lcount").textContent=`${r.length} ${r.length===1?"deur":"deuren"}`;
+ const active=["type","serie","color","kant","glass"].flatMap(k=>LS[k].map(v=>[k,v]));
+ $("#chips").innerHTML=active.map(([k,v])=>`<button data-unf="${k}" data-v="${esc(v)}">${esc(v)} ✕</button>`).join("");
+ const showColor=m=>LS.color.find(c=>m.colors.includes(c));
+ const g=$("#lgrid");g.classList.remove("fadein");void g.offsetWidth;
+ g.innerHTML=r.slice((LS.page-1)*LS.per,LS.page*LS.per).map(m=>prod(m,showColor(m))).join("")||`<p class="muted">Geen deuren gevonden met deze filters. Wis een of meer filters om meer modellen te zien.</p>`;
+ g.querySelectorAll(".rv").forEach(e=>e.classList.add("in"));g.classList.add("fadein");
+ $("#lpager").innerHTML=pages>1?Array.from({length:pages},(_,i)=>`<button data-page="${i+1}" aria-current="${i+1===LS.page}">${i+1}</button>`).join(""):"";
+}
+
+/* ================= PRODUCT ================= */
+let PD={};
+function product(code){
+ const m=byCode(code);if(!m)return page404();
+ PD={m,color:m.colors[0],glass:m.glass[0],lat:COLORS[m.colors[0]].dark?"Zwart":"Wit",hand:"Rechts",view:"foto"};
+ TITLE.product=m.code;PARENT.product=Object.keys(LIST_PRESET).find(k=>LIST_PRESET[k]===m.type);
+ return `<section class="wrap pagehead" style="padding-bottom:1.6rem"><nav class="crumbs" aria-label="Kruimelpad">${crumbsHtml("product")}</nav></section><section class="wrap"><div class="detail">
+ <div class="gallery"><div class="main" id="pdMain"></div><div class="thumbs" id="pdThumbs"></div></div>
+ <div><span class="mono muted" style="font-size:.82rem;letter-spacing:.05em">${m.serie.toUpperCase()} · ${m.code}</span><h1 style="margin:.5rem 0 1rem;font-size:clamp(2rem,3.4vw,3rem)">${esc(m.name)}</h1>
+ <p class="muted" style="font-size:1.05rem">${esc(SERIES[m.serie])} Kant-en-klaar afgelakt met Superlak®, direct af te hangen.</p>
+ <div class="usprow" style="margin-top:.8rem">${["Superlak®","10 jaar lakgarantie","FSC","KOMO","Kant-en-klaar",...(m.glass.length?["Veiligheidsglas"]:[])].map(u=>`<span>${CHK}${u}</span>`).join("")}</div>
+ <div class="og"><b>Kleur: <span id="pdColor">${PD.color}</span></b><div class="swatches">${m.colors.map(c=>`<button class="sw" data-pd="color" data-v="${c}" aria-pressed="${c===PD.color}" title="${c}" aria-label="${c}" style="background:${COLORS[c].hex}"></button>`).join("")}</div></div>
+ ${m.glass.length?`<div class="og"><b>Glassoort</b><div class="seg">${m.glass.map(g=>`<button data-pd="glass" data-v="${g}" aria-pressed="${g===PD.glass}">${g}</button>`).join("")}</div></div>
+ <div class="og"><b>Glaslatten</b><div class="seg">${Object.keys(LATS).map(l=>`<button data-pd="lat" data-v="${l}" aria-pressed="${l===PD.lat}">${l}</button>`).join("")}</div></div>`:""}
+ <div class="og"><b>Draairichting</b><div class="seg">${["Links","Rechts"].map(l=>`<button data-pd="hand" data-v="${l}" aria-pressed="${l===PD.hand}">${l}</button>`).join("")}</div></div>
+ <div class="og" style="gap:1.1rem"><div><span class="bigprice" id="pdPrice"></span> <small class="muted">bruto adviesprijs incl. btw</small></div>
+ <div style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn" data-cfg="${m.code}">Stel uw deur samen ${AR}</button><button class="btn line" data-go="verkooppunten">Verkooppunten</button><button class="btn line" data-fav="${m.code}" aria-label="Bewaar ${m.code}">♡</button></div></div>
+ <details class="acc" open><summary>Productomschrijving</summary><div><p>De ${esc(m.name)} uit de serie ${m.serie} wordt fabrieksmatig afgelakt en is leverbaar in opdek, stomp en stomp recht. ${m.glass.length?"Het glas is altijd gehard veiligheidsglas, geplaatst met glaslatten met folie-omhulling. ":""}Standaard voorzien van slotgatboring en gemonteerd loopslot.</p></div></details>
+ <details class="acc"><summary>Technische informatie</summary><div class="tablewrap"><table class="spec">
+  <tr><td>Kantvorm</td><td>Opdek / Stomp / Stomp recht</td></tr><tr><td>Kantmodel opdek</td><td>Opdek schuin of opdek recht</td></tr>
+  <tr><td>Standaardbreedtes</td><td class="mono">730 · 780 · 830 · 880 · 930 mm</td></tr><tr><td>Standaardhoogtes</td><td class="mono">2015 · 2115 · 2315 mm</td></tr>
+  <tr><td>Afwijkende maten</td><td class="mono">B 580–1110 · H 1580–2700 mm</td></tr><tr><td>Dikte</td><td class="mono">ca. 39 mm</td></tr>
+  <tr><td>Vulling</td><td>Samengestelde HPC</td></tr><tr><td>Afwerking</td><td>Superlak®, kantfolie in deurkleur op drie zijden, onderzijde afgedicht</td></tr>
+  <tr><td>Voorbewerking</td><td>Slotgatboring, gemonteerd slot; 2–4 paumelleboringen (opdek)</td></tr><tr><td>Keurmerken</td><td>KOMO, FSC</td></tr></table></div></details>
+ <details class="acc"><summary>Downloads</summary><div>${["Verwerkingsvoorschrift|VerwerkingvoorschriftIdeaal.pdf","KOMO attest-met-productcertificaat|20833_13_Houtindustrie_Ideaal.pdf","FSC certificaat|SKH-COC-000527-22-Houtindustrie-Ideaal-B.pdf"].map(s=>{const[a,b]=s.split("|");return `<a class="dl" href="${IDP(b)}" target="_blank" rel="noopener"><span>${a}</span><small>PDF ↗</small></a>`}).join("")}</div></details>
+ </div></div></section>
+ <section class="wrap block"><div class="sh"><div class="l"><span class="kick">Serie ${m.serie}</span><h2>Meer uit deze serie</h2></div>${railNav("serieRail")}</div>${rail("serieRail",MODELS.filter(x=>x.serie===m.serie&&x.code!==m.code).slice(0,10).map(x=>prod(x)).join(""))}</section>`;
+}
+function drawPD(){
+ const m=PD.m;
+ $("#pdMain").innerHTML=PD.view==="schets"?door(m,{color:PD.color,glass:PD.glass,lat:PD.lat,hand:PD.hand,frame:1,frameColor:COLORS[PD.color].hex}):prodImg(m,PD.color);
+ $("#pdThumbs").innerHTML=m.colors.filter(c=>!(c==="Extra wit"&&m.colors.includes("Alpine wit"))).map(c=>`<button data-pdt="${c}" aria-pressed="${PD.view==="foto"&&c===PD.color}" aria-label="Foto ${c}">${prodImg(m,c)}</button>`).join("")+`<button data-pdv="schets" aria-pressed="${PD.view==="schets"}" aria-label="Schets met uw keuzes">${door(m,{color:PD.color,glass:PD.glass,lat:PD.lat,hand:PD.hand})}</button>`;
+ tween($("#pdPrice"),priceOf(m,PD.color)+(PD.glass?GLASS[PD.glass].add:0),"vanaf ");$("#pdColor").textContent=PD.color;
+ $$(".og [data-pd]").forEach(b=>b.setAttribute("aria-pressed",PD[b.dataset.pd]===b.dataset.v));
+}
+function tween(el,to,pre=""){if(!el)return;const from=+el.dataset.v||to;el.dataset.v=to;if(RM||from===to){el.textContent=pre+eur(to);return}const t0=performance.now(),d=500;const f=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=pre+eur(from+(to-from)*e);if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+
+/* ================= CONFIGURATOR ================= */
+const STEPS=["Model","Kleur","Glas & lijnen","Maten","Beslag","Kozijn & opties","Overzicht"];
+const SLOT={"Loopslot":0,"Dag-nachtslot":18,"Vrij-bezetslot":32,"Kastslot":10};
+const EXTRA={"Valdorpel":65,"Ventilatierooster":38,"Groef onderkant":15,"Montage door Ideaal":95};
+let C=store.get("cfg3",null);if(C&&!byCode(C.code))C=null;
+function cfgDefault(code,color){const m=byCode(code||"FR507");const col=color&&m.colors.includes(color)?color:m.colors[0];return{code:m.code,color:col,glass:m.glass[0]||"",lat:COLORS[col].dark?"Zwart":"Wit",line:"LIN01",w:830,h:2315,cw:"",ch:"",kant:"Opdek",kantmodel:"Opdek schuin",hand:"Rechts",slot:"Loopslot",garn:"Amsterdam RVS",koz:"",extras:["Montage door Ideaal"],qty:1,step:code?1:0,typeFilter:"",serieFilter:""}}
+function cfgPrice(){const m=byCode(C.code),rows=[[`${m.name} · ${C.color}`,priceOf(m,C.color)]];
+ if(C.glass&&GLASS[C.glass].add)rows.push(["Glas "+C.glass,GLASS[C.glass].add]);
+ if(C.line==="VLG03"&&/Lijn|lijn/.test(m.type))rows.push(["Lijnvariant VLG03",35]);
+ const w=+(C.cw||C.w),h=+(C.ch||C.h);if(C.cw||C.ch)rows.push(["Afwijkende maat",45]);if(h>2315)rows.push(["Hoogte boven 2315 mm",95]);
+ if(SLOT[C.slot])rows.push([C.slot,SLOT[C.slot]]);if(C.garn&&HOPPE[C.garn])rows.push(["Garnituur Hoppe "+C.garn,HOPPE[C.garn].p]);
+ const k=KOZIJNEN.find(x=>x.id===C.koz);if(k&&k.p)rows.push([k.t,k.p]);
+ C.extras.forEach(e=>rows.push([e,EXTRA[e]]));
+ const per=rows.reduce((a,b)=>a+b[1],0);return{rows,per,total:per*C.qty,w,h}}
+function configurator(code,color){
+ if(code||!C)C=cfgDefault(code,color);
+ return `<section class="wrap pagehead" style="padding-bottom:1.4rem"><nav class="crumbs" aria-label="Kruimelpad">${crumbsHtml("configurator")}</nav><h1>Stel uw deur samen</h1><p class="lead">Kies in zeven stappen model, kleur, glas, maat en beslag. Foto, maatschets en prijs veranderen direct mee.</p></section><section class="wrap" style="padding-bottom:4rem"><div class="cfgbar"><i id="cfgProg"></i></div><div class="cfg"><div class="cstage" id="cfgStage"></div><div><div class="steps" id="cfgSteps"></div><div id="cfgPanel"></div></div></div></section>`;
+}
+let lastStage="";
+function drawCfg(animPanel){
+ store.set("cfg3",C);const m=byCode(C.code),P=cfgPrice();
+ $("#cfgProg").style.width=(C.step/6*100)+"%";
+ const key=C.code+C.color;
+ const photo=`<div class="photo">${prodImg(m,C.color)}</div>`;
+ const sk=`<div class="sk"><div><p class="mono muted" style="font-size:.72rem;margin-bottom:.5rem;letter-spacing:.06em">MAATSCHETS · ${C.hand.toUpperCase()}</p>${door(m,{color:C.color,glass:C.glass,lat:C.lat,hand:C.hand,frame:!!C.koz,frameColor:COLORS[C.color].hex,beslag:C.garn,dims:1,w:P.w,h:P.h})}</div>${C.garn&&HOPPE[C.garn]?`<div class="garn"><img src="${U(hoppeImg(C.garn,C.slot))}" alt="Hoppe ${esc(C.garn)}" loading="lazy"><span>Hoppe ${esc(C.garn)} · ${C.slot}</span></div>`:""}</div>`;
+ const stage=$("#cfgStage");
+ if(lastStage!==key||!stage.querySelector(".photo")){stage.innerHTML=photo+sk+`<div class="total"><span class="mono muted" style="font-size:.8rem">${m.code} · ${C.color}${C.glass?" · "+C.glass:""}</span><b id="cfgTot"></b></div>`;lastStage=key}
+ else{stage.querySelector(".sk").outerHTML=sk;stage.querySelector(".total .mono").textContent=`${m.code} · ${C.color}${C.glass?" · "+C.glass:""}`}
+ tween($("#cfgTot"),P.per);
+ $("#cfgSteps").innerHTML=STEPS.map((s,i)=>`<button data-step="${i}" ${i===C.step?'aria-current="step"':""} class="${i<C.step?"done":""}"><span class="n">0${i+1}</span>${s}</button>`).join("");
+ const seg=(k,vals,lab)=>`<div class="og"><b>${lab}</b><div class="seg">${vals.map(v=>`<button data-c="${k}" data-v="${esc(v)}" aria-pressed="${C[k]==v}">${esc(v)||"Alle"}</button>`).join("")}</div></div>`;
+ let h="";
+ if(C.step===0){h=`<h2>Kies een deurmodel</h2>${seg("serieFilter",["",...Object.keys(SERIES)],"Serie")}${seg("typeFilter",["","Glas","Paneel","Lijn","Glas-/paneel","Glas-/lijn"],"Type")}
+  <div class="modelpick" style="margin-top:.4rem">${MODELS.filter(x=>(!C.typeFilter||x.type===C.typeFilter)&&(!C.serieFilter||x.serie===C.serieFilter)).map(x=>`<button data-pick="${x.code}" aria-pressed="${x.code===C.code}" title="${esc(x.name)}">${prodImg(x)}${x.code}</button>`).join("")}</div>`}
+ else if(C.step===1)h=`<h2>Kies de kleur</h2><p class="muted">Beschikbare kleuren voor de ${m.code}.</p><div class="og" style="border:0"><div class="swatches">${m.colors.map(c=>`<button class="sw" data-c="color" data-v="${c}" aria-pressed="${C.color===c}" title="${c}" aria-label="${c}" style="background:${COLORS[c].hex}"></button>`).join("")}</div></div>
+  <div class="tablewrap"><table class="spec">${m.colors.map(c=>`<tr><td>${c===C.color?"<b style='color:var(--fg)'>"+c+"</b>":c}</td><td class="mono">${COLORS[c].ral}</td><td class="mono" style="text-align:right">${eur(priceOf(m,c))}</td></tr>`).join("")}</table></div>`;
+ else if(C.step===2){h=`<h2>Glas en lijnen</h2>`;
+  if(m.glass.length)h+=`${seg("glass",m.glass,"Glassoort")}<p class="muted" style="font-size:.9rem;margin-top:-.4rem">${esc(GLASS[C.glass]?.d||"")}</p>`+seg("lat",Object.keys(LATS),"Kleur glaslatten");
+  if(/Lijn|lijn/.test(m.type))h+=seg("line",["LIN01","VLG03"],"Lijnvariant");
+  if(!m.glass.length&&!/Lijn|lijn/.test(m.type))h+=`<p class="muted" style="margin-top:1rem">De ${m.code} heeft geen glas of groeflijnen. U kunt door naar de maten.</p>`}
+ else if(C.step===3)h=`<h2>Maten en kantvorm</h2><div class="dim" style="margin-top:1.4rem">
+  <label for="cw0">Breedte (mm)<select id="cw0" data-cs="w">${[730,780,830,880,930].map(v=>`<option ${C.w==v?"selected":""}>${v}</option>`).join("")}</select></label>
+  <label for="ch0">Hoogte (mm)<select id="ch0" data-cs="h">${[2015,2115,2315].map(v=>`<option ${C.h==v?"selected":""}>${v}</option>`).join("")}</select></label>
+  <label for="cw1">Afwijkende breedte<input id="cw1" type="number" data-cs="cw" min="580" max="1110" placeholder="580–1110" value="${C.cw}"></label>
+  <label for="ch1">Afwijkende hoogte<input id="ch1" type="number" data-cs="ch" min="1580" max="2700" placeholder="1580–2700" value="${C.ch}"></label></div>
+  <p class="note" style="margin-top:1rem">Maximale breedte 1110 mm tot 2500 mm hoog, 1030 mm tot 2700 mm hoog.</p>
+  ${seg("kant",m.kant,"Kantvorm")}${C.kant==="Opdek"?seg("kantmodel",["Opdek schuin","Opdek recht"],"Kantmodel"):""}`;
+ else if(C.step===4)h=`<h2>Draairichting en beslag</h2>${seg("hand",["Links","Rechts"],"Draairichting")}${seg("slot",Object.keys(SLOT),"Slot")}
+  <div class="og"><b>Garnituur <span>· Hoppe</span></b><div class="garnpick"><button data-c="garn" data-v="" aria-pressed="${!C.garn}"><span class="none">Zonder</span>Zonder garnituur</button>${Object.keys(HOPPE).map(g=>`<button data-c="garn" data-v="${g}" aria-pressed="${C.garn===g}"><img src="${U(hoppeImg(g,C.slot))}" alt="Hoppe ${g}" loading="lazy">${g}<span class="muted mono" style="font-weight:400">+ ${eur(HOPPE[g].p)}</span></button>`).join("")}</div></div>`;
+ else if(C.step===5)h=`<h2>Kozijn en opties</h2><div class="og"><b>Kozijn</b><div class="seg"><button data-c="koz" data-v="" aria-pressed="${!C.koz}">Geen kozijn</button>${KOZIJNEN.filter(k=>k.p).map(k=>`<button data-c="koz" data-v="${k.id}" aria-pressed="${C.koz===k.id}">${k.t}</button>`).join("")}</div></div>
+  <div class="og"><b>Extra opties</b>${Object.keys(EXTRA).map((e,i)=>`<label for="ex${i}" style="display:flex;gap:.7rem;align-items:center;cursor:pointer"><input id="ex${i}" type="checkbox" data-ex="${e}" ${C.extras.includes(e)?"checked":""} style="accent-color:var(--brand);width:18px;height:18px"> ${e} <span class="muted mono" style="margin-left:auto">+ ${eur(EXTRA[e])}</span></label>`).join("")}</div>
+  <div class="og"><label for="cq" style="display:flex;gap:.9rem;align-items:center;font-weight:700">Aantal deuren <input id="cq" type="number" min="1" max="999" data-cs="qty" value="${C.qty}" style="width:6.5rem;padding:.6rem;border:1px solid var(--line)"></label></div>`;
+ else{h=`<h2>Overzicht en offerte</h2><div class="summary" style="margin:1.4rem 0"><table>${P.rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${eur(r[1])}</td></tr>`).join("")}
+  <tr><td>Maat · kant · draairichting</td><td class="mono">${P.w}×${P.h} · ${C.kant} · ${C.hand}</td></tr><tr><td>Aantal</td><td>${C.qty}×</td></tr>
+  <tr class="total"><td>Totaal indicatief</td><td>${eur(P.total)}</td></tr></table></div>
+  <p class="note" style="margin-bottom:1.4rem">Houtindustrie Ideaal levert aan de zakelijke markt. Particulieren bestellen via hun aannemer of een verkooppunt; wij sturen uw samenstelling daar naartoe.</p>
+  <form class="form" id="quote"><label for="qa">Aanhef<select id="qa"><option>dhr.</option><option>mevr.</option></select></label><label for="qn">Naam *<input id="qn" required autocomplete="name"></label>
+  <label for="qb">Bedrijfsnaam<input id="qb" autocomplete="organization"></label><label for="qr">Ik ben<select id="qr"><option>Aannemer / bouwbedrijf</option><option>Dealer / verkooppunt</option><option>Projectontwikkelaar</option><option>Particulier</option></select></label>
+  <label for="qe">E-mail *<input id="qe" type="email" required autocomplete="email"></label><label for="qp">Telefoon *<input id="qp" required autocomplete="tel"></label>
+  <label for="qj">Projectnaam<input id="qj"></label><label for="qnr">Bouwnummer<input id="qnr"></label>
+  <label class="full" for="qm">Opmerkingen<textarea id="qm" rows="3" placeholder="Bijv. gewenste leverweek"></textarea></label>
+  <div class="full" style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn" type="submit">Offerte aanvragen ${AR}</button><button class="btn line" type="button" id="copyQuote">Kopieer overzicht</button></div></form>`}
+ const panel=$("#cfgPanel");panel.innerHTML=h+`<div class="navbtns">${C.step>0?`<button class="btn line" data-step="${C.step-1}">← Vorige</button>`:"<span></span>"}${C.step<6?`<button class="btn" data-step="${C.step+1}">Volgende: ${STEPS[C.step+1]} ${AR}</button>`:""}</div>`;
+ if(animPanel){panel.classList.remove("anim");void panel.offsetWidth;panel.classList.add("anim")}
+}
+function quoteText(){const P=cfgPrice();return["Deurconfiguratie Houtindustrie Ideaal",...P.rows.map(r=>`${r[0]}: ${eur(r[1])}`),`Maat: ${P.w} x ${P.h} mm, ${C.kant}, draairichting ${C.hand}`,`Aantal: ${C.qty}`,`Totaal indicatief: ${eur(P.total)}`].join("\n")}
+
+/* ================= SHOP ================= */
+function shopItem(it){return `<article class="item rv">${it.lak?`<div class="lakstift"><i style="background:${it.lak}"></i></div>`:`<div class="fig sq"><img src="${U(it.img)}" alt="${esc(it.n)}" loading="lazy"></div>`}<div style="display:grid;gap:.5rem"><h3 style="font-size:1rem">${esc(it.n)}</h3><span style="font-weight:700">${eur2(it.p)}</span><button class="btn sm" data-add="${esc(it.n)}" style="justify-self:start">In winkelwagen</button></div></article>`}
+function shop(cat){
+ const cats=cat?[cat]:Object.keys(SHOP);
+ return head(cat?"shop-"+cat:"serviceshop","Garnituren, sloten, schuifdeurkommen en lakstiften voor onderhoud en vervanging. Verzendkosten € 6,95, gratis vanaf € 75.",cat?null:PH.kruk)+`<section class="wrap" style="padding-block:1rem 4rem">${cat?"":`<div class="filterchips rv" style="margin-bottom:1rem">${Object.keys(SHOP).map(k=>`<button data-go="shop-${k}">${SHOPCAT[k]}</button>`).join("")}</div>`}
+ ${cats.map(c=>`<div class="sh" style="margin:3rem 0 1.6rem"><h2 class="rv" style="font-size:1.8rem">${SHOPCAT[c]}</h2></div><div class="grid g4">${SHOP[c].map(shopItem).join("")}</div>`).join("")}</section>`;
+}
+const allShop=()=>Object.values(SHOP).flat();
+function drawCart(){
+ const sub=cart.reduce((a,b)=>a+b.p*b.q,0),ship=sub>=75||!sub?0:6.95;
+ $("#cart").innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-size:1.6rem">Winkelwagen</h2><button class="iconbtn" data-close="cart" aria-label="Sluiten"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+ <div class="items">${cart.length?cart.map((it,i)=>`<div class="citem"><div class="im">${it.lak?`<i style="width:60%;aspect-ratio:1;border-radius:50%;background:${it.lak}"></i>`:`<img src="${U(it.img)}" alt="">`}</div><div><b style="font-size:.92rem">${esc(it.n)}</b><div class="qty"><button data-q="${i}" data-d="-1" aria-label="Minder">−</button><span class="mono">${it.q}</span><button data-q="${i}" data-d="1" aria-label="Meer">+</button></div></div><span class="mono">${eur2(it.p*it.q)}</span></div>`).join(""):`<p class="muted" style="padding-top:1rem">Uw winkelwagen is leeg. Bekijk de <a class="tl" data-go="serviceshop">serviceshop</a>.</p>`}</div>
+ <table class="spec"><tr><td>Subtotaal</td><td class="mono" style="text-align:right">${eur2(sub)}</td></tr><tr><td>Verzending</td><td class="mono" style="text-align:right">${ship?eur2(ship):"gratis"}</td></tr><tr><td><b style="color:var(--fg)">Totaal incl. verzending</b></td><td class="mono" style="text-align:right"><b>${eur2(sub+ship)}</b></td></tr></table>
+ <button class="btn" style="margin-top:1.2rem;width:100%" data-go="checkout" ${cart.length?"":"disabled"}>Afrekenen ${AR}</button>`;
+}
+function checkout(){const sub=cart.reduce((a,b)=>a+b.p*b.q,0);return head("checkout","Controleer uw bestelling en vul uw gegevens in.")+`<section class="wrap" style="padding-bottom:4rem"><div class="split top"><form class="form" id="co"><label for="con">Naam *<input id="con" required></label><label for="coe">E-mail *<input id="coe" type="email" required></label><label class="full" for="coa">Adres *<input id="coa" required></label><label for="cop">Postcode *<input id="cop" required></label><label for="cos">Plaats *<input id="cos" required></label><div class="full"><button class="btn" type="submit">Bestelling plaatsen ${AR}</button></div></form>
+ <div class="summary" style="background:var(--tint);padding:1.8rem"><h3 style="margin-bottom:1rem">Uw bestelling</h3><table>${cart.map(i=>`<tr><td>${i.q}× ${esc(i.n)}</td><td>${eur2(i.p*i.q)}</td></tr>`).join("")||"<tr><td>Geen artikelen</td><td></td></tr>"}<tr class="total"><td>Subtotaal</td><td>${eur2(sub)}</td></tr></table></div></div></section>`}
+
+/* ================= PAGINA'S ================= */
+const HUBINTRO={assortiment:"Alles voor de binnendeur: stijldeuren, deuren voor woning- en utiliteitsbouw, kozijnen, beslag en afwerkopties. Geleverd en desgewenst gemonteerd door Houtindustrie Ideaal.",binnendeuren:"Houten binnendeuren uit eigen fabriek, voor woningbouw en utiliteitsbouw.",inspiratie:"Ideeën voor het interieur, van kleurtrends tot projecten die we realiseerden.",professionals:"Voor aannemers, ontwikkelaars, architecten en dealers: techniek, logistiek en montage uit één hand.",technische:"Aan deuren in de utiliteitsbouw worden andere eisen gesteld. Alle standaard- en speciale deuren zijn leverbaar met GND-zekerheidsklasse.",kozijnen:"Montagekozijnen die naadloos aansluiten op de deuren, inclusief plaatsing.",beslag:"Het juiste hang- en sluitwerk maakt de deur af.",deuropties:"Kleuren, glassoorten en lijnvarianten.",stomp:"Praktische informatie voor het verwerken van afgelakte deuren.",serviceshop:""};
+const HUBTOP={assortiment:PH.front,inspiratie:PH.connect,professionals:PH.fabriek,binnendeuren:PH.hout,kozijnen:PH.kozijnzwart,beslag:PH.zwartgarn,technische:PH.utiliteit,deuropties:PH.nuance,stomp:PH.zwartgarn};
+const IMGFOR={stijldeuren:PH.connect,binnendeuren:PH.hout,kozijnen:PH.kozijnhout,beslag:IDP("Hoppe-Amsterdam-RVS.jpg"),deuropties:PH.nuance,glasdeuren:PH.front,paneeldeuren:PH.deuren,lijndeuren:PH.interieur,"glas-paneeldeuren":PH.deuren,"glas-lijndeuren":PH.connect,prijslijst:PH.staal,woningbouw:PH.woningbouw,utiliteitsbouw:PH.utiliteit,profilux:PH.ind1,technische:PH.utiliteit,hpl:IDP(HPL[2][1]),garnituren:IDP("Hoppe-Tokyo-F1.jpg"),schuifdeuren:PH.schuif,superlak:PH.staal,glassoorten:PH.zwartgarn,lijnvarianten:PH.interieur,configurator:PH.front,trends:PH.nuance,projecten:PROJ[0].img,montage:PH.fabriek,gnd:PH.gnd,brandwerend:PH.utiliteit,geluidwerend:PH.brochure,inbraakwerend:PH.ind11,downloads:PH.brochure,links:PH.hout,koperskeuze:PROJ[4].img,dealerportal:PH.fabriek,brandstoftoeslag:PH.woningbouw,stomp:PH.zwartgarn,"stomp-monteren":PH.zwartgarn,"stomp-schaven":PH.ind6,"stomp-opmaat":PH.ind3};
+function imgFor(k){return IMGFOR[k.id]||KOZIJNEN.find(x=>"koz-"+x.id===k.id)?.img||(k.id.startsWith("trend-")?trendImg(+k.id.slice(6)):null)||(k.id.startsWith("shop-")?(SHOP[k.id.slice(5)][0].img||IDP("Hoppe-Bonn-RVS.jpg")):PH.deuren)}
+function hub(id){const n=NODE[id];
+ let extra="";
+ if(id==="assortiment")extra=`<section class="tintbg"><div class="wrap block"><div class="sh"><div class="l"><span class="kick">Uitgelicht</span><h2>Populaire stijldeuren</h2></div>${railNav("popRail")}</div>${rail("popRail",[["FR507","Diep zwart"],["NDB901","Metallic brons"],["AL13"],["CE104","Diep zwart"],["NC103","Leem taupe"],["CN07"],["FM03"],["CA04"]].map(([c,col])=>prod(byCode(c),col)).join(""))}</div></section>`;
+ return head(id,HUBINTRO[id]||"",HUBTOP[id]||PH.hout)+`<section class="wrap" style="padding-block:1rem 4rem"><div class="grid g3">${n.kids.map((k,i)=>tile(k.id,k.t,imgFor(k),"","",String(i+1).padStart(2,"0"))).join("")}</div></section>`+extra}
+const CONTENT={
+ woningbouw:{img:PH.woningbouw,i:"Houtindustrie Ideaal produceert en levert een groot scala aan binnendeuren, kozijnen en hang- en sluitwerk voor de woningbouw. Van het standaard afgelakte binnendeurenassortiment Profal tot de luxe afgelakte binnendeuren uit het Profiluxe- en Profiline-programma. Kant-en-klaar, in opdek of stomp, vlak, met luxe glasopeningen met veiligheidsbeglazing of als groeflijndeur.",groups:1,cta:[["Koperskeuze intake","koperskeuze"],["Deur-Kozijn-Montage","montage"]]},
+ utiliteitsbouw:{img:PH.utiliteit,i:"Boarddeuren, fineerdeuren en Paletdeuren voor scholen, bioscopen, verzorgingscentra, ziekenhuizen en kantoren. Leverbaar brandwerend, inbraakwerend, geluidwerend en rookwerend, met GND-zekerheidsklasse I, II of III voor gegarandeerde zekerheid.",grid:HPL.map(([t,f])=>[t,IDP(f)]),gridTitle:"HPL-decors",cta:[["GND-deuren","gnd"],["Technische deuren","technische"]]},
+ profilux:{img:PH.ind1,i:"Houtindustrie Ideaal ontwikkelde als eerste in Nederland een zwart UV-gelakte houten binnendeur met de uitstraling van een industriële stalen deur. De deur wordt in onze fabriek afgewerkt en hoeft op de bouw niet meer gelakt te worden.",l3:[["Goedkoper dan staal","Voordeliger dan een stalen deur en dan een zwart voorbewerkte deur die nog gelakt moet worden."],["Compleet geleverd","Leverbaar met verdekte scharnieren, magneetslot met bijpassend garnituur en optioneel een valdorpel."],["Professionele markt","Wij leveren de Profilux Industriële deur uitsluitend aan de professionele markt."]],gallery:[PH.ind1,PH.ind3,PH.ind6,PH.ind10,PH.ind11],cta:[["Vraag informatie aan","contact"]]},
+ hpl:{img:PH.utiliteit,i:"Deuren met een HPL-toplaag zijn extreem slijtvast en geschikt voor scholen, sporthallen, zorg en andere omgevingen met intensief gebruik.",grid:HPL.map(([t,f])=>[t,IDP(f)]),gridTitle:"Uit de HPL-collectie",dl:[["HPL voor deuren 2025","Formica-Door-Collection-NL-2025.pdf"],["Formica collectie deuren","Formica-Collection-Doors-NL.pdf"]]},
+ brandwerend:{img:PH.utiliteit,i:"Brandwerende deuren getest volgens NEN 6069 en EN 1634-1, leverbaar met GND-zekerheidsklasse. Labels op de zijkant van de deur tonen de klasse en de brandwerendheid in minuten.",spec:[["Brandwerendheid","Wbdbo 30 en 60 minuten"],["Deurdikte","40 en 54 mm"],["Uitvoering","Enkel en dubbel, met of zonder glas"],["Kozijn","Stalen en houten (montage)kozijnen"]],dl:DL[5][1].filter(d=>/wbdbo/i.test(d[1])).slice(0,6)},
+ geluidwerend:{img:PH.brochure,i:"Geluidwerende binnendeuren voor appartementen, kantoren en zorg. Met een GND-zekerheidsklasse heeft u zekerheid over de prestaties in de praktijk.",spec:[["Geluidwering","Tot 41 dB, afhankelijk van uitvoering"],["Combinatie","Ook brandwerend uitvoerbaar"],["Dorpel","Valdorpel"]]},
+ inbraakwerend:{img:PH.ind11,i:"Inbraakwerende deuren, getest in stalen kozijnen, binnen- en buitendraaiend. De B-I-G-DOOR combineert brand-, inbraak- en geluidwering in één inpandige woningtoegangsdeur van 54 mm.",dl:DL[5][1].slice(0,3)},
+ superlak:{img:PH.staal,i:"Superlak® is een hoogwaardige lakafwerking die in het productieproces wordt aangebracht: krasvast en slijtvast, ongevoelig voor uv-licht, oplosmiddelvrij en emissiearm. 10 jaar garantie op de lak.",sw:1},
+ glassoorten:{img:PH.zwartgarn,i:"Al het glas is gehard veiligheidsglas. Kies uit zeven soorten, van helder tot getint.",gl:1},
+ lijnvarianten:{img:PH.interieur,i:"Groeflijnen gefreesd in de vlakke, afgelakte deur.",l3:[["LIN01 · standaard","De standaardgroef: smal en strak."],["VLG03 · optioneel","Een bredere V-groef met meer schaduwwerking."]],models:["AL11","AL13","AL14","AL15","AL21","AL24"]},
+ prijslijst:{img:PH.staal,i:"Een overzicht van de collectie met bruto adviesprijzen incl. btw, per deur in standaardmaat. Meerprijzen voor kleur, glas en maatwerk staan per model vermeld.",table:1},
+ montage:{img:PH.fabriek,i:"Naast binnendeuren levert Houtindustrie Ideaal houten en stalen montagekozijnen inclusief montage. Dit ontzorgingsconcept Deur-Kozijn-Montage introduceerden we ruim 20 jaar geleden en het is sindsdien continu verbeterd. U zorgt alleen voor een gat in de muur, wij doen de rest.",l3:[["Wat wij doen","Begeleiding van het aspect binnendeuren, werkvoorbereiding, transport, coördinatie op de bouwplaats, leveren en monteren van deur- en kozijncombinaties, glas en glaslatten, hang- en sluitwerk en panelen."],["Just-in-Time","Alles staat op afroep klaar. We werken per dagmontage en laten niets ongemonteerd achter, zodat het bouwproject geen oponthoud ondervindt."],["Voordelen","Geen opslag op de bouwplaats, veel minder faalkosten, automatische controle op de voorschriften, snellere doorlooptijd en afvoer van verpakkingsafval."]],cta:[["Bekijk projecten","projecten"],["Neem contact op","contact"]]},
+ gnd:{img:PH.gnd,i:"Houtindustrie Ideaal is aangesloten bij Stichting GARANTIEDEUREN (GND), een garantiesysteem voor brandwerende deuren. Alle standaard- en speciale deuren zijn leverbaar met een GND-zekerheidsklasse.",l3:[["Klasse I","Het deurblad is gegarandeerd conform het testcertificaat."],["Klasse II","Deurblad én hang- en sluitwerk zijn gegarandeerd conform het testcertificaat."],["Klasse III","Deurblad, hang- en sluitwerk en kozijn gegarandeerd; montage door of onder verantwoording van de fabrikant en controle van de wandconstructie op basis van brandtestrapporten."]],s:[["Wat GND garandeert","Productie volgens de technische specificaties van het testrapport, testen volgens NEN 6069 en EN 1634-1 door een geaccrediteerde instantie, en vastgelegde verantwoordelijkheden voor alle betrokken partijen."],["Zonder klasse","Ook zonder zekerheidsklasse leveren wij het 3-in-1 systeem: deuren, kozijnen, beglazing en hang- en sluitwerk inclusief montage."]],dl:[["Brandveiligheid (bedrijfsfolder GND)","Bedrijfsfolder-GND-148x210mm-DEFONLINE.pdf"]]},
+ duurzaamheid:{img:PH.hout,i:"Hout is de basisgrondstof van onze binnendeuren: een natuurproduct dat in bepaalde soorten schaars is. Daarom produceerden we al milieubewust lang voordat de huidige eisen golden. Duurzaam in het kwadraat: duurzame producten én duurzame processen.",l3:[["Frame","Gevingerlast vurenhout van duurzaam verbouwde houtplantages, gemaakt van restpartijen: weinig vervorming en nagenoeg geen noesten."],["Dekplaat en vulling","HDF HOMADUR vezelplaat van onbehandeld hout met low-formaldehyde lijmsystemen; vulling van honingraatkarton van gerecycled papier."],["Afwerking en proces","UV-lak zonder oplosmiddelen. QRM in de fabriek en de LEAN-methode bij levering en montage beperken verspilling."]],cert:1},
+ "over-ons":{img:PH.fabriek,i:"Houtindustrie Ideaal is een no-nonsense deurenfabriek. Al sinds 1958 produceren we in Zevenaar binnendeuren voor de woningbouw en de utiliteitsbouw: deuren met reële functionaliteit voor een normale prijs. Bijzondere specificaties zoals geluidwerende, brandwerende of verdiepingsscheidende deuren adviseren we alleen als de klant ze echt nodig heeft.",l3:[["Korte lijnen","Projecten worden van begin tot eind behandeld door één en dezelfde persoon. U heeft altijd één aanspreekpunt."],["Flexibel","Hoe goed een project ook is voorbereid, er verandert altijd iets. Wij leveren Just-in-Time en reageren snel op gewijzigde specificaties of ordergroottes."],["Duurzaam","Grondstoffen en bewerkingsprocessen voldoen ruim aan de eisen op het gebied van milieu en duurzaamheid: onze deuren zijn groen."],["Innovatief","We ontwikkelen samen met u deuren met bijzondere specificaties, zoals een schuifdeurkozijn met Ergo-til-lift systeem."]],qrm:1},
+ "stomp-monteren":{img:PH.zwartgarn,i:"Stompe deuren worden pas- en armgeschaafd geleverd, zonder scharnierkrozingen; die zijn op aanvraag fabrieksmatig aan te brengen. Stompe deuren zijn als draai- of schuifdeur toe te passen.",dl:[["Verwerkingsvoorschrift","VerwerkingvoorschriftIdeaal.pdf"],["Montagevoorwaarden","montagevoorwaardenideaal2018.pdf"]]},
+ "stomp-schaven":{img:PH.ind6,i:"Afgelakte deuren direct na ontvangst beschermen tegen vocht, hitte en schade. Volg bij schaven en afhangen altijd het verwerkingsvoorschrift; afgewerkte deuren opslaan en behandelen als afgewerkte producten.",dl:[["Verwerkingsvoorschrift","VerwerkingvoorschriftIdeaal.pdf"]]},
+ "stomp-opmaat":{img:PH.ind3,i:"Deuren op maat tussen 580–1110 mm breed en 1580–2700 mm hoog, fabrieksmatig afgelakt. Verdiepingshoge deuren tot 2700 mm geven ruimte en rust zonder bovenlicht."},
+ dealerportal:{img:PH.fabriek,i:"Het dealerportal geeft verkooppunten toegang tot netto prijzen, orderstatus en documentatie.",login:1},
+ koperskeuze:{img:PROJ[4].img,i:"Kopers in een nieuwbouwproject kiezen hier hun binnendeuren binnen de opties van hun project. Deze omgeving is beveiligd met een wachtwoord; dat ontvangt u van uw projectontwikkelaar of aannemer.",kk:1},
+ brandstoftoeslag:{img:PH.woningbouw,i:"Door de ontwikkelingen in het Midden-Oosten zijn de brandstofprijzen structureel hoger en onvoorspelbaar. Dat raakt direct onze transportkosten. Daarom geldt vanaf 15 april 2026 een tijdelijke brandstoftoeslag.",l3:[["Hoe het werkt","De toeslag staat los van de reguliere prijsafspraken en is gekoppeld aan de actuele dieselprijs, met een referentieniveau van € 1,70 excl. btw (TLN-brandstofmonitor). De hoogte wordt wekelijks vastgesteld en hier gepubliceerd."],["Per levering","De toeslag geldt per levering en per afleveradres en staat apart op de factuur. Bestaat een levering uit meerdere orders, dan rekenen we hem één keer."],["Kosten beperken","Bundel of combineer leveringen op één adres. Zodra de dieselprijs weer op of onder het referentieniveau komt, vervalt de toeslag."]]},
+ vacatures:{img:PH.vacatures,i:"Houtindustrie Ideaal is landelijk actief en fabriceert hoogwaardige houten binnendeuren en binnendeurkozijnen voor bouwondernemingen, bouwmaterialenhandelaren en afhangbedrijven in heel Nederland. Een stabiele, groeiende organisatie met een prettige werksfeer, sinds 1958 in Zevenaar.",vac:1},
+ nieuws:{img:PH.nieuws,i:"Nieuws uit de fabriek, de projecten en de branche.",news:1},
+ downloads:{img:PH.brochure,i:"Certificaten, voorwaarden, werkvoorbereiding en testrapporten om direct te downloaden.",dls:1},
+ links:{img:PH.hout,i:"Organisaties waarmee Houtindustrie Ideaal samenwerkt of waarbij we zijn aangesloten.",links:1},
+ faq:{i:"Antwoorden op de meest gestelde vragen.",faq:1},
+ garantie:{i:"De garantievoorwaarden van Houtindustrie Ideaal voor geleverde deuren.",garantie:1},
+ privacy:{i:"Hoe Houtindustrie Ideaal omgaat met persoonsgegevens. De tekst van de huidige privacyverklaring wordt hier ongewijzigd overgenomen."}
+};
+function dlList(list){return list.map(([t,f])=>`<a class="dl" href="${IDP(f)}" target="_blank" rel="noopener"><span>${esc(t)}</span><small>PDF ↗</small></a>`).join("")}
+function content(id){
+ const c=CONTENT[id]||{};
+ let h=head(id,c.i||"",c.img);
+ h+=`<section class="wrap" style="padding-block:1rem 3rem">`;
+ if(c.s||c.spec||c.dl||c.sw||c.table||c.cta){
+  h+=`<div class="${c.spec||c.dl?"split top":""}"><div class="prose">`;
+  (c.s||[]).forEach(([t,p])=>h+=`<div class="rv"><h3>${esc(t)}</h3><p class="muted" style="margin-top:.4rem">${esc(p)}</p></div>`);
+  if(c.sw)h+=`<div class="swatches rv" style="gap:1.6rem">${["Alpine wit","Extra wit","Diep zwart"].map(k=>`<div style="display:grid;gap:.5rem;justify-items:center"><span class="sw" style="width:84px;height:84px;background:${COLORS[k].hex};cursor:default"></span><b style="font-size:.9rem">${k}</b><small class="muted mono">${COLORS[k].ral}</small></div>`).join("")}</div><p class="muted rv">Daarnaast zijn per serie leverbaar: leem taupe, cacao bruin, metallic brons, licht eiken en donker eiken.</p>`;
+  if(c.spec)h+=`<div class="tablewrap rv"><table class="spec">${c.spec.map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join("")}</table></div>`;
+  if(c.table)h+=`<div class="tablewrap rv"><table class="spec">${Object.keys(SERIES).map(s=>{const l=MODELS.filter(m=>m.serie===s);return `<tr><td><a class="tl" data-serie="${s}">${s}</a></td><td class="mono">${l.length} modellen</td><td class="mono" style="text-align:right">vanaf ${eur(Math.min(...l.map(m=>m.price)))}</td></tr>`}).join("")}</table></div>`;
+  if(c.cta)h+=`<div class="rv" style="display:flex;gap:.7rem;flex-wrap:wrap">${c.cta.map(([l,g],i)=>`<button class="btn ${i?"line":""}" data-go="${g}">${l} ${i?"":AR}</button>`).join("")}</div>`;
+  h+=`</div>`;
+  if(c.dl)h+=`<div class="rv"><h3 style="margin-bottom:.6rem">Documentatie</h3>${dlList(c.dl)}</div>`;
+  h+=`</div>`;
+ }
+ if(c.lever)h+="";
+ if(c.login)h+=`<form class="form rv" id="dealer" style="max-width:32rem"><label class="full" for="dn">Dealernummer<input id="dn" required></label><label class="full" for="dw">Wachtwoord<input id="dw" type="password" required></label><div class="full"><button class="btn" type="submit">Inloggen ${AR}</button></div></form>`;
+ if(c.kk)h+=`<form class="form rv" id="kk" style="max-width:32rem"><label class="full" for="kw">Wachtwoord<input id="kw" type="password" required></label><div class="full" style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn" type="submit">Naar mijn project ${AR}</button><button class="btn line" type="button" data-go="configurator">Bekijk de deuren</button></div></form>`;
+ if(c.faq)h+=`<div style="max-width:52rem">${[["Leveren jullie aan particulieren?","Houtindustrie Ideaal richt zich op de zakelijke markt en levert niet direct aan particulieren. Was Ideaal leverancier tijdens de bouw van uw woning, dan kunt u het contactformulier invullen met uw projectnaam en bouwnummer."],["Hoe lang is de garantie?","Op geleverde deuren geldt 1 jaar garantie na factuurdatum volgens onze garantievoorwaarden. Op Superlak® afgelakte stijldeuren geldt 10 jaar garantie op de lak."],["Kan ik een afgelakte deur inkorten of schaven?","Ja, volg daarbij altijd het verwerkingsvoorschrift en dicht bewerkte kanten direct af."],["Wat is het verschil tussen opdek en stomp?","Een opdekdeur valt met een sponning over het kozijn; een stompe deur valt vlak in het kozijn."],["Monteren jullie ook?","Ja. Met ons Deur-Kozijn-Montage concept leveren en monteren we deuren, kozijnen, glas en hang- en sluitwerk Just-in-Time."],["Wat is een GND-zekerheidsklasse?","Een garantie dat brandwerende deuren in de praktijk presteren zoals getest. Klasse I geldt voor het deurblad, klasse II ook voor hang- en sluitwerk, klasse III ook voor het kozijn en de montage."]].map(([q,a])=>`<details class="acc rv"><summary>${q}</summary><div><p class="muted">${a}</p></div></details>`).join("")}</div>`;
+ if(c.garantie)h+=`<div class="list3">${[["Termijn","1 jaar na factuurdatum, voor hinderlijke gebreken als gevolg van materiaal- en/of constructiefouten. Herstel ter plaatse of in de fabriek, of vervanging van ondeugdelijke eenheden."],["Voorwaarden","De deuren zijn vakkundig behandeld en de instructiebladen zijn nauwkeurig opgevolgd: direct na ontvangst beschermen tegen vocht, hitte en schade; afgewerkte deuren behandelen als afgewerkte producten."],["Uitsluitingen","Kleur- en structuurverschillen door natuurlijk hout, kleurafwijkingen bij gelakte deuren, luchtvochtigheid van 40% of lager of 75% of hoger, eenzijdige verwarming, en afhang- en schilderkosten."]].map(([t,d])=>`<div class="rv"><h3>${t}</h3><p class="muted">${d}</p></div>`).join("")}</div><p class="note rv" style="margin-top:2rem">Op Superlak® afgelakte stijldeuren geldt daarnaast 10 jaar garantie op de lak.</p>`;
+ h+=`</section>`;
+ if(c.l3)h+=`<section class="${c.qrm?"":"tintbg"}"><div class="wrap block"><div class="list3">${c.l3.map(([t,p],i)=>`<div class="rv" style="--d:${i*.08}s"><span class="nr">0${i+1}</span><h3>${esc(t)}</h3><p class="muted">${esc(p)}</p></div>`).join("")}</div>${c.cta&&!(c.s||c.spec||c.dl)?"":""}</div></section>`;
+ if(c.qrm)h+=`<section class="night"><div class="wrap block"><div class="split"><div class="prose"><span class="kick rv">Quick Response Manufacturing</span><h2 class="rv">Kortere doorlooptijden in de hele organisatie</h2><p class="muted rv">Al jaren steken we veel tijd en energie in QRM: een bedrijfsbrede aanpak om doorlooptijden terug te brengen, van orderverwerking en productie tot de aanlevering van grondstoffen en de levering aan de bouw.</p><div class="stats rv"><div><b class="count" data-to="50" data-pre="±" data-suf="%">±50%</b><span class="muted">kortere doorlooptijd</span></div><div><b>Laat</b><span class="muted">wijzigen nog mogelijk</span></div><div><b>Minder</b><span class="muted">voorraadkosten</span></div></div><p class="muted rv">Meer weten over QRM bij Ideaal? Neem contact op met Frank Kasper, bedrijfsleider.</p></div>${ph(PH.ind3,"Profilux Industriële deur","land plx rv")}</div></div></section>`;
+ if(c.cert)h+=`<section class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Keurmerken</span><h2 class="rv">Gecertificeerd en aangesloten</h2></div></div><div class="grid g4">${[["fsc.svg","FSC","Verantwoord geproduceerd hout"],["komo.png","KOMO","Kwaliteitskeurmerk voor de bouw"],["gnd.png","GND","Garantiedeuren"],["fnd.png","FND","Federatie Nederlandse Deurenindustrie"],["nbvt.png","NBvT","Nederlandse Bond van Timmerfabrikanten"]].map(([f,t,d])=>`<article class="item rv"><div class="fig sq" style="padding:2.4rem"><img src="${U(IDP(f))}" alt="${t}" loading="lazy" data-fallback="<b>${t}</b>"></div><div><h3 style="font-size:1rem">${t}</h3><p class="muted" style="font-size:.88rem">${d}</p></div></article>`).join("")}</div></section>`;
+ if(c.groups){const gs=[...new Set(IDEAAL.map(x=>x.g))];h+=`<section class="tintbg"><div class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Ideaal-programma</span><h2 class="rv">Uit ons woningbouwassortiment</h2></div></div><div class="tabs rv" style="margin-bottom:2rem">${gs.map((g,i)=>`<button data-idg="${g}" aria-selected="${i===0}">${g}</button>`).join("")}</div><div class="grid g4" id="idgrid">${idGrid(gs[0])}</div></div></section>`}
+ if(c.grid)h+=`<section class="wrap block"><div class="sh"><div class="l"><h2 class="rv">${c.gridTitle||"Uit het assortiment"}</h2></div></div><div class="grid g4">${c.grid.map(([t,f])=>itemCard(t,f)).join("")}</div></section>`;
+ if(c.gallery)h+=`<section class="night"><div class="wrap block"><div class="sh"><div class="l"><span class="kick rv">Galerij</span><h2 class="rv">Profilux in beeld</h2></div>${railNav("galRail")}</div>${rail("galRail",c.gallery.map((g,i)=>`<div class="tile wide" style="cursor:default">${ph(g,"Profilux Industriële deur "+(i+1))}</div>`).join(""),"wide")}</div></section>`;
+ if(c.gl)h+=`<section class="tintbg"><div class="wrap block"><div class="grid g4">${GALL.map(g=>`<article class="item rv"><div class="fig" style="background:#fff">${door(byCode("AE10"),{glass:g})}</div><div><h3 style="font-size:1rem">${g}</h3><p class="muted" style="font-size:.88rem">${GLASS[g].d}</p></div></article>`).join("")}</div></div></section>`;
+ if(c.models)h+=`<section class="wrap block"><div class="sh"><div class="l"><h2 class="rv">Lijndeuren</h2></div><a class="tl" data-go="lijndeuren">Alle lijndeuren ${AR}</a></div><div class="grid g4">${c.models.map(x=>prod(byCode(x))).join("")}</div></section>`;
+ if(c.news)h+=`<section class="wrap" style="padding-bottom:4rem">${NEWS.map((n,i)=>`<article class="newsrow rv" id="news-${i}"><span class="d">${n[0]}</span><div><h3>${esc(n[1])}</h3><p class="muted">${esc(n[2])}</p></div>${ph(n[3],n[1],"","width:160px;aspect-ratio:3/2")}</article>`).join("")}</section>`;
+ if(c.vac)h+=`<section class="wrap" style="padding-bottom:4rem">${VACS.map(v=>`<details class="acc rv"><summary><span><span class="muted" style="font-weight:500;font-size:.85rem;display:block">${v.s}</span><span style="font-size:1.4rem;letter-spacing:-.02em">${v.t}</span></span></summary><div class="split top" style="gap:2rem"><div class="prose"><p>${v.d}</p><p class="muted">${v.o}</p></div><div><h3 style="margin-bottom:.6rem">Wat wij vragen</h3><ul style="margin:0;padding-left:1.1rem;display:grid;gap:.35rem">${v.e.map(x=>`<li>${x}</li>`).join("")}</ul><p style="margin-top:1rem">Stuur je cv en motivatie naar <b>info@ideaal.nl</b>. Vragen? Bel Frank Kasper (bedrijfsleider), <span class="mono">0316 - 581350</span>.</p></div></div></details>`).join("")}<p class="note" style="margin-top:2rem">Acquisitie naar aanleiding van deze vacatures wordt niet op prijs gesteld.</p></section>`;
+ if(c.dls)h+=`<section class="wrap" style="padding-bottom:4rem">${DL.map(([g,l])=>`<div class="dlgroup rv"><h3>${g}</h3><div>${dlList(l)}</div></div>`).join("")}</section>`;
+ if(c.links)h+=`<section class="wrap" style="padding-bottom:4rem"><div class="list3">${LINKS.map(([t,u,d])=>`<div class="rv"><h3>${t}</h3><p class="muted">${d}</p><a class="tl" href="${u}" target="_blank" rel="noopener" style="justify-self:start">Bezoek website ↗</a></div>`).join("")}</div></section>`;
+ return h;
+}
+function idGrid(g){return IDEAAL.filter(x=>x.g===g).map(x=>itemCard(x.t,IDP(x.f),x.pdf?`<a class="tl" href="${IDP(x.pdf)}" target="_blank" rel="noopener">Productinformatie ↗</a>`:"")).join("")}
+function garnituren(){return head("garnituren","Garnituren van Hoppe in RVS en F1-aluminium, leverbaar als loopslot, dag-nachtslot, vrij-bezetslot en kastslot.",PH.zwartgarn)+`<section class="wrap block" style="padding-top:1rem"><div class="grid g4">${Object.keys(HOPPE).map(n=>`<article class="item rv"><div class="fig sq" style="padding:0"><img src="${U(hoppeImg(n,"base"))}" alt="Hoppe ${n}" loading="lazy" style="width:100%;height:100%;object-fit:contain"></div><div style="display:grid;gap:.4rem"><h3 style="font-size:1.05rem">Hoppe ${n}</h3><div class="seg" style="gap:.3rem">${Object.keys(SLOT).map(s=>`<button style="padding:.3rem .55rem;font-size:.75rem" data-hz="${n}|${s}">${s}</button>`).join("")}</div></div></article>`).join("")}</div></section><section class="tintbg"><div class="wrap block"><div class="sh"><div class="l"><h2 class="rv">Schuifdeurkommen en grepen</h2></div></div><div class="grid g4">${SCHUIFKOM.map(([n,f])=>itemCard(n,IDP(f),"",true)).join("")}</div></div></section>`}
+function schuifdeuren(){return head("schuifdeuren","Ruimtebesparend en strak: schuifdeursystemen voor elke situatie, met bijpassende schuifdeurkommen.",PH.schuif)+`<section class="wrap block" style="padding-top:1rem"><div class="grid g3">${SCHUIF.map((s,i)=>`<article class="item rv">${ph(s.img,s.t,"","aspect-ratio:4/3")}<div style="display:grid;gap:.4rem"><span class="nr mono" style="color:var(--wood);font-size:.8rem">0${i+1}</span><h3>${s.t}</h3><p class="muted">${s.d}</p></div></article>`).join("")}</div></section><section class="tintbg"><div class="wrap block"><div class="sh"><div class="l"><h2 class="rv">Schuifdeurkommen</h2></div></div><div class="grid g4">${SCHUIFKOM.map(([n,f])=>itemCard(n,IDP(f),"",true)).join("")}</div></div></section>`}
+function infoPage(id,item){
+ TITLE[id]=item.t;
+ return head(id,item.d,item.img)+`<section class="wrap block" style="padding-top:1rem"><div class="split top"><div class="prose">${item.spec?`<div class="tablewrap rv"><table class="spec">${item.spec.map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join("")}</table></div>`:""}${item.p?`<p class="rv"><span class="bigprice">vanaf ${eur(item.p)}</span> <small class="muted">indicatief</small></p>`:""}<div class="rv" style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn" data-go="configurator">Combineer met een deur ${AR}</button><button class="btn line" data-go="contact">Advies vragen</button></div></div>${item.ideaal?`<div class="grid g2" style="gap:1rem">${IDEAAL.filter(x=>x.g==="Profal"&&/kozijn/.test(x.t)).map(x=>itemCard(x.t,IDP(x.f))).join("")}</div>`:ph(item.img===PH.kozijnzwart?PH.staal:PH.kozijnhout,item.t,"land rv")}</div></section>`}
+function trend(i){const t=TRENDS[i],m=byCode(t.m);
+ return head("trend-"+i,t.d,t.img||trendImg(i))+`<section class="wrap block" style="padding-top:1rem"><div class="split"><div class="figure rv" style="aspect-ratio:4/5;padding:2.4rem">${prodImg(m,t.c)}</div><div class="prose"><span class="kick rv">Ons advies</span><h2 class="rv">${esc(m.name)} in ${t.c.toLowerCase()}</h2><p class="muted rv">${esc(SERIES[m.serie])}</p><p class="rv"><span class="bigprice">vanaf ${eur(priceOf(m,t.c))}</span></p><div class="rv" style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn" data-cfgc="${m.code}|${t.c}">Stel dit model samen ${AR}</button><button class="btn line" data-go="trends">Alle trends</button></div></div></div></section>`}
+function projecten(f){const types={"Alle":()=>true,"Woningen":p=>/woningen/.test(p.t)&&!/recreatie/.test(p.t),"Appartementen":p=>/appartementen/.test(p.t),"Recreatie":p=>/recreatie/.test(p.t)};const sel=f||"Alle";const l=PROJ.filter(types[sel]);
+ return head("projecten",`Een selectie van recente woningbouwprojecten waarvoor Houtindustrie Ideaal binnendeuren leverde en monteerde: samen ${TOTAL_UNITS.toLocaleString("nl-NL")} woningen en appartementen.`,PROJ[12].img)+`<section class="wrap" style="padding-block:1rem 4rem"><div class="sh"><div class="filterchips rv">${Object.keys(types).map(k=>`<button data-pf="${k}" aria-pressed="${k===sel}">${k}</button>`).join("")}</div><span class="muted">${l.length} projecten · ${l.reduce((s,p)=>s+p.a,0).toLocaleString("nl-NL")} woningen</span></div><div class="grid g3 fadein">${l.map(p=>projCard(p)).join("")}</div></section>`}
+function verkooppunten(){return head("verkooppunten","Houtindustrie Ideaal levert aan bouwondernemingen, bouwmaterialenhandelaren en afhangbedrijven in heel Nederland. Vind een verkooppunt waar u de deuren kunt zien en bestellen.",PH.connect)+`<section class="wrap block" style="padding-top:1rem"><form class="form rv" id="vp" style="max-width:36rem"><label class="full" for="vpq">Postcode of plaats<input id="vpq" placeholder="bijv. 6905 DH of Arnhem"></label><div class="full"><button class="btn" type="submit">Zoek verkooppunten ${AR}</button></div></form><div class="list3" id="vpres" style="margin-top:3rem">${vpCards()}</div><p class="note" style="margin-top:2rem">Behalve de fabriek in Zevenaar zijn dit voorbeeldvestigingen; in de live site komt hier de dealerlijst met kaart.</p></section>`}
+function vpCards(){return [["Houtindustrie Ideaal · fabriek","Industriestraat 18, 6905 DH Zevenaar","Projecten & zakelijke klanten · ma–vr 07:30–16:30"],["Voorbeeld bouwmaterialenhandel","Arnhem","Showroom met binnendeuren"],["Voorbeeld afhangbedrijf","Doetinchem","Levering en montage"],["Voorbeeld houthandel","Nijmegen","Showroom"]].map(([n,a,s])=>`<div class="rv"><h3>${n}</h3><p>${a}</p><span class="muted">${s}</span></div>`).join("")}
+function contactPage(){return head("contact","Houtindustrie Ideaal richt zich op de zakelijke markt en levert niet direct aan particulieren. Bent u particulier en was Ideaal leverancier tijdens de bouw van uw woning? Vul dan het formulier in met uw projectnaam en bouwnummer.",PH.fabriek)+`<section class="wrap block" style="padding-top:1rem"><div class="split top"><form class="form rv" id="ct"><label for="cta">Aanhef<select id="cta"><option>mevr.</option><option>dhr.</option></select></label><label for="ctn">Naam *<input id="ctn" required autocomplete="name"></label><label for="ctb">Bedrijfsnaam<input id="ctb" autocomplete="organization"></label><label for="ctad">Adres<input id="ctad" autocomplete="street-address"></label><label for="ctpc">Postcode *<input id="ctpc" required autocomplete="postal-code"></label><label for="ctpl">Plaats *<input id="ctpl" required></label><label for="ctt">Telefoonnummer *<input id="ctt" required autocomplete="tel"></label><label for="cte">E-mailadres *<input id="cte" type="email" required autocomplete="email"></label><label for="ctpn">Projectnaam *<input id="ctpn" required></label><label for="ctbn">Bouwnummer<input id="ctbn"></label><label class="full" for="cts">Onderwerp<select id="cts"><option>Aanvraag offerte</option><option>Terugbellen met vraag</option><option>Vraag koperskeuze website</option><option>Anders</option></select></label><label class="full" for="ctm">Opmerkingen *<textarea id="ctm" rows="5" required></textarea></label><div class="full"><button class="btn" type="submit">Verstuur ${AR}</button></div></form>
+ <div style="display:grid;gap:2rem" class="rv"><div><h3 style="font-size:1.5rem;margin-bottom:.8rem">Houtindustrie “Ideaal” B.V.</h3><table class="spec"><tr><td>Adres</td><td>Industriestraat 18<br>6905 DH Zevenaar</td></tr><tr><td>Telefoon</td><td class="mono">0316 - 581350</td></tr><tr><td>Fax</td><td class="mono">0316 - 529368</td></tr><tr><td>E-mail</td><td>info@ideaal.nl</td></tr><tr><td>Openingstijden</td><td>Ma t/m vr 07:30 – 16:30<br><span class="muted">Za, zo en feestdagen gesloten</span></td></tr><tr><td>KvK</td><td class="mono">09045549</td></tr><tr><td>BTW</td><td class="mono">NL004847180B01</td></tr></table></div>${ph(PH.fabriek,"Fabriek Zevenaar","","aspect-ratio:16/10")}</div></div></section>`}
+function favorieten(){const l=favs.map(byCode).filter(Boolean);return head("favorieten","Uw bewaarde deuren. Ze worden alleen in deze browser bewaard.")+`<section class="wrap" style="padding-bottom:4rem">${l.length?`<div class="grid g4">${l.map(m=>prod(m)).join("")}</div>`:`<p class="muted">U heeft nog geen favorieten. Klik op het hartje bij een deur om hem te bewaren.</p><button class="btn" data-go="stijldeuren" style="margin-top:1.4rem">Bekijk de collectie ${AR}</button>`}</section>`}
+function sitemap(){return head("sitemap","")+`<section class="wrap" style="padding-bottom:4rem"><div class="grid g3">${NAV.map(n=>`<div><h3 style="margin-bottom:.8rem"><a class="tl" data-go="${n.id}">${n.t}</a></h3>${n.kids?tree(n.kids):""}</div>`).join("")}<div><h3 style="margin-bottom:.8rem">Over Ideaal</h3><ul>${["over-ons","duurzaamheid","nieuws","vacatures","faq","garantie","privacy"].map(i=>`<li><a data-go="${i}">${TITLE[i]}</a></li>`).join("")}</ul></div></div></section>`}
+function page404(){return `<section class="wrap block"><h1>Pagina niet gevonden</h1><p class="muted" style="margin:.8rem 0 1.4rem">Deze pagina bestaat niet (meer).</p><button class="btn" data-go="home">Naar home ${AR}</button></section>`}
+
+/* ================= ROUTER ================= */
+let current="home";
+const HUBS=["assortiment","binnendeuren","technische","kozijnen","beslag","deuropties","inspiratie","professionals","stomp","serviceshop"];
+function go(id,arg,arg2){
+ closeMega();$("#drawer").hidden=true;$("#searchbox").hidden=true;$("#cart").hidden=true;
+ current=id;let h;
+ if(id==="home")h=home();
+ else if(id==="product")h=product(arg);
+ else if(id==="configurator")h=configurator(arg,arg2);
+ else if(id in LIST_PRESET)h=listing(id);
+ else if(id.startsWith("shop-"))h=shop(id.slice(5));
+ else if(id==="serviceshop")h=shop();
+ else if(id==="checkout")h=checkout();
+ else if(id==="garnituren")h=garnituren();
+ else if(id==="schuifdeuren")h=schuifdeuren();
+ else if(id.startsWith("koz-"))h=infoPage(id,KOZIJNEN.find(k=>"koz-"+k.id===id));
+ else if(id.startsWith("trend-"))h=trend(+id.slice(6));
+ else if(id==="trends")h=head("trends","Laat u inspireren door de actuele interieurtrends, elk met een passend deurmodel en kleuradvies.",PH.nuance)+`<section class="wrap" style="padding-block:1rem 4rem"><div class="grid g3">${TRENDS.map((t,i)=>tile("trend-"+i,t.t,trendImg(i),t.m+" · "+t.c,"","0"+(i+1))).join("")}</div></section>`;
+ else if(id==="projecten")h=projecten(arg);
+ else if(id==="verkooppunten")h=verkooppunten();
+ else if(id==="contact")h=contactPage();
+ else if(id==="favorieten")h=favorieten();
+ else if(id==="sitemap")h=sitemap();
+ else if(HUBS.includes(id)&&NODE[id]&&NODE[id].kids&&id!=="serviceshop")h=hub(id);
+ else if(CONTENT[id])h=content(id);
+ else h=page404();
+ const app=$("#app");app.classList.remove("enter");app.innerHTML=h;void app.offsetWidth;app.classList.add("enter");
+ if($("#lgrid"))drawListing();
+ if(id==="product")drawPD();
+ if(id==="configurator"){lastStage="";drawCfg()}
+ if(id==="home")startSlides();
+ $$("#mainnav [data-nav],#mainnav [data-mega]").forEach(b=>b.classList.toggle("cur",(b.dataset.nav||b.dataset.mega)===rootOf(id)));
+ try{history.replaceState(null,"","#"+(id==="product"?arg:id))}catch(e){}
+ window.scrollTo({top:0,behavior:"instant"});
+ observe();requestAnimationFrame(fitAll);
+}
+function rootOf(id){let p=id,g=0;while(PARENT[p]&&g++<8)p=PARENT[p];return p}
+
+/* ================= FOTO-INPASSING ================= */
+function fitImg(img){
+ if(!img||!img.naturalWidth)return;const ph=img.parentElement;if(!ph||!ph.classList.contains("ph")||ph.closest(".slide"))return;
+ const r=img.naturalWidth/img.naturalHeight;
+ if(ph.parentElement.classList.contains("banner")){
+  const bn=ph.parentElement;bn.classList.remove("split");ph.style.height="";ph.style.aspectRatio="";
+  const w=bn.clientWidth;
+  if(innerWidth>900&&img.naturalWidth<w*.62){bn.classList.add("split");ph.style.height=`min(78%,${img.naturalHeight}px)`;ph.style.aspectRatio=`${img.naturalWidth}/${img.naturalHeight}`;return}
+  const h=ph.clientHeight;if(h&&r>(w/h)*1.2)ph.style.height=Math.max(260,Math.round(w/r))+"px";return}
+ const w=ph.clientWidth,h=ph.clientHeight;if(!w||!h)return;const b=w/h;
+ ph.classList.remove("fit","prodfit");
+ if(r<.75&&b>r*1.4){ph.classList.add("prodfit");return}
+ if(r/b>3.1||b/r>2.4){ph.classList.add("fit");ph.style.setProperty("--bg",`url("${img.src}")`)}
+}
+document.addEventListener("load",e=>{if(e.target.tagName==="IMG")fitImg(e.target)},true);
+function fitAll(){$$(".ph>img").forEach(i=>{if(i.complete)fitImg(i)})}
+let rzT;addEventListener("resize",()=>{clearTimeout(rzT);rzT=setTimeout(fitAll,200)});
+
+/* ================= SCROLL FX ================= */
+let io;
+function observe(){
+ const els=$$(".rv:not(.in)");
+ if(!("IntersectionObserver" in window)||RM){els.forEach(e=>e.classList.add("in"));return}
+ if(!io)io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);en.target.querySelectorAll?.(".count").forEach(countUp);if(en.target.classList.contains("count"))countUp(en.target)}}),{rootMargin:"0px 0px -6% 0px",threshold:.08});
+ els.forEach((e,i)=>{const sib=e.parentElement?[...e.parentElement.children].indexOf(e):0;if(!e.style.getPropertyValue("--d"))e.style.setProperty("--d",(Math.min(sib,6)*.07)+"s");io.observe(e)});
+}
+function countUp(el){if(el.dataset.done||RM)return;el.dataset.done=1;const to=+el.dataset.to,pre=el.dataset.pre||"",suf=el.dataset.suf||"",plain=el.dataset.plain;const from=plain?to-60:0;const t0=performance.now(),d=1600;const f=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,4),v=Math.round(from+(to-from)*e);el.textContent=pre+(plain?v:v.toLocaleString("nl-NL"))+suf;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+let ticking=false;
+function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(()=>{ticking=false;$("#hdr").classList.toggle("scrolled",scrollY>30);if(RM)return;const vh=innerHeight;$$(".plx>img").forEach(img=>{const r=img.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const p=(r.top+r.height/2-vh/2)/vh;img.style.transform=`translateY(${(p*-46).toFixed(1)}px) scale(1.14)`})})}
+addEventListener("scroll",onScroll,{passive:true});
+
+/* ================= EVENTS ================= */
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-fav],[data-add],[data-go],[data-model],[data-cfg],[data-cfgc],[data-mega],[data-close],[data-step],[data-pick],[data-c],[data-pd],[data-pdt],[data-pdv],[data-page],[data-q],[data-slide],[data-slide-step],[data-unf],[data-rail],[data-hometab],[data-show],[data-idg],[data-pf],[data-serie],[data-news],[data-hz],#btnSearch,#btnCart,#btnMenu,#freset,#ftoggle,#copyQuote");
+ if(!e.target.closest("#mega,[data-mega]"))closeMega();
+ if(!t)return;
+ const d=t.dataset;
+ if(d.fav){e.stopPropagation();toggleFav(d.fav);$$(`.fav[data-fav="${d.fav}"]`).forEach(b=>b.classList.toggle("on",favs.includes(d.fav)));if(current==="favorieten")go("favorieten");return}
+ if(d.add){const it=allShop().find(x=>x.n===d.add);if(it)addCart(it);return}
+ if(d.mega){openMega(d.mega);return}
+ if(d.cfg){go("configurator",d.cfg);return}
+ if(d.cfgc){const[c,col]=d.cfgc.split("|");go("configurator",c,col);return}
+ if(d.model){go("product",d.model);return}
+ if(d.go){if(t.hasAttribute("disabled"))return;go(d.go);return}
+ if(d.close){$("#"+d.close).hidden=true;return}
+ if(d.slide!==undefined){showSlide(+d.slide);startSlides();return}
+ if(d.slideStep){showSlide(curSlide+ +d.slideStep);startSlides();return}
+ if(d.rail){const r=$("#"+d.rail);if(r){const card=r.firstElementChild;const w=card?card.getBoundingClientRect().width+22:300;r.scrollBy({left:+d.dir*w*(innerWidth>900?2:1),behavior:RM?"auto":"smooth"})}return}
+ if(d.hometab){homeTab=d.hometab;$$("[data-hometab]").forEach(b=>b.setAttribute("aria-selected",b.dataset.hometab===homeTab));$("#homeRail").innerHTML=homeRail();$$("#homeRail .rv").forEach(x=>x.classList.add("in"));return}
+ if(d.show){showIdx=+d.show;const s=$("#showcase");s.style.background=COLORS[SHOWCASE[showIdx][1]].bg;s.innerHTML=showHtml();return}
+ if(d.idg){$$("[data-idg]").forEach(b=>b.setAttribute("aria-selected",b.dataset.idg===d.idg));const g=$("#idgrid");g.classList.remove("fadein");g.innerHTML=idGrid(d.idg);void g.offsetWidth;g.classList.add("fadein");g.querySelectorAll(".rv").forEach(x=>x.classList.add("in"));return}
+ if(d.pf){go("projecten",d.pf);return}
+ if(d.serie){go("stijldeuren");const cb=document.querySelector(`[data-f="serie"][value="${CSS.escape(d.serie)}"]`);if(cb){cb.checked=true;LS.serie.push(d.serie);drawListing()}return}
+ if(d.news){go("nieuws");const el=$("#news-"+d.news);if(el)setTimeout(()=>el.scrollIntoView({behavior:RM?"auto":"smooth",block:"center"}),80);return}
+ if(d.hz){const[n,s]=d.hz.split("|");const card=t.closest(".item");card.querySelector("img").src=U(hoppeImg(n,s));card.querySelectorAll("[data-hz]").forEach(b=>b.setAttribute("aria-pressed",b===t));return}
+ if(d.unf){const a=LS[d.unf];a.splice(a.indexOf(d.v),1);const cb=document.querySelector(`[data-f="${d.unf}"][value="${CSS.escape(d.v)}"]`);if(cb)cb.checked=false;drawListing();return}
+ if(d.step!==undefined){C.step=+d.step;drawCfg(true);const top=$("#cfgSteps").getBoundingClientRect().top;if(top<80||top>innerHeight*.6)$("#cfgSteps").scrollIntoView({block:"start",behavior:RM?"auto":"smooth"});return}
+ if(d.pick){const m=byCode(d.pick);Object.assign(C,{code:m.code,color:m.colors.includes(C.color)?C.color:m.colors[0],glass:m.glass.includes(C.glass)?C.glass:(m.glass[0]||""),kant:m.kant.includes(C.kant)?C.kant:m.kant[0]});drawCfg();return}
+ if(d.c){C[d.c]=d.v;if(d.c==="color"&&COLORS[C.color].dark)C.lat="Zwart";drawCfg();return}
+ if(d.pd){PD[d.pd]=d.v;PD.view=d.pd==="color"?"foto":"schets";drawPD();return}
+ if(d.pdt){PD.color=d.pdt;PD.view="foto";drawPD();return}
+ if(d.pdv){PD.view=d.pdv;drawPD();return}
+ if(d.page){LS.page=+d.page;drawListing();$("#lgrid").scrollIntoView({block:"start",behavior:RM?"auto":"smooth"});return}
+ if(d.q){const i=+d.q;cart[i].q+=+d.d;if(cart[i].q<1)cart.splice(i,1);store.set("cart2",cart);counts();drawCart();return}
+ if(t.id==="btnSearch"){const s=$("#searchbox");closeMega();s.hidden=!s.hidden;if(!s.hidden)$("#q").focus();return}
+ if(t.id==="btnCart"){drawCart();$("#cart").hidden=false;return}
+ if(t.id==="btnMenu"){$("#drawer").hidden=false;return}
+ if(t.id==="freset"){go(LS.id);return}
+ if(t.id==="ftoggle"){$("#filters").classList.toggle("open");return}
+ if(t.id==="copyQuote"){const txt=quoteText();try{navigator.clipboard.writeText(txt).then(()=>toast("Overzicht gekopieerd"),()=>toast("Kopiëren is hier niet toegestaan"))}catch(err){toast("Kopiëren is hier niet toegestaan")}return}
+});
+document.addEventListener("mousemove",e=>{const m=e.target.closest&&e.target.closest(".gallery .main");if(!m)return;const img=m.querySelector("img");if(!img)return;const r=m.getBoundingClientRect();img.style.transformOrigin=`${((e.clientX-r.left)/r.width*100).toFixed(1)}% ${((e.clientY-r.top)/r.height*100).toFixed(1)}%`});
+document.addEventListener("change",e=>{
+ const t=e.target;
+ if(t.dataset.f){const a=LS[t.dataset.f];if(t.checked)a.push(t.value);else a.splice(a.indexOf(t.value),1);LS.page=1;drawListing()}
+ if(t.id==="lsort"){LS.sort=t.value;drawListing()}
+ if(t.id==="lper"){LS.per=+t.value;LS.page=1;drawListing()}
+ if(t.dataset.ex){if(t.checked)C.extras.push(t.dataset.ex);else C.extras=C.extras.filter(x=>x!==t.dataset.ex);drawCfg()}
+ if(t.dataset.cs){let v=t.value;const k=t.dataset.cs;
+  if(k==="cw"&&v)v=Math.max(580,Math.min(1110,+v));
+  if(k==="ch"&&v)v=Math.max(1580,Math.min(2700,+v));
+  if(k==="qty")v=Math.max(1,Math.min(999,+v||1));
+  C[k]=v;const w=+(C.cw||C.w),h=+(C.ch||C.h);
+  if(h>2500&&w>1030){C.cw=1030;toast("Boven 2500 mm hoogte is de maximale breedte 1030 mm")}
+  drawCfg()}
+});
+document.addEventListener("input",e=>{
+ if(e.target.id==="fmin"){LS.min=e.target.value;drawListing()}
+ if(e.target.id==="fmax"){LS.max=e.target.value;drawListing()}
+ if(e.target.id==="q"){const q=e.target.value.trim().toLowerCase();if(q.length<2){$("#sres").innerHTML="";return}
+  const ms=MODELS.filter(m=>(m.code+" "+m.serie+" "+m.type+" "+m.colors.join(" ")).toLowerCase().includes(q)).slice(0,8).map(m=>`<a data-model="${m.code}">${prodImg(m)}<span><b>${m.code}</b> · ${esc(m.name)}<br><small class="muted">${m.serie}</small></span></a>`);
+  const ps=Object.entries(TITLE).filter(([k,v])=>k!=="product"&&k!=="checkout"&&v.toLowerCase().includes(q)).slice(0,8).map(([k,v])=>`<a data-go="${k}"><span>${esc(v)}</span></a>`);
+  const pr=PROJ.filter(p=>(p.n+" "+p.p).toLowerCase().includes(q)).slice(0,4).map(p=>`<a data-go="projecten"><span>Project ${esc(p.n)} · ${esc(p.p)}</span></a>`);
+  $("#sres").innerHTML=[...ms,...ps,...pr].join("")||`<span class="muted">Geen resultaten voor “${esc(q)}”.</span>`}
+});
+document.addEventListener("submit",e=>{
+ e.preventDefault();const f=e.target;
+ const msg={quote:"Bedankt. Uw offerte-aanvraag is opgesteld; in de live site gaat deze naar de verkoop van Houtindustrie Ideaal (testversie: niets verzonden).",co:"Bedankt voor uw bestelling (testversie: er is niet betaald of verzonden).",kk:"In de live site opent nu de koperskeuze-omgeving van uw project.",nb:"Inschrijving geregistreerd (testversie).",ct:"Bedankt, uw bericht is opgesteld. In de live site gaat dit naar info@ideaal.nl (testversie: niets verzonden).",dealer:"Het dealerportal wordt in de live site gekoppeld."}[f.id];
+ if(f.id==="vp"){const r=$("#vpres");r.innerHTML=vpCards();r.querySelectorAll(".rv").forEach(x=>x.classList.add("in"));toast("Verkooppunten bij "+($("#vpq").value||"u in de buurt"));return}
+ if(msg){const box=document.createElement("p");box.className="ok";box.style.marginTop="1.2rem";box.textContent=msg;f.after(box);const b=f.querySelector("button[type=submit]");if(b)b.disabled=true;if(f.id==="co"){cart=[];store.set("cart2",cart);counts()}}
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeMega();["drawer","searchbox","cart"].forEach(i=>$("#"+i).hidden=true)}
+ if(current==="home"&&(e.key==="ArrowRight"||e.key==="ArrowLeft")&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){showSlide(curSlide+(e.key==="ArrowRight"?1:-1));startSlides()}});
+
+/* ================= START ================= */
+renderChrome();counts();
+const start=(location.hash||"").slice(1);
+if(start&&byCode(start))go("product",start);else if(start&&(CONTENT[start]||TITLE[start]||start==="home"))go(start);else go("home");
+})();
+</script>
+
+</body>
+</html>
